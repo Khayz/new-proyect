@@ -14,7 +14,7 @@ const Navbar = () => {
 
 	return (
 		<header className='header'>
-			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
+			<nav className='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
 				<NavLink className='navbar-brand' to='/' exact activeStyle={activeLink}>
 					<i className='far fa-address-book'></i> Home School
 				</NavLink>
@@ -31,15 +31,6 @@ const Navbar = () => {
 
 				<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 					<ul className='navbar-nav mr-auto'>
-						<li className='nav-item'>
-							<NavLink
-								className='nav-link'
-								to='/s'
-								exact
-								activeStyle={activeLink}>
-								Aprenda mas
-							</NavLink>
-						</li>
 						<li className='nav-item'>
 							<NavLink
 								className='nav-link'
@@ -80,6 +71,15 @@ const Navbar = () => {
 								exact
 								activeStyle={activeLink}>
 								Darse de alta
+							</NavLink>
+						</li>
+						<li className='nav-item'>
+							<NavLink
+								className='nav-link'
+								to='/login'
+								exact
+								activeStyle={activeLink}>
+								Iniciar Sesion
 							</NavLink>
 						</li>
 					</ul>
