@@ -6,15 +6,15 @@ import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import HomeGuest from "./container/HomeGuest/HomeGuest";
 import Footer from "./components/Footer/Footer";
-import ModalRegister from "./components/Ui/ModalRegister/ModalRegister";
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <Route path="/" render={() => <HomeGuest />} />
-        <Route path="/register/:account" component={ModalRegister} />
+        <Route exact path="/" render={() => <HomeGuest />} />
+        <Route exact path="/register/:account" render={() => <SignUp />} />
         {/* <Footer /> */}
       </div>
     </BrowserRouter>

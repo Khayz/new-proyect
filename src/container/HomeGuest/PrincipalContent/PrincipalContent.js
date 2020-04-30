@@ -1,5 +1,6 @@
 import React from "react";
 import "./PrincipalContent.scss";
+import { Link } from "react-router-dom";
 
 const PrincipalContent = () => {
   return (
@@ -17,11 +18,11 @@ const PrincipalContent = () => {
         <div className="typeAccount">
           <div className="teacher">
             <i className="fas fa-chalkboard-teacher"></i>
-            <p>Maestro</p>
+            <Link to="/register/teacher">Maestro</Link>
           </div>
           <div className="parent">
             <i className="fas fa-user"></i>
-            <p>Padre</p>
+            <Link to="/register/parent">Padre</Link>
           </div>
         </div>
       </section>
