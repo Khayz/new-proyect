@@ -6,6 +6,7 @@ import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import HomeGuest from './container/HomeGuest/HomeGuest';
 import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
 	return (
@@ -14,6 +15,10 @@ function App() {
 				<Navbar />
 				<Route exact path='/' render={() => <HomeGuest />} />
 				<Route path='/login' render={() => <Login />} />
+				<Route
+					path='/register/:account'
+					render={(props) => <SignUp {...props} />}
+				/>
 			</div>
 		</BrowserRouter>
 	);

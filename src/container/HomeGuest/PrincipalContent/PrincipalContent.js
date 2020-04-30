@@ -1,5 +1,6 @@
 import React from 'react';
 import './PrincipalContent.scss';
+import { Link } from 'react-router-dom';
 
 const PrincipalContent = () => {
 	return (
@@ -15,14 +16,14 @@ const PrincipalContent = () => {
 				</p>
 				<h2>Inscribirse como un...</h2>
 				<div className='typeAccount'>
-					<div className='teacher'>
+					<Link className='teacher' to='/register/teacher'>
 						<i className='icon fas fa-chalkboard-teacher'></i>
 						<p>Maestro</p>
-					</div>
-					<div className='parent'>
+					</Link>
+					<Link className='parent' to='/register/parent'>
 						<i className='icon fas fa-user'></i>
 						<p>Padre</p>
-					</div>
+					</Link>
 				</div>
 			</section>
 			<section className='video-opening'>

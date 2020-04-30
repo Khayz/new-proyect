@@ -40,7 +40,7 @@ const Navbar = () => {
 								Contacto
 							</NavLink>
 						</li>
-						{/* <li className='nav-item dropdown'>
+						<li className='nav-item dropdown'>
 							<NavLink
 								className='nav-link dropdown-toggle'
 								to='/'
@@ -49,29 +49,24 @@ const Navbar = () => {
 								data-toggle='dropdown'
 								aria-haspopup='true'
 								aria-expanded='false'>
-								Dropdown
-							</NavLink>
-							<div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-								<NavLink className='dropdown-item' to='/'>
-									Action
-								</NavLink>
-								<NavLink className='dropdown-item' to='/'>
-									Another action
-								</NavLink>
-								<div className='dropdown-divider'></div>
-								<NavLink className='dropdown-item' to='/'>
-									Something else here
-								</NavLink>
-							</div>
-						</li> */}
-						<li className='nav-item'>
-							<NavLink
-								className='nav-link'
-								to='/q'
-								exact
-								activeStyle={activeLink}>
 								Darse de alta
 							</NavLink>
+							<div className='dropdown-menu' aria-labelledby='navbarDropdown'>
+								<NavLink
+									exact
+									activeStyle={activeLink}
+									className='dropdown-item'
+									to='/register/teacher'>
+									Profesor
+								</NavLink>
+								<NavLink
+									exact
+									activeStyle={activeLink}
+									className='dropdown-item'
+									to='/register/parent'>
+									Padre
+								</NavLink>
+							</div>
 						</li>
 						<li className='nav-item'>
 							<NavLink
