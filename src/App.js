@@ -14,7 +14,11 @@ function App() {
       <div className="App">
         <Navbar />
         <Route exact path="/" render={() => <HomeGuest />} />
-        <Route exact path="/register/:account" render={() => <SignUp />} />
+        <Route
+          exact
+          path="/register/:account"
+          render={(props) => <SignUp {...props} />}
+        />
         {/* <Footer /> */}
       </div>
     </BrowserRouter>
