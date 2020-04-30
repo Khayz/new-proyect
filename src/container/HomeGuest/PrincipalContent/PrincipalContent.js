@@ -5,7 +5,9 @@ const PrincipalContent = () => {
   return (
     <div className="PrincipalContent">
       <section className="speach">
-        <h1>Lleva a cada familia a tu aula</h1>
+        <h1>
+          Lleva a cada familia a <br /> tu aula
+        </h1>
         <p>
           ¡Únete al 95% de las escuelas en los Estados Unidos que utilizan
           ClassDojo para involucrar a los niños y conectarse con las familias!
