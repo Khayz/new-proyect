@@ -1,0 +1,24 @@
+.Community {
+  box-sizing: border-box;
+  margin-top: 50px;
+  background-color: #fff;
+  h3 {
+    text-align: center;
+    padding: 50px 0;
+    color: #363636;
+    font-size: 26px;
+  }
+  ul li {
+    text-align: center;
+    margin: 15px;
+  }
+  p {
+    text-align: center;
+  }
+  figure {
+    img {
+      margin-left: 15%;
+      width: 260px;
+    }
+  }
+}
