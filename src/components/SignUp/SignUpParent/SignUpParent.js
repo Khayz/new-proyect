@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { registerUser } from '../../../redux/actions/index.actions';
+import { connect } from 'react-redux';
 
-function SignUpParent() {
+function SignUpParent({ registerUser }) {
+	const [register, setRegister] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		password: '',
+		phone: '',
+		account: 'parent',
+	});
+
+	const handleRegisterData = (event) => {
+		const { value, name } = event.target;
+		setRegister((prevProps) => ({
+			...prevProps,
+			[name]: value,
+		}));
+	};
+
+	const handleSubmitRegister = (event) => {
+		event.preventDefault();
+		registerUser(register);
+	};
+
 	return (
-		<form className='Register text-center border border-light p-5' action='#!'>
+		<form
+			onSubmit={handleSubmitRegister}
+			className='Register text-center border border-light p-5'
+			action='#!'>
 			<p className='h4 mb-4'>Sign up parent</p>
 
 			<div className='form-row mb-4'>
 				<div className='col'>
 					<input
+						onChange={handleRegisterData}
 						type='text'
+						name='firstName'
 						id='defaultRegisterFormFirstName'
 						className='form-control'
 						placeholder='First name'
@@ -16,7 +45,9 @@ function SignUpParent() {
 				</div>
 				<div className='col'>
 					<input
+						onChange={handleRegisterData}
 						type='text'
+						name='lastName'
 						id='defaultRegisterFormLastName'
 						className='form-control'
 						placeholder='Last name'
@@ -25,14 +56,18 @@ function SignUpParent() {
 			</div>
 
 			<input
+				onChange={handleRegisterData}
 				type='email'
+				name='email'
 				id='defaultRegisterFormEmail'
 				className='form-control mb-4'
 				placeholder='E-mail'
 			/>
 
 			<input
+				onChange={handleRegisterData}
 				type='password'
+				name='password'
 				id='defaultRegisterFormPassword'
 				className='form-control'
 				placeholder='Password'
@@ -45,7 +80,9 @@ function SignUpParent() {
 			</small>
 
 			<input
+				onChange={handleRegisterData}
 				type='text'
+				name='phone'
 				id='defaultRegisterPhonePassword'
 				className='form-control'
 				placeholder='Phone number'
@@ -55,22 +92,7 @@ function SignUpParent() {
 				id='defaultRegisterFormPhoneHelpBlock'
 				className='form-text text-muted mb-4'></small>
 
-			<div className='custom-control custom-checkbox'>
-				<input
-					type='checkbox'
-					className='custom-control-input'
-					id='defaultRegisterFormNewsletter'
-				/>
-				<label
-					className='custom-control-label'
-					htmlFor='defaultRegisterFormNewsletter'>
-					Subscribe to our newsletter
-				</label>
-			</div>
-
-			<button className='btn btn-info my-4 btn-block' type='submit'>
-				Sign in
-			</button>
+			<button className='btn btn-info my-4 btn-block'>Sign in</button>
 
 			<p>or sign up with:</p>
 
@@ -100,4 +122,8 @@ function SignUpParent() {
 	);
 }
 
-export default SignUpParent;
+const mapDispatchToProps = {
+	registerUser,
+};
+
+export default connect(null, mapDispatchToProps)(SignUpParent);

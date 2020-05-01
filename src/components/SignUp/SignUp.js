@@ -5,14 +5,13 @@ import SignUpTeacher from './SignUpTeacher/SignUpTeacher';
 import './SignUp.scss';
 
 const SignUp = (props) => {
-	let Register = null;
-
 	const {
 		match: {
 			params: { account },
 		},
 	} = props;
 
+	let Register = null;
 	if (account === 'teacher') {
 		Register = <SignUpTeacher />;
 	} else if (account === 'parent') {
