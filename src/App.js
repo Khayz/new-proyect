@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import { authUser, getChilds } from './redux/actions/index.actions';
-import {} from 'react-toastify';
+import { } from 'react-toastify';
 import './App.scss';
 
 import Navbar from './components/Navbar/Navbar';
@@ -10,6 +10,7 @@ import HomeGuest from './container/HomeGuest/HomeGuest';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import Dashboard from './container/Dashboard/Dashboard';
+import Footer from './components/Footer/Footer';
 
 function App({ authUser, user, getChilds }) {
 	const { _id } = user;
@@ -40,6 +41,7 @@ function App({ authUser, user, getChilds }) {
 						_id ? <Redirect to='/' /> : <SignUp {...props} />
 					}
 				/>
+				<Footer />
 			</div>
 		</BrowserRouter>
 	);
