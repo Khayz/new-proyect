@@ -89,8 +89,8 @@
       justify-content: center;
       .school-video {
         border-radius: 10px;
-        width: 400px;
-        height: 260px;
+        width: 420px;
+        height: 280px;
       }
     }
   }
@@ -112,6 +112,39 @@
     background-repeat: no-repeat;
     height: auto;
     width: 70%;
-    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.4);
+  }
+  .devices {
+    margin: auto;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f5f5f3;
+    .cards {
+      width: 80%;
+      height: auto;
+      margin: 30px auto;
+      i {
+        font-size: 50px;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .card:nth-child(1) {
+        i {
+          color: rgb(86, 46, 155);
+        }
+      }
+      .card:nth-child(2) {
+        i {
+          color: rgb(162, 44, 44);
+        }
+      }
+      .card:nth-child(3) {
+        i {
+          color: rgb(59, 145, 9);
+        }
+      }
+    }
   }
 }
