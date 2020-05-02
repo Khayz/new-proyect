@@ -1,49 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { loginUser } from '../../redux/actions/index.actions';
 
 import './Login.scss';
 
-const Login = () => {
+const Login = ({ loginUser }) => {
+	const [login, setLogin] = useState({
+		email: '',
+		password: '',
+	});
+
+	const handleLoginData = (event) => {
+		const { value, name } = event.target;
+		setLogin((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	};
+
+	const handleSubmitLogin = (event) => {
+		event.preventDefault();
+		loginUser(login);
+	};
+
 	return (
-		<form className='FormLogin text-center border border-light p-5' action='#!'>
+		<form
+			onSubmit={handleSubmitLogin}
+			className='FormLogin text-center border border-light p-5'
+			action='#!'>
 			<p className='h4 mb-4'>Sign in</p>
 
 			<input
+				onChange={handleLoginData}
 				type='email'
+				name='email'
 				id='defaultLoginFormEmail'
 				className='form-control mb-4'
 				placeholder='E-mail'
 			/>
 
 			<input
+				onChange={handleLoginData}
 				type='password'
+				name='password'
 				id='defaultLoginFormPassword'
 				className='form-control mb-4'
 				placeholder='Password'
 			/>
 
 			<div className='d-flex justify-content-around'>
-				<div>
-					<div className='custom-control custom-checkbox'>
-						<input
-							type='checkbox'
-							className='custom-control-input'
-							id='defaultLoginFormRemember'
-						/>
-						<label
-							className='custom-control-label'
-							htmlFor='defaultLoginFormRemember'>
-							Remember me
-						</label>
-					</div>
-				</div>
-				<div>
-					<a href='/'>Forgot password?</a>
-				</div>
+				<a href='/'>Forgot password?</a>
 			</div>
 
-			<button className='btn btn-info btn-block my-4' type='submit'>
-				Sign in
-			</button>
+			<button className='btn btn-info btn-block my-4'>Sign in</button>
 
 			<p>
 				Not a member? <a href='/'>Register</a>
@@ -67,4 +76,8 @@ const Login = () => {
 	);
 };
 
-export default Login;
+const mapDispatchToProps = {
+	loginUser,
+};
+
+export default connect(null, mapDispatchToProps)(Login);

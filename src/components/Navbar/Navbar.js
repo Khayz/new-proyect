@@ -1,9 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './Navbar.scss';
 
-const Navbar = () => {
+import NavGuest from './NavGuest/NavGuest';
+import NavParent from './NavParent/NavParent';
+import NavTeacher from './NavTeacher/NavTeacher';
+
+const Navbar = ({ user }) => {
+	const { _id, account } = user;
+
 	const activeLink = {
 		backgroundColor: '#00aeef',
 		color: '#fff',
@@ -12,76 +18,21 @@ const Navbar = () => {
 		fontWeight: 'normal',
 	};
 
-	return (
-		<header className='header'>
-			<nav className='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
-				<NavLink className='navbar-brand' to='/' exact activeStyle={activeLink}>
-					<i className='far fa-address-book'></i> Home School
-				</NavLink>
-				<button
-					className='navbar-toggler'
-					type='button'
-					data-toggle='collapse'
-					data-target='#navbarSupportedContent'
-					aria-controls='navbarSupportedContent'
-					aria-expanded='false'
-					aria-label='Toggle navigation'>
-					<span className='navbar-toggler-icon'></span>
-				</button>
+	let actualNavbar = <NavGuest activeLink={activeLink} />;
 
-				<div className='collapse navbar-collapse' id='navbarSupportedContent'>
-					<ul className='navbar-nav mr-auto'>
-						<li className='nav-item'>
-							<NavLink
-								className='nav-link'
-								to='/d'
-								exact
-								activeStyle={activeLink}>
-								Contacto
-							</NavLink>
-						</li>
-						<li className='nav-item dropdown'>
-							<NavLink
-								className='nav-link dropdown-toggle'
-								to='/'
-								id='navbarDropdown'
-								role='button'
-								data-toggle='dropdown'
-								aria-haspopup='true'
-								aria-expanded='false'>
-								Darse de alta
-							</NavLink>
-							<div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-								<NavLink
-									exact
-									activeStyle={activeLink}
-									className='dropdown-item'
-									to='/register/teacher'>
-									Profesor
-								</NavLink>
-								<NavLink
-									exact
-									activeStyle={activeLink}
-									className='dropdown-item'
-									to='/register/parent'>
-									Padre
-								</NavLink>
-							</div>
-						</li>
-						<li className='nav-item'>
-							<NavLink
-								className='nav-link'
-								to='/login'
-								exact
-								activeStyle={activeLink}>
-								Iniciar Sesion
-							</NavLink>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</header>
-	);
+	if (_id && account === 'parent') {
+		actualNavbar = <NavParent user={user} />;
+	} else if (_id && account === 'teacher') {
+		actualNavbar = <NavTeacher />;
+	}
+
+	return actualNavbar;
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+	user: state.auth.user,
+});
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

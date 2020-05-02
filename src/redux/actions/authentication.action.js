@@ -17,3 +17,17 @@ export const registerUser = (user) => async (dispatch) => {
 		return dispatch({ type: types.REGISTER_USER_SUCCESS, user: data });
 	} catch (error) {}
 };
+
+export const loginUser = (user) => async (dispatch) => {
+	try {
+		console.log(user);
+		const { data } = await axios.post(`${url}/login`, user);
+		localStorage.setItem('user', JSON.stringify(data));
+		return dispatch({ type: types.LOGIN_USER_SUCCESS, user: data });
+	} catch (error) {}
+};
+
+export const logoutUser = () => (dispatch) => {
+	localStorage.removeItem('user');
+	return dispatch({ type: types.LOGOUT_USER });
+};

@@ -1,6 +1,8 @@
 import * as types from '../actions/actionTypes';
 const initialState = {
-	user: {},
+	user: {
+		_id: '',
+	},
 };
 
 export const authenticationReducer = (state = initialState, action) => {
@@ -16,6 +18,20 @@ export const authenticationReducer = (state = initialState, action) => {
 			return {
 				...state,
 				user: action.user,
+			};
+
+		case types.LOGIN_USER_SUCCESS:
+			return {
+				...state,
+				user: action.user,
+			};
+
+		case types.LOGOUT_USER:
+			return {
+				...state,
+				user: {
+					_id: '',
+				},
 			};
 
 		default:

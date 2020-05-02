@@ -8,9 +8,7 @@ router.post('/register', async (req, res) => {
 		let findAccount = await Parents.find({ email });
 		if (findAccount.length === 0) {
 			findAccount = await Teachers.find({ email });
-			return (
-				findAccount.length > 0 && res.send({ message: 'Email already exists' })
-			);
+			findAccount.length > 0 && res.send({ message: 'Email already exists' });
 		}
 
 		if (findAccount.length === 0 && data.account === 'parent') {
@@ -25,16 +23,15 @@ router.post('/register', async (req, res) => {
 			return res.send(user);
 		}
 	} catch (error) {
-		res.send({ message: error });
+		res.send({ message: error.message });
 	}
 });
 
 router.post('/login', async (req, res) => {
-	const data = req.body;
-	const { email, password } = data;
-	let findAccount = await Parents.find({ email });
+	const { email, password } = req.body;
+	let findAccount = await Parents.findOne({ email });
 	if (findAccount === null) {
-		findAccount = await Teachers.find({ email });
+		findAccount = await Teachers.findOne({ email });
 		return findAccount === null && res.send({ message: "Account don't exist" });
 	}
 

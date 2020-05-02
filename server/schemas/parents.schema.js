@@ -5,6 +5,7 @@ const ParentsSchema = mongoose.Schema({
 	email: { type: String },
 	password: { type: String },
 	phone: { type: Number },
+	childs: { type: Array },
 	account: { type: String },
 });
 

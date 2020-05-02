@@ -9,6 +9,7 @@ function SignUpParent({ registerUser }) {
 		email: '',
 		password: '',
 		phone: '',
+		childs: [],
 		account: 'parent',
 	});
 
