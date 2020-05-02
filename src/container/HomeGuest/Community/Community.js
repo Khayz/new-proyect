@@ -1,5 +1,7 @@
 import React from "react";
 import Mobile from "../../../Assets/Images/telefono-inteligente.svg";
+import Share from "../../../Assets/Images/img-share.png";
+import Calendar from "../../../Assets/Images/unnamed.png";
 
 import "./Community.scss";
 
@@ -8,12 +10,13 @@ const Community = () => {
     <section id="Community" className="Community">
       <div>
         <div>
-          <div>
+          <div className="share">
             <h3>Comparte la historia de tu clase con las familias</h3>
             <p>
               Comparte instantáneamente fotos, vídeos y anuncios en la historia
               de la clase o envía mensajes privados a cualquier padre 😍
             </p>
+
             <ul>
               <li>
                 Los padres se unen a la clase fácilmente usando cualquier
@@ -26,11 +29,12 @@ const Community = () => {
               </li>
             </ul>
             <figure>
-              <img src="" alt="imagen" />
+              <img src={Share} alt="imagen" />
             </figure>
           </div>
-          <div>
-            <div>
+          <hr />
+          <div className="tools">
+            <div className="tool-text">
               <h3>Todas tus herramientas de clase en un solo lugar</h3>
               <p>
                 Arma grupos de alumnos al azar. Muestra las instrucciones para
@@ -42,8 +46,8 @@ const Community = () => {
               <img src={Mobile} alt="imagen" />
             </figure>
           </div>
-
-          <div>
+          <hr />
+          <div className="digital-content">
             <div>
               <div>
                 <h3>Dale una voz a los alumnos con las carpetas digitales</h3>
@@ -55,11 +59,11 @@ const Community = () => {
               </div>
             </div>
             <figure>
-              <img src="" alt="imagen" />
+              <img src={Calendar} alt="imagen" />
             </figure>
           </div>
-
-          <div>
+          <hr />
+          <div className="school-community">
             <div>
               <div>
                 <h3>Consolida tu comunidad escolar</h3>
@@ -70,8 +74,25 @@ const Community = () => {
                 </p>
               </div>
             </div>
+            <div className="show">
+              <iframe
+                className="school-video"
+                src="https://www.youtube.com/embed/CCdgxIsQcCE"
+                autoPlay
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          <hr />
+          <div className="plan">
             <div>
-              <img src="" alt="imagen" />
+              <h3>¿Planeando una presentación? ¡Tenemos todo cubierto!</h3>
+              <p>
+                ¡Recursos gratuitos y preguntas frecuentes sobre todo lo que
+                necesitas para tu presentación!
+              </p>
             </div>
           </div>
         </div>
