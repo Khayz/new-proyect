@@ -11,8 +11,8 @@ const PrincipalContent = () => {
         </h1>
         <p>
           ¡Únete al 95% de las escuelas en los Estados Unidos que utilizan
-          ClassDojo para involucrar a los niños y conectarse con las familias!
-          Gratis para los profesores, para siempre.
+          'HOME-SCHOOL' para involucrar a los niños y conectarse con las
+          familias! Gratis para los profesores, para siempre.
         </p>
         <h2>Inscribirse como un...</h2>
         <div className="typeAccount">

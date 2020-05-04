@@ -1,0 +1,33 @@
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 80px auto;
+  width: 100%;
+  height: auto;
+  max-width: 820px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: solid 1px #ccc;
+
+  .form-settings {
+    margin: auto;
+    width: 100%;
+    .btn-form-setting {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .form-group {
+      width: 85%;
+      margin: auto;
+      i {
+        font-size: 20px;
+        color: #00aeef;
+      }
+    }
+  }
+}

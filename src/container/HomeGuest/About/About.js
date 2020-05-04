@@ -5,8 +5,8 @@ const About = () => {
   return (
     <section id="about" className="About">
       <h1>
-        ClassDojo conecta a profesores, <br /> alumnos y padres para construir{" "}
-        <br /> comunidades asombrosas en el aula
+        'HOME-SCHOOL' conecta a profesores, <br /> alumnos y padres para
+        construir <br /> comunidades asombrosas en el aula
       </h1>
       <div className="card-group cards">
         <div className="card">

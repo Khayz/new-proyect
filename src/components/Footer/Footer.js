@@ -6,14 +6,18 @@ const Footer = () => {
   return (
     <footer className="footer-distributed">
       <div className="footer-left">
-        <h3>Home<span>School</span></h3>
+        <h3>
+          Home<span>School</span>
+        </h3>
         <p className="footer-company-name">HomeSchool &copy; 2020</p>
       </div>
 
       <div className="footer-center">
         <div>
           <i className="fa fa-map-marker"></i>
-          <p><span>Av. Chapultepec Sur 284</span> Guadalajara, Jalisco</p>
+          <p>
+            <span>Av. Chapultepec Sur 284</span> Guadalajara, Jalisco
+          </p>
         </div>
 
         <div>
@@ -37,10 +41,18 @@ const Footer = () => {
         </p>
 
         <div className="footer-icons">
-          <a href="#"><i className="fa fa-facebook"></i></a>
-          <a href="#"><i className="fa fa-twitter"></i></a>
-          <a href="#"><i className="fa fa-linkedin"></i></a>
-          <a href="#"><i className="fa fa-github"></i></a>
+          <a href="#">
+            <i className="fa fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i className="fa fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i className="fa fa-linkedin"></i>
+          </a>
+          <a href="#">
+            <i className="fa fa-github"></i>
+          </a>
         </div>
       </div>
     </footer>
