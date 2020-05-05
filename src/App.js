@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 import Dashboard from './container/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
+import Settings from './container/Settings/Settings';
 
 function App({ authUser, user, getChilds }) {
 	const { _id } = user;
@@ -34,6 +35,10 @@ function App({ authUser, user, getChilds }) {
 				<Route
 					path='/login'
 					render={() => (_id ? <Redirect to='/' /> : <Login />)}
+				/>
+				<Route
+					path='/settings'
+					render={() => (_id ? <Settings /> : <Redirect to='/' />)}
 				/>
 				<Route
 					path='/register/:account'

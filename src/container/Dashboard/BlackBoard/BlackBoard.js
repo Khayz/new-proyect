@@ -22,7 +22,15 @@ const BlackBoard = ({ posts, loadingPosts }) => {
 		);
 	}
 
-	return groupPosts;
+	return (
+		<div className='blackboard'>
+			<nav>
+				<h2>Publicaciones</h2>
+				<h2>Materias</h2>
+			</nav>
+			{groupPosts}
+		</div>
+	);
 };
 
 const mapStateToProps = (state) => ({
