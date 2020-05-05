@@ -13,7 +13,7 @@ const Community = () => {
 					<h3>Comparte la historia de tu clase con las familias</h3>
 					<p>
 						Comparte instantáneamente fotos, vídeos y anuncios en la historia de
-						la clase o envía mensajes privados a cualquier padre 😍
+						la clase o envía mensajes privados a cualquier padre
 					</p>
 
 					<ul>

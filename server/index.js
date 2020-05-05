@@ -12,11 +12,12 @@ mongoose.connect(
 const authRoute = require('./routes/authentication.route');
 const childsRoute = require('./routes/childs.route');
 const groupsRoute = require('./routes/groups.route');
+const postsRoute = require('./routes/posts.route');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/', authRoute, childsRoute, groupsRoute);
+app.use('/', authRoute, childsRoute, groupsRoute, postsRoute);
 
 app.listen(4000, () => console.log('Server running'));

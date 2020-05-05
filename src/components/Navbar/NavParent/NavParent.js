@@ -39,7 +39,7 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
 									exact
 									activeStyle={activeLink}
 									className='dropdown-item'
-									to='/register/teacher'>
+									to='/settings'>
 									Configuraciones
 								</NavLink>
 								<NavLink
@@ -47,7 +47,7 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
 									exact
 									activeStyle={activeLink}
 									className='dropdown-item'
-									to='/register/parent'>
+									to='/'>
 									Cerrar Sesion
 								</NavLink>
 							</div>

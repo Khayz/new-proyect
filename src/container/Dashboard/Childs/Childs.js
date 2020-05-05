@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getPosts } from '../../../redux/actions/index.actions';
 import { v1 } from 'uuid';
 import Avatar from 'react-avatar';
 
@@ -9,7 +10,7 @@ import styles from './Childs.module.scss';
 import ModalAddChild from './ModalAddChild/ModalAddChild';
 import Spinner from '../../../components/Ui/Spinner/Spinner';
 
-const Childs = ({ user, childList, loading }) => {
+const Childs = ({ user, childList, loadChilds, getPosts }) => {
 	return (
 		<>
 			<div className={styles.Childs}>
@@ -22,11 +23,14 @@ const Childs = ({ user, childList, loading }) => {
 				</div>
 			</div>
 			<div className={styles.ChildList}>
-				{loading ? (
+				{loadChilds ? (
 					<Spinner />
 				) : (
 					childList.map((child) => (
-						<div key={v1()} className={styles.child}>
+						<div
+							onClick={() => getPosts(child.groupID)}
+							key={v1()}
+							className={styles.child}>
 							<Avatar name={child.firstName + ' ' + child.lastName} />
 							<div className={styles.user}>
 								<h2>
@@ -52,7 +56,11 @@ const Childs = ({ user, childList, loading }) => {
 const mapStateToProps = (state) => ({
 	user: state.auth.user,
 	childList: state.childs.childList,
-	loading: state.childs.loading,
+	loadChilds: state.childs.loading,
 });
 
-export default connect(mapStateToProps)(Childs);
+const mapDispatchToProps = {
+	getPosts,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Childs);
