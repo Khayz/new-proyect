@@ -4,11 +4,11 @@ import { getPosts, setActualChild } from '../../../redux/actions/index.actions';
 import { v1 } from 'uuid';
 import Avatar from 'react-avatar';
 
-import avatarChild from '../../../Assets/Images/avatar-1.png';
-import styles from './Childs.module.scss';
+import avatarChild from "../../../Assets/Images/avatar-1.png";
+import styles from "./Childs.module.scss";
 
-import ModalAddChild from './ModalAddChild/ModalAddChild';
-import Spinner from '../../../components/Ui/Spinner/Spinner';
+import ModalAddChild from "./ModalAddChild/ModalAddChild";
+import Spinner from "../../../components/Ui/Spinner/Spinner";
 
 const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 	return (
@@ -57,14 +57,18 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 	);
 };
 const mapStateToProps = (state) => ({
-	user: state.auth.user,
-	childList: state.childs.childList,
-	loadChilds: state.childs.loading,
+  user: state.auth.user,
+  childList: state.childs.childList,
+  loadChilds: state.childs.loading,
 });
 
 const mapDispatchToProps = {
+<<<<<<< HEAD
 	getPosts,
 	setActualChild,
+=======
+  getPosts,
+>>>>>>> 48aacc15cac6fd3b34e9904d21bd30e8f1b4619e
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Childs);

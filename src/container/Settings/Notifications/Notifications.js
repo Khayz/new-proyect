@@ -17,6 +17,20 @@ const Notifications = () => {
           <span className="slider"></span>
         </label>
       </div>
+      <div>
+        <h4>Notificaciones por telefono movil</h4>
+        <p>
+          Tus notificaciones a movil se enviarán como push o directamente en la
+          app. Si deseas dejar de recibir algún mensaje, ubicado en la parte
+          inferior de este.
+        </p>
+      </div>
+      <div className="toggle">
+        <label className="switch">
+          <input type="checkbox" />
+          <span className="slider"></span>
+        </label>
+      </div>
     </div>
   );
 };
