@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPosts } from '../../../redux/actions/index.actions';
+import { getPosts, setActualChild } from '../../../redux/actions/index.actions';
 import { v1 } from 'uuid';
 import Avatar from 'react-avatar';
 
@@ -10,7 +10,7 @@ import styles from './Childs.module.scss';
 import ModalAddChild from './ModalAddChild/ModalAddChild';
 import Spinner from '../../../components/Ui/Spinner/Spinner';
 
-const Childs = ({ user, childList, loadChilds, getPosts }) => {
+const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 	return (
 		<>
 			<div className={styles.Childs}>
@@ -28,7 +28,10 @@ const Childs = ({ user, childList, loadChilds, getPosts }) => {
 				) : (
 					childList.map((child) => (
 						<div
-							onClick={() => getPosts(child.groupID)}
+							onClick={() => {
+								getPosts(child.groupID);
+								setActualChild(child);
+							}}
 							key={v1()}
 							className={styles.child}>
 							<Avatar name={child.firstName + ' ' + child.lastName} />
@@ -61,6 +64,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
 	getPosts,
+	setActualChild,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Childs);

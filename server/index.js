@@ -13,11 +13,22 @@ const authRoute = require('./routes/authentication.route');
 const childsRoute = require('./routes/childs.route');
 const groupsRoute = require('./routes/groups.route');
 const postsRoute = require('./routes/posts.route');
+const teachersRoute = require('./routes/teachers.route');
+const tasksRoute = require('./routes/tasks.route');
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/', authRoute, childsRoute, groupsRoute, postsRoute);
+app.use(
+	'/',
+	authRoute,
+	childsRoute,
+	groupsRoute,
+	postsRoute,
+	teachersRoute,
+	tasksRoute
+);
 
 app.listen(4000, () => console.log('Server running'));

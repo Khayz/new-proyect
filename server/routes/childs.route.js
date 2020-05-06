@@ -16,6 +16,7 @@ router.post('/child', async (req, res) => {
 			group,
 			assignments,
 			parentName: `${parent.firstName} ${parent.lastName}`,
+			tasks: [],
 		});
 		const newStudent = await student.save();
 		await Groups.updateOne(

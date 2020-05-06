@@ -18,3 +18,7 @@ export const getChilds = () => async (dispatch) => {
 		dispatch({ type: types.GET_CHILDS, childs: data });
 	} catch (error) {}
 };
+
+export const setActualChild = (child) => (dispatch) => {
+	dispatch({ type: types.SET_ACTUAL_CHILD, child });
+};

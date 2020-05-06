@@ -1,6 +1,7 @@
 import * as types from '../actions/actionTypes';
 const initialState = {
 	childList: [],
+	actualChild: {},
 	loading: false,
 	error: null,
 };
@@ -26,6 +27,14 @@ export const childReducer = (state = initialState, action) => {
 			return {
 				...state,
 				loading: true,
+			};
+
+		case types.SET_ACTUAL_CHILD:
+			return {
+				...state,
+				loading: false,
+				error: null,
+				actualChild: action.child,
 			};
 
 		default:

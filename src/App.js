@@ -12,6 +12,8 @@ import SignUp from './components/SignUp/SignUp';
 import Dashboard from './container/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
 import Settings from './container/Settings/Settings';
+import LineGraph from './chart';
+import Assignments from './container/Assignments/Assignments';
 
 function App({ authUser, user, getChilds }) {
 	const { _id } = user;
@@ -27,6 +29,7 @@ function App({ authUser, user, getChilds }) {
 		<BrowserRouter>
 			<div className='App'>
 				<Navbar />
+				<Route path='/assignments' component={Assignments} />
 				<Route
 					exact
 					path='/'

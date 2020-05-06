@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
 		}
 
 		if (findAccount.length === 0 && data.account === 'teacher') {
-			const account = new Teachers(data);
+			const account = new Teachers({ ...data, tasks: [] });
 			const user = await account.save();
 			return res.send(user);
 		}

@@ -8,6 +8,7 @@ const StudentsSchema = mongoose.Schema({
 	assignments: { type: Array },
 	group: { type: String },
 	school: { type: String },
+	tasks: { type: Array },
 });
 
 module.exports = mongoose.model('students_accounts', StudentsSchema);

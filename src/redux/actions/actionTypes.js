@@ -12,4 +12,5 @@ export const GET_CHILDS = 'GET_CHILDS';
 export const LOADING_CHILDS = 'LOADING_CHILDS';
 
 export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
+export const SET_ACTUAL_CHILD = 'SET_ACTUAL_CHILD';
 export const LOADING_POSTS = 'LOADING_POSTS';
