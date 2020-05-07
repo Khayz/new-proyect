@@ -7,11 +7,14 @@ const ModalTask = () => {
 	const handleSubmitFiles = (event) => {
 		event.preventDefault();
 		console.log(files);
-		let data = new FormData();
-		data.append('file', files);
-		data.append('name', 'Cat and dogs');
-		console.log(data);
-		/* axios.post('http://localhost:4000/upload', data); */
+		axios({
+			method: 'POST',
+			url: 'http://localhost:4000/upload',
+			data: files,
+			headers: {
+				'Content-Type': 'image/base64',
+			},
+		});
 	};
 
 	const handleFileUpload = async (event) => {
@@ -51,14 +54,24 @@ const ModalTask = () => {
 							</button>
 						</div>
 						<div className='modal-body'>
-							<form
+							{/* <form
 								onSubmit={handleSubmitFiles}
 								className='fileupload'
-								encType='multipart/form-data'>
+								encType='image/base64'>
 								<h1>Upload File Here</h1>
-								<input onChange={handleFileUpload} type='file' />
-								<button>Enviar</button>
-							</form>
+								<input
+									type='file'
+									style={{ display: 'none' }}
+									className='couple-foto-upload'
+									id='coupleFoto'
+									onChange={(e) => {
+										const theFile = e.target.files[0];
+										axios.post('http://localhost:4000/upload', theFile);
+									}}
+									accept='image/*'
+									name='image_uploads'
+								/>
+							</form> */}
 						</div>
 						<div className='modal-footer'>
 							<button
