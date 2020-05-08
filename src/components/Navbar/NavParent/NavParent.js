@@ -57,18 +57,18 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
               </div>
             </li>
           </ul>
+          <button
+            style={{
+              color: "#00aeef",
+              fontSize: "22px",
+              border: "none",
+              background: "transparent",
+              outline: "none",
+              marginRight: "50px",
+            }}
+            className="fas fa-bell"
+          ></button>
         </div>
-        <button
-          style={{
-            color: "#00aeef",
-            fontSize: "22px",
-            border: "none",
-            background: "transparent",
-            outline: "none",
-            marginRight: "50px",
-          }}
-          className="fas fa-bell"
-        ></button>
       </nav>
     </header>
   );
