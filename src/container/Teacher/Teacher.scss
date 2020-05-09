@@ -1,12 +1,12 @@
 .Layout {
   margin: auto;
   background-color: #f0efef;
-  min-height: 100vh;
-  min-width: 100%;
+  height: 827px;
 
   .LayoutItem {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
     box-sizing: border-box;
     padding: 12px;
   }
@@ -21,32 +21,58 @@
     margin: 22px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
     width: 230px;
-    height: 130px;
+    height: 135px;
+    border: 1px dashed #ccc;
+  }
 
-    i:nth-child(1) {
-      text-align: center;
-      font-size: 30px;
-      color: blue;
-    }
-    i:nth-child(2) {
-      text-align: center;
-      font-size: 30px;
+  .TeacherCards:hover {
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  i {
+    text-align: center;
+    font-size: 34px;
+  }
+
+  .TeacherCards:nth-child(1) {
+    i {
       color: orange;
+    }
+  }
+
+  .TeacherCards:nth-child(2) {
+    i {
+      color: blue;
     }
   }
 
   .sideBoard {
     display: block;
-    padding: 12px;
+    padding: 16px;
     margin: auto;
     float: right;
     position: relative;
     box-sizing: border-box;
     background-color: #fff;
     text-size-adjust: 100%;
-    width: 28%;
+    width: 530px;
     color: rgb(54, 54, 54);
-    min-height: 100vh;
+
+    .teacher-info {
+      margin-top: 15px;
+      iframe {
+        display: flex;
+        border-radius: 8px;
+        width: 250px;
+        height: 145px;
+      }
+      i {
+        float: right;
+        margin: auto;
+        font-size: 45px;
+        color: rgb(18, 132, 174);
+      }
+    }
 
     button {
       border-radius: 5px;
@@ -57,12 +83,15 @@
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding-bottom: 1rem;
     color: #545454;
   }
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgb(167, 167, 167);
   }
+}
+
+@media (min-width: 830px) {
 }

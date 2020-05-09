@@ -57,6 +57,15 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
               </div>
             </li>
           </ul>
+          <i
+            style={{
+              color: "#00aeef",
+              fontSize: "25px",
+              border: "none",
+              marginRight: "30px",
+            }}
+            className="fas fa-user-circle"
+          ></i>
           <button
             style={{
               color: "#00aeef",

@@ -15,6 +15,7 @@ import Settings from "./container/Settings/Settings";
 import LineGraph from "./chart";
 import Assignments from "./container/Assignments/Assignments";
 import Teacher from "./container/Teacher/Teacher";
+import DemoClass from "./container/Teacher/DemoClass/DemoClass";
 
 function App({ authUser, user, getChilds }) {
   const { _id } = user;
@@ -51,6 +52,7 @@ function App({ authUser, user, getChilds }) {
             _id ? <Redirect to="/" /> : <SignUp {...props} />
           }
         />
+        <Route path="/demo-class" component={DemoClass} />
         <Footer />
       </div>
     </BrowserRouter>
