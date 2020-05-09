@@ -51,7 +51,7 @@ const Teacher = () => {
           <h2>Clase Demo</h2>
           <i className="fas fa-book"></i>
         </Link>
-        <Link className="TeacherCards">
+        <Link to="/" className="TeacherCards">
           <h2>Crear Clase</h2>
           <i className="fas fa-plus-circle"></i>
         </Link>

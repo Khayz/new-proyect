@@ -1,7 +1,7 @@
 .Layout {
   margin: auto;
   background-color: #f0efef;
-  height: 827px;
+  height: 830px;
 
   .LayoutItem {
     display: flex;
@@ -79,6 +79,7 @@
       background-color: rgb(0, 174, 239);
       border: none;
       color: white;
+      outline: none;
     }
   }
 
