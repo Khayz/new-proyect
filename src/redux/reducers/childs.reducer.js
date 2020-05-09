@@ -37,6 +37,16 @@ export const childReducer = (state = initialState, action) => {
 				actualChild: action.child,
 			};
 
+		case types.DELETE_CHILD:
+			return {
+				...state,
+				loading: false,
+				error: null,
+				childList: state.childList.filter(
+					(child) => child._id !== action.child._id
+				),
+			};
+
 		default:
 			return state;
 	}

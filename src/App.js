@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
-import { authUser, getChilds } from './redux/actions/index.actions';
-import {} from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import { authUser, getChilds, loginUser } from './redux/actions/index.actions';
 import './App.scss';
 
 import Navbar from './components/Navbar/Navbar';
@@ -12,13 +12,14 @@ import SignUp from './components/SignUp/SignUp';
 import Dashboard from './container/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
 import Settings from './container/Settings/Settings';
-import LineGraph from './chart';
 import Assignments from './container/Assignments/Assignments';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 function App({ authUser, user, getChilds }) {
 	const { _id } = user;
 	useEffect(() => {
 		authUser();
+		toast.success('Login Succesfull');
 	}, [authUser]);
 
 	useEffect(() => {
@@ -50,6 +51,12 @@ function App({ authUser, user, getChilds }) {
 					}
 				/>
 				<Footer />
+				<ToastContainer
+					autoClose={5000}
+					hideProgressBar={false}
+					draggable
+					position='top-right'
+				/>
 			</div>
 		</BrowserRouter>
 	);

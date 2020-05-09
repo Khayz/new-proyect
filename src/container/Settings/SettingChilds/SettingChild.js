@@ -1,23 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteChild } from '../../../redux/actions/childs.action';
 import { v1 } from 'uuid';
+import { toast } from 'react-toastify';
 
 import Kid from '../../../Assets/Images/kid-icon.svg';
 
 import './SettingChilds.scss';
-import EditChildModal from './EditChildModal/EditChildModal';
-import DeleteChildModal from './DeleteChildModal/DeleteChildModal';
 
-const SettingChild = ({ childs }) => {
+const SettingChild = ({ childs, deleteChild }) => {
+	const handleDeleteChild = async (child) => {
+		await deleteChild(child);
+		toast.error('Child Deleted');
+	};
+
 	return (
 		<div className='settings-childs'>
-			<i className='fas fa-user'></i>
 			<h2>Hijos</h2>
 			{childs.length > 0 ? (
 				<div className='settings-list-child'>
-					{childs.map((child, i) => {
+					{childs.map((child) => {
 						return (
-							<div key={i} className='card'>
+							<div key={v1()} className='card'>
 								<img className='card-img-top' src={Kid} alt='Card cap' />
 								<div className='card-body'>
 									<h4 className='card-title'>
@@ -29,17 +33,16 @@ const SettingChild = ({ childs }) => {
 										<br />
 										<span>Grupo: {child.group}</span>
 									</p>
-									<div className='btn'>
-										<EditChildModal child={child} />
-										<DeleteChildModal />
-									</div>
+									<button onClick={() => handleDeleteChild(child)}>
+										Eliminar
+									</button>
 								</div>
 							</div>
 						);
 					})}
 				</div>
 			) : (
-				<p>No hay estudiantes</p>
+				<p style={{ textAlign: 'center' }}>No hay estudiantes</p>
 			)}
 		</div>
 	);
@@ -49,6 +52,8 @@ const mapStateToProps = (state) => ({
 	childs: state.childs.childList,
 });
 
-export default connect(mapStateToProps)(SettingChild);
+const mapDispatchToProps = {
+	deleteChild,
+};
 
-v1();
+export default connect(mapStateToProps, mapDispatchToProps)(SettingChild);
