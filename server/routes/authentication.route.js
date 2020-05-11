@@ -16,7 +16,6 @@ router.post('/register', async (req, res) => {
 			const user = await account.save();
 			return res.send(user);
 		}
-
 		if (findAccount.length === 0 && data.account === 'teacher') {
 			const account = new Teachers({ ...data, tasks: [] });
 			const user = await account.save();
@@ -32,7 +31,10 @@ router.post('/login', async (req, res) => {
 	let findAccount = await Parents.findOne({ email });
 	if (findAccount === null) {
 		findAccount = await Teachers.findOne({ email });
-		return findAccount === null && res.send({ message: "Account don't exist" });
+	}
+
+	if (findAccount === null) {
+		findAccount === null && res.send({ message: "Account don't exist" });
 	}
 
 	if (findAccount.password !== password) {

@@ -43,4 +43,34 @@ router.get('/child', async (req, res) => {
 	const students = await Students.find({ parentID: id });
 	res.send(students);
 });
+
+router.delete('/child', async (req, res) => {
+	const child = JSON.parse(req.query.child);
+	await Students.deleteOne({ _id: child._id });
+	const parentChild = await Parents.findOne({ _id: child.parentID });
+
+	await Parents.updateOne(
+		{ _id: child.parentID },
+		{
+			$set: {
+				childs: parentChild.childs.filter(
+					(student) => String(student) !== child._id
+				),
+			},
+		}
+	);
+	const groupChild = await Groups.findOne({ inviteID: child.groupID });
+	await Groups.updateOne(
+		{ inviteID: child.groupID },
+		{
+			$set: {
+				students: groupChild.students.filter(
+					(student) => String(student) !== child._id
+				),
+			},
+		}
+	);
+	res.send('CHILD DELETED');
+});
+
 module.exports = router;

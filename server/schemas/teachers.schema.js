@@ -7,7 +7,7 @@ const TeachersSchema = mongoose.Schema({
 	phone: { type: Number },
 	cct: { type: Number },
 	account: { type: String },
-	tasks: { type: String },
+	tasks: { type: Array },
 });
 
 module.exports = mongoose.model('teachers_accounts', TeachersSchema);

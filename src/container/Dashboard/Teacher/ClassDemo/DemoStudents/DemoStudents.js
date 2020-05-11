@@ -1,6 +1,6 @@
 import React from "react";
 
-import Monster from "../../../../Assets/Images/avatar.svg";
+import Monster from "../../../../../Assets/Images/avatar.svg";
 
 import "./DemoStudents.scss";
 

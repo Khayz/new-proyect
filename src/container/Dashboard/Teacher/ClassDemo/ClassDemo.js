@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ClassDemo.scss";
 import DemoStudents from "./DemoStudents/DemoStudents";
 
-import "./DemoClass.scss";
-
-const DemoClass = () => {
+const ClassDemo = () => {
   return (
     <section>
       <div className="navLinks">
         <article className="student-content">
-          <Link style={{ color: "#fff" }} to="/demo-class">
+          <Link style={{ color: "#fff" }} to="/">
             <h4>Classroom</h4>
           </Link>
           <Link style={{ color: "#fff" }} to="/">
@@ -27,4 +26,4 @@ const DemoClass = () => {
   );
 };
 
-export default DemoClass;
+export default ClassDemo;
