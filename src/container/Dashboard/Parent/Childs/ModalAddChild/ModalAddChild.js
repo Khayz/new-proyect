@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addChild } from '../../../../redux/actions/index.actions';
+import { addChild } from '../../../../../redux/actions/index.actions';
 
 import './ModalAddChild.scss';
 import { connect } from 'react-redux';

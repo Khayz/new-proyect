@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './BlackBoard.scss';
 import { connect } from 'react-redux';
 import BoardContent from './BoardContent/BoardContent';
-import PostsSpinner from '../../../components/Ui/Spinner/PostsSpinner';
+import PostsSpinner from '../../../../components/Ui/Spinner/PostsSpinner';
 import ChildTasks from './ChildTasks/ChildTasks';
 
 const BlackBoard = ({ posts, loadingPosts }) => {

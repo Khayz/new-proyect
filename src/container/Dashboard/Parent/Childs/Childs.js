@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPosts, setActualChild } from '../../../redux/actions/index.actions';
+import {
+	getPosts,
+	setActualChild,
+} from '../../../../redux/actions/index.actions';
 import { v1 } from 'uuid';
 import Avatar from 'react-avatar';
 
-import avatarChild from '../../../Assets/Images/avatar-1.png';
+import avatarChild from '../../../../Assets/Images/avatar-1.png';
 import styles from './Childs.module.scss';
 
 import ModalAddChild from './ModalAddChild/ModalAddChild';
-import Spinner from '../../../components/Ui/Spinner/Spinner';
+import Spinner from '../../../../components/Ui/Spinner/Spinner';
 
 const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 	return (

@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import { authUser, getChilds, loginUser } from './redux/actions/index.actions';
+import { ToastContainer } from 'react-toastify';
+import { authUser, getChilds } from './redux/actions/index.actions';
+
 import './App.scss';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import Navbar from './components/Navbar/Navbar';
 import HomeGuest from './container/HomeGuest/HomeGuest';
@@ -13,13 +15,12 @@ import Dashboard from './container/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
 import Settings from './container/Settings/Settings';
 import Assignments from './container/Assignments/Assignments';
-import 'react-toastify/dist/ReactToastify.min.css';
+import ClassDemo from './container/Dashboard/Teacher/ClassDemo/ClassDemo';
 
 function App({ authUser, user, getChilds }) {
 	const { _id } = user;
 	useEffect(() => {
 		authUser();
-		toast.success('Login Succesfull');
 	}, [authUser]);
 
 	useEffect(() => {
@@ -34,7 +35,7 @@ function App({ authUser, user, getChilds }) {
 				<Route
 					exact
 					path='/'
-					render={() => (_id ? <Dashboard /> : <HomeGuest />)}
+					render={() => (_id ? <Dashboard user={user} /> : <HomeGuest />)}
 				/>
 				<Route
 					path='/login'
@@ -43,6 +44,18 @@ function App({ authUser, user, getChilds }) {
 				<Route
 					path='/settings'
 					render={() => (_id ? <Settings /> : <Redirect to='/' />)}
+				/>
+				<Route
+					path='/register/:account'
+					render={(props) =>
+						_id ? <Redirect to='/' /> : <SignUp {...props} />
+					}
+				/>
+				<Route
+					path='/demo-class'
+					render={(props) =>
+						_id ? <ClassDemo {...props} /> : <Redirect to='/' />
+					}
 				/>
 				<Route
 					path='/register/:account'
