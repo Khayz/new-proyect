@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./DemoClass.scss";
 import DemoStudents from "./DemoStudents/DemoStudents";
+
+import "./DemoClass.scss";
 
 const DemoClass = () => {
   return (
     <section>
       <div className="navLinks">
         <article className="student-content">
-          <Link style={{ color: "#fff" }} to="/">
+          <Link style={{ color: "#fff" }} to="/demo-class">
             <h4>Classroom</h4>
           </Link>
           <Link style={{ color: "#fff" }} to="/">
