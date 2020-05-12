@@ -1,12 +1,13 @@
 import React from "react";
-import Board from "./Board/Board";
-import Childs from "./Childs/Childs";
-import BlackBoard from "./BlackBoard/BlackBoard";
+import Board from "./Parent/Board/Board";
+import Childs from "./Parent/Childs/Childs";
+import BlackBoard from "./Parent/BlackBoard/BlackBoard";
 
 import "./Dashboard.scss";
+import Teacher from "./Teacher/Teacher";
 
-const Dashboard = () => {
-  return (
+const Dashboard = ({ user }) => {
+  return user.account === "parent" ? (
     <div className="Dashboard">
       <div className="side">
         <Childs />
@@ -14,6 +15,8 @@ const Dashboard = () => {
       </div>
       <BlackBoard />
     </div>
+  ) : (
+    <Teacher />
   );
 };
 

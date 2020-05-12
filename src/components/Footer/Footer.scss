@@ -5,8 +5,7 @@
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
-
-  padding: 30px 50px;
+  padding: 55px 50px;
 }
 
 .footer-distributed .footer-left,
@@ -22,7 +21,7 @@
 
 .footer-distributed h3 {
   color: #ffffff;
-  font: normal 36px 'Helvetica';
+  font: normal 36px 'Cookie', cursive;
   margin: 0;
 }
 
@@ -58,8 +57,8 @@
   background-color: #33383b;
   color: #ffffff;
   font-size: 25px;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   text-align: center;
   line-height: 42px;
@@ -132,7 +131,7 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 880px) {
   .footer-distributed {
     font: bold 14px sans-serif;
   }
@@ -152,5 +151,11 @@
   .main {
     line-height: normal;
     font-size: auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer-distributed {
+    margin-top: 200px;
   }
 }
