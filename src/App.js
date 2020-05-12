@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { authUser, getChilds } from "./redux/actions/index.actions";
+import { authUser, getChilds, getGroups } from "./redux/actions/index.actions";
 
 import "./App.scss";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -17,15 +17,19 @@ import Settings from "./container/Settings/Settings";
 import Assignments from "./container/Assignments/Assignments";
 import ClassDemo from "./container/Dashboard/Teacher/ClassDemo/ClassDemo";
 
-function App({ authUser, user, getChilds }) {
+function App({ authUser, user, getChilds, getGroups }) {
   const { _id } = user;
+
   useEffect(() => {
     authUser();
   }, [authUser]);
 
   useEffect(() => {
-    getChilds();
-  }, [getChilds, user]);
+    if (_id) {
+      getChilds();
+      getGroups();
+    }
+  }, [getChilds, getGroups, _id]);
 
   return (
     <BrowserRouter>
@@ -57,12 +61,6 @@ function App({ authUser, user, getChilds }) {
             _id ? <ClassDemo {...props} /> : <Redirect to="/" />
           }
         />
-        <Route
-          path="/register/:account"
-          render={(props) =>
-            _id ? <Redirect to="/" /> : <SignUp {...props} />
-          }
-        />
         <Footer />
         <ToastContainer
           autoClose={5000}
@@ -82,6 +80,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   authUser,
   getChilds,
+  getGroups,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
