@@ -15,7 +15,7 @@ import Dashboard from './container/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
 import Settings from './container/Settings/Settings';
 import Assignments from './container/Assignments/Assignments';
-import ClassDemo from './container/Dashboard/Teacher/ClassDemo/ClassDemo';
+import Class from './container/Dashboard/Teacher/Class/Class';
 
 function App({ authUser, user, getChilds, getGroups }) {
 	const { _id } = user;
@@ -56,10 +56,8 @@ function App({ authUser, user, getChilds, getGroups }) {
 					}
 				/>
 				<Route
-					path='/demo-class'
-					render={(props) =>
-						_id ? <ClassDemo {...props} /> : <Redirect to='/' />
-					}
+					path='/group/:classID'
+					render={(props) => (_id ? <Class {...props} /> : <Redirect to='/' />)}
 				/>
 				<Footer />
 				<ToastContainer

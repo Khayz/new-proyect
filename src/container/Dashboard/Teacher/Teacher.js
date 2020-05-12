@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Teacher.scss';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ModalClass from './ClassDemo/ModalClass/ModalClass';
+import ModalClass from './ModalClass/ModalClass';
 import { v1 } from 'uuid';
 
 const Teacher = ({ user, groups }) => {
@@ -11,7 +11,7 @@ const Teacher = ({ user, groups }) => {
 	return (
 		<section className='dashboard-teacher'>
 			<article className='class-cards'>
-				<Link to='/demo-class/classroom' className='TeacherCards'>
+				<Link to='group/demo-class/classroom' className='TeacherCards'>
 					<h2>Clase Demo</h2>
 					<i className='fas fa-book'></i>
 				</Link>

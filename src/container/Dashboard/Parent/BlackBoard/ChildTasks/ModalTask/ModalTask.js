@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React /* useState */ from 'react';
+/* import axios from 'axios'; */
 
 const ModalTask = () => {
-	const [files, setFiles] = useState('');
+	/* const [files, setFiles] = useState('');
 
 	const handleSubmitFiles = (event) => {
 		event.preventDefault();
@@ -21,7 +21,7 @@ const ModalTask = () => {
 		setFiles(event.target.files[0]);
 		console.log(event.target.files[0]);
 	};
-
+ */
 	return (
 		<div>
 			<button
