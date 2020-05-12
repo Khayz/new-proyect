@@ -1,0 +1,19 @@
+.modal_class {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	.modal_form {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin: 100px auto;
+		width: 300px;
+		height: 200px;
+		text-align: center;
+		padding: 10px;
+		background-color: #fff;
+	}
+}

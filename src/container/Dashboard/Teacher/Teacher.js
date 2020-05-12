@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Teacher.scss';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import ModalClass from './ClassDemo/ModalClass/ModalClass';
+import { v1 } from 'uuid';
 
-const Teacher = ({ user }) => {
+const Teacher = ({ user, groups }) => {
+	const [openModal, setOpenModal] = useState(false);
+
 	return (
 		<section className='dashboard-teacher'>
 			<article className='class-cards'>
@@ -11,11 +15,24 @@ const Teacher = ({ user }) => {
 					<h2>Clase Demo</h2>
 					<i className='fas fa-book'></i>
 				</Link>
-				<Link to='/' className='TeacherCards'>
+				{groups.map((group) => (
+					<Link key={v1()} to='/' className='group-card'>
+						<h2>{group.group}</h2>
+						<p>
+							Escuela: <span>{group.school}</span>{' '}
+						</p>
+						<p>
+							Turno: <span>{group.class_turn}</span>
+						</p>
+						<i className='fas fa-book'></i>
+					</Link>
+				))}
+				<button onClick={() => setOpenModal(true)} className='TeacherCards'>
 					<h2>Crear Clase</h2>
 					<i className='fas fa-plus-circle'></i>
-				</Link>
+				</button>
 			</article>
+			{openModal && <ModalClass close={setOpenModal} />}
 			<article className='sideboard-teacher'>
 				<i className='fas fa-user-circle'></i>
 				<h2>
@@ -56,6 +73,7 @@ const Teacher = ({ user }) => {
 
 const mapStateToProps = (state) => ({
 	user: state.auth.user,
+	groups: state.groups.groups,
 });
 
 export default connect(mapStateToProps)(Teacher);
