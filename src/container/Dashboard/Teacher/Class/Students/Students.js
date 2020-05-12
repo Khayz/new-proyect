@@ -1,7 +1,7 @@
 import React from 'react';
+import { v1 } from 'uuid';
 
 import Monster from '../../../../../Assets/Images/avatar.svg';
-
 import './Students.scss';
 
 const Students = () => {
@@ -24,9 +24,9 @@ const Students = () => {
 	];
 
 	return (
-		<div className='Student-List'>
+		<section className='Student-List'>
 			{studers.map((students) => (
-				<div className='Student-Card'>
+				<div key={v1()} className='Student-Card'>
 					<figure>
 						<img src={Monster} alt='' />
 					</figure>
@@ -34,12 +34,12 @@ const Students = () => {
 				</div>
 			))}
 			<div style={{ border: `dashed 1px #ccc` }} className='Student-Card'>
-				<h3>Añadir estudiante</h3>
+				<h3>Invitar Estudiante</h3>
 				<i
 					style={{ color: 'blue', fontSize: '34px' }}
 					className='fas fa-plus-circle'></i>
 			</div>
-		</div>
+		</section>
 	);
 };
 

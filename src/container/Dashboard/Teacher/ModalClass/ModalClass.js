@@ -25,7 +25,7 @@ const ModalClass = ({ addGroup, close }) => {
 	};
 
 	return ReactDOM.createPortal(
-		<div onClick={() => close(false)} className='modal_class'>
+		<div className='modal_class'>
 			<form className='modal_form'>
 				<h2>Crear Clase</h2>
 				<input

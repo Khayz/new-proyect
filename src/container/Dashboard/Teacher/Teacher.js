@@ -16,7 +16,10 @@ const Teacher = ({ user, groups }) => {
 					<i className='fas fa-book'></i>
 				</Link>
 				{groups.map((group) => (
-					<Link key={v1()} to='/' className='group-card'>
+					<Link
+						key={v1()}
+						to={`/group/${group.group}/classroom`}
+						className='group-card'>
 						<h2>{group.group}</h2>
 						<p>
 							Escuela: <span>{group.school}</span>{' '}
