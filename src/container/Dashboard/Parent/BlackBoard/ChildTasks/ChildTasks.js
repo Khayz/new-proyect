@@ -1,42 +1,43 @@
-import React from 'react';
-import { v1 } from 'uuid';
+import React from "react";
+import { v1 } from "uuid";
 
-import './ChildTasks.scss';
-import { connect } from 'react-redux';
-import ModalTask from './ModalTask/ModalTask';
+import "./ChildTasks.scss";
+import { connect } from "react-redux";
+import ModalTask from "./ModalTask/ModalTask";
 
 const ChildTasks = ({ child }) => {
-	return (
-		<div className='ChildTasks'>
-			{child.tasks.map((task) => (
-				<div
-					key={v1()}
-					className={`Task card text-white ${
-						task.status === 'approved' ? 'bg-success' : 'bg-danger'
-					} mb-3`}
-					style={{ maxWidth: '18rem' }}>
-					<div className='card-header'>{`${
-						task.status === 'approved' ? 'Entregada' : 'No Entregada'
-					}`}</div>
-					<div className='card-body'>
-						<h5 className='card-title'>Titulo: {task.title}</h5>
-						<p className='card-text'>Descripcion: {task.description}</p>
-						<p className='card-text'>
-							Calificacion: {task.calification || 'none'}
-						</p>
-						<p className='card-text'>
-							Fecha: {new Date(task.dueDate).toLocaleDateString()}
-						</p>
-						{task.status !== 'approved' && <ModalTask />}
-					</div>
-				</div>
-			))}
-		</div>
-	);
+  return (
+    <div className="ChildTasks">
+      {child.tasks.map((task) => (
+        <div
+          key={v1()}
+          className={`Task card text-white ${
+            task.status === "approved" ? "bg-success" : "bg-danger"
+          } mb-3`}
+          style={{ maxWidth: "18rem" }}
+        >
+          <div className="card-header">{`${
+            task.status === "approved" ? "Entregada" : "No Entregada"
+          }`}</div>
+          <div className="card-body">
+            <h5 className="card-title">Titulo: {task.title}</h5>
+            <p className="card-text">Descripcion: {task.description}</p>
+            <p className="card-text">
+              Calificacion: {task.calification || "none"}
+            </p>
+            <p className="card-text">
+              Fecha: {new Date(task.dueDate).toLocaleDateString()}
+            </p>
+            {task.status !== "approved" && <ModalTask />}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({
-	child: state.childs.actualChild,
+  child: state.childs.actualChild,
 });
 
 export default connect(mapStateToProps)(ChildTasks);

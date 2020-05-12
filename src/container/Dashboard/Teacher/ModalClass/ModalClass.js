@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import "./ModalClass.scss";
-import { addGroup } from "../../../../../redux/actions/groups.action";
+import { addGroup } from "../../../../redux/actions/groups.action";
 import { connect } from "react-redux";
 const ModalClass = ({ addGroup, close }) => {
   const [group, setGroup] = useState({

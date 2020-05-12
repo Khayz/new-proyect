@@ -20,39 +20,62 @@ $colorBlue: #00aeef;
 .dashboard-teacher {
   margin: auto;
   background-color: #f0efef;
-  min-height: 90vh;
+  height: 830px;
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;
   .class-cards {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 12px;
+    .group-card {
+      @include card();
+      h2 {
+        font-size: 23px;
+        color: $colorBlue;
+        margin: 10px 0;
+      }
+      p {
+        font-size: 15px;
+        color: $colorBlue;
+        margin: 0;
+        font-weight: normal;
+        span {
+          font-weight: lighter;
+          color: #000;
+        }
+      }
+      i {
+        color: $colorBlue;
+      }
+    }
+    .group-card:hover {
+      -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      -moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+    }
     .TeacherCards {
-      width: 230px;
-      height: 135px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-transform: uppercase;
-      text-decoration: none;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
-      margin: 22px;
-      border: 1px dashed #ccc;
-      transition: 0.3s ease-out;
+      @include card();
+      h2 {
+        font-size: 23px;
+        color: $colorBlue;
+      }
+      i {
+        color: $colorBlue;
+        transition: 0.3s ease-out;
+      }
     }
     .TeacherCards:hover {
-      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
-    }
-    h2 {
-      font-size: 25px;
-    }
-    i {
-      text-align: center;
-      font-size: 30px;
+      -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      -moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      h2 {
+        font-size: 25px;
+      }
+      i {
+        text-align: center;
+        font-size: 25px;
+      }
     }
 
     .TeacherCards:nth-child(1) {
@@ -74,9 +97,9 @@ $colorBlue: #00aeef;
     background-color: #fff;
     width: 100%;
     max-width: 530px;
-    height: 890px;
+    height: 700px;
     color: rgb(54, 54, 54);
-    margin-top: 10px;
+    margin-top: 15px;
     i {
       float: right;
       margin: auto;

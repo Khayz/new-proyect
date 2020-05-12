@@ -1,14 +1,13 @@
-.student-list {
+.Student-List {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   background-color: #f0efef;
   box-sizing: border-box;
   width: 100%;
-  min-height: 90vh;
-  margin: auto;
-
-  .StudentCard {
+  min-height: 60vh;
+  margin: 130px auto 0;
+  .Student-Card {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +20,7 @@
     background-color: white;
     margin: 20px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease-out;
     figure {
       img {
         display: flex;
@@ -28,9 +28,16 @@
         width: 50px;
       }
     }
+    h3 {
+      font-size: 20px;
+      text-transform: capitalize;
+      text-align: center;
+    }
   }
 
-  .StudentCard:hover {
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.4);
+  .Student-Card:hover {
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.75);
   }
 }

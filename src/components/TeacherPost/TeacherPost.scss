@@ -1,7 +1,9 @@
-.post {
+.Post {
   background-color: #f0efef;
+  margin: 130px auto;
   min-height: 90vh;
   .post-events {
+    margin: 50px 0;
     background-color: #fff;
     box-sizing: border-box;
     text-align: center;
@@ -64,14 +66,15 @@
         font-size: 50px;
         color: rgb(91, 142, 88);
       }
-      input {
+      textarea {
+        height: 150px;
         border: none;
-        margin: 20px;
+        margin: 10px;
         width: 70%;
         outline: none;
       }
 
-      input::placeholder {
+      textarea::placeholder {
         color: rgb(0, 174, 240);
       }
     }

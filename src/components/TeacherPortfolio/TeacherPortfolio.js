@@ -1,9 +1,10 @@
 import React from "react";
 import "./TeacherPortfolio.scss";
 
+import "./TeacherPortfolio.scss";
 const TeacherPortfolio = () => {
   return (
-    <section className="portfolio-index">
+    <section className="Teacher-Portfolio">
       <div className="sideBoard-activities">
         <article>
           <h3>Todos los envios</h3>

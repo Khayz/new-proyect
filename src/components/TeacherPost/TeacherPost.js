@@ -5,7 +5,7 @@ import "./TeacherPost.scss";
 
 const TeacherPost = () => {
   return (
-    <section className="post">
+    <section className="Post">
       <article className="post-events">
         <h3>Eventos proximos</h3>
         <hr />
@@ -24,7 +24,11 @@ const TeacherPost = () => {
         </article>
         <article className="teacher-post">
           <i className="fas fa-user-circle"></i>
-          <input placeholder="Que pasa en tu classroom?" type="text" />
+          <textarea
+            maxLength="300"
+            placeholder="Que pasa en tu classroom?"
+            type="text"
+          />
           <hr />
           <button className="btn btn-primary">Publicar</button>
         </article>

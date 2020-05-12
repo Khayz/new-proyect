@@ -35,6 +35,15 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
                 aria-expanded="false"
               >
                 {user.firstName + " " + user.lastName}
+                <i
+                  style={{
+                    color: "#00aeef",
+                    fontSize: "25px",
+                    border: "none",
+                    marginLeft: "5px",
+                  }}
+                  className="fas fa-user-circle"
+                ></i>
               </NavLink>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <NavLink
@@ -44,6 +53,14 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
                   to="/settings"
                 >
                   Configuraciones
+                </NavLink>
+                <NavLink
+                  exact
+                  activeStyle={activeLink}
+                  className="dropdown-item"
+                  to="/ratings"
+                >
+                  Calificaciones
                 </NavLink>
                 <NavLink
                   onClick={logoutUser}
@@ -57,15 +74,7 @@ const NavParent = ({ activeLink, user, logoutUser }) => {
               </div>
             </li>
           </ul>
-          <i
-            style={{
-              color: "#00aeef",
-              fontSize: "25px",
-              border: "none",
-              marginRight: "30px",
-            }}
-            className="fas fa-user-circle"
-          ></i>
+
           <button
             style={{
               color: "#00aeef",
