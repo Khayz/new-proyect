@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ModalClass from './ModalClass/ModalClass';
 import { v1 } from 'uuid';
+import { setCurrentGroup } from '../../../redux/actions/groups.action';
 
-const Teacher = ({ user, groups }) => {
+const Teacher = ({ user, groups, setCurrentGroup }) => {
 	const [openModal, setOpenModal] = useState(false);
 
 	return (
@@ -17,6 +18,7 @@ const Teacher = ({ user, groups }) => {
 				</Link>
 				{groups.map((group) => (
 					<Link
+						onClick={() => setCurrentGroup(group)}
 						key={v1()}
 						to={`/group/${group.group}/classroom`}
 						className='group-card'>
@@ -79,4 +81,8 @@ const mapStateToProps = (state) => ({
 	groups: state.groups.groups,
 });
 
-export default connect(mapStateToProps)(Teacher);
+const mapDispatchToProps = {
+	setCurrentGroup,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Teacher);

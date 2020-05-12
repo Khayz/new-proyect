@@ -22,7 +22,7 @@ router.post('/child', async (req, res) => {
 		await Groups.updateOne(
 			{ _id: studentGroup._id },
 			{
-				$set: { students: [...studentGroup.students, newStudent._id] },
+				$set: { students: [...studentGroup.students, newStudent] },
 			}
 		);
 		await Parents.updateOne(

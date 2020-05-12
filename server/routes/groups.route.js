@@ -4,6 +4,8 @@ require('dotenv').config({ path: __dirname + '../.env' });
 const { Groups } = require('../schemas/index.schemas');
 
 router.post('/groups', async (req, res) => {
+	console.log(req.body);
+
 	const dbConnect = await mongodb.connect(process.env.DB_CONNECTION, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
@@ -19,7 +21,6 @@ router.post('/groups', async (req, res) => {
 		assignments: [],
 		tasks: [],
 		school: dbGroup.nombre,
-		inviteID: '',
 		teachers: [{ teacher: req.body.teacherID }],
 		class_turn: dbGroup.turno,
 		type: dbGroup.type,

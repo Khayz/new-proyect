@@ -1,6 +1,7 @@
 import * as types from '../actions/actionTypes';
 const initialState = {
 	groups: [],
+	currentGroup: null,
 };
 
 export const groupsReducer = (state = initialState, action) => {
@@ -17,6 +18,9 @@ export const groupsReducer = (state = initialState, action) => {
 				...state,
 				groups: action.data,
 			};
+
+		case types.SET_CURRENT_GROUP:
+			return { ...state, currentGroup: action.data };
 
 		default:
 			return state;

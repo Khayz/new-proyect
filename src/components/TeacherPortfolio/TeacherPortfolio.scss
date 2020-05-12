@@ -41,18 +41,16 @@
 			h4 {
 				font-size: 22px;
 				margin: 10px;
-				padding: 5px;
+				padding: 7px;
+				transition: 0.3s ease-out;
 			}
 
 			h4:hover {
-				border: 1px solid #ccc;
+				background-color: #00aeef;
+				color: #fff;
+				border: 1px solid #fff;
 				border-radius: 50px;
 				cursor: pointer;
-			}
-
-			i {
-				font-size: 30px;
-				color: blue;
 			}
 		}
 	}

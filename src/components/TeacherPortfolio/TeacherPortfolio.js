@@ -2,25 +2,20 @@ import React from 'react';
 import './TeacherPortfolio.scss';
 
 import './TeacherPortfolio.scss';
-const TeacherPortfolio = () => {
+import { connect } from 'react-redux';
+const TeacherPortfolio = ({ students }) => {
 	return (
 		<section className='Teacher-Portfolio'>
 			<div className='sideBoard-activities'>
 				<article>
 					<h3>Todos los envios</h3>
 				</article>
-
 				<hr />
 				<article className='name-students'>
 					<h2>Estudiantes</h2>
-					<h4>
-						<i className='fas fa-plus-circle'></i>Añadir Estudiante
-					</h4>
-					<h4>Sarah</h4>
-					<h4>Ricardo</h4>
-					<h4>David</h4>
-					<h4>Liliana</h4>
-					<h4>Alex</h4>
+					{students.map((student) => (
+						<h4>{student.firstName}</h4>
+					))}
 				</article>
 			</div>
 			<article className='portfolio-info'>
@@ -34,4 +29,8 @@ const TeacherPortfolio = () => {
 	);
 };
 
-export default TeacherPortfolio;
+const mapStateToProps = (state) => ({
+	students: state.groups.currentGroup.students,
+});
+
+export default connect(mapStateToProps)(TeacherPortfolio);
