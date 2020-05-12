@@ -1,7 +1,7 @@
 .dashboard-teacher {
   margin: auto;
   background-color: #f0efef;
-  height: 830px;
+  min-height: 90vh;
   display: flex;
   justify-content: space-between;
   .class-cards {
@@ -55,9 +55,9 @@
     background-color: #fff;
     width: 100%;
     max-width: 530px;
-    height: 700px;
+    height: 890px;
     color: rgb(54, 54, 54);
-    margin-top: 15px;
+    margin-top: 10px;
     i {
       float: right;
       margin: auto;

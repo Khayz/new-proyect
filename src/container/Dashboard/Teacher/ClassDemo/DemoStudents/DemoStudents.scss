@@ -1,10 +1,11 @@
 .student-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   background-color: #f0efef;
   box-sizing: border-box;
   width: 100%;
-  min-height: 60vh;
+  min-height: 90vh;
   margin: auto;
 
   .StudentCard {
