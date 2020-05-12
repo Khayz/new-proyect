@@ -60,9 +60,10 @@
   .video-opening {
     margin: 20px;
     iframe {
+      border-radius: 8px;
       border: none;
-      height: 500px;
       width: 500px;
+      height: 400px;
     }
   }
 }

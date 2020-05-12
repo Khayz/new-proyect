@@ -1,0 +1,59 @@
+.portfolio-index {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 90vh;
+
+  .portfolio-info {
+    margin: auto;
+    height: 400px;
+    color: #423e5d;
+    text-align: center;
+  }
+
+  .sideBoard-activities {
+    margin-top: 15px;
+    padding: 20px;
+
+    h2 {
+      color: #423e5d;
+    }
+
+    .activities {
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      h4 {
+        margin: 10px;
+        font-size: 22px;
+      }
+
+      i {
+        font-size: 30px;
+        color: blue;
+      }
+    }
+
+    .name-students {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h4 {
+        font-size: 22px;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      h4:hover {
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      i {
+        font-size: 30px;
+        color: blue;
+      }
+    }
+  }
+}
