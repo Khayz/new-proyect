@@ -9,11 +9,12 @@ router.post('/child', async (req, res) => {
 		if (studentGroup === null) {
 			return res.send({ message: 'GroupID Incorrect' });
 		}
-		const { school, group, assignments } = studentGroup;
+		const { school, group, assignments, _id } = studentGroup;
 		const student = new Students({
 			...req.body,
 			school,
 			group,
+			groupID: _id,
 			assignments,
 			parentName: `${parent.firstName} ${parent.lastName}`,
 			tasks: [],
@@ -22,7 +23,7 @@ router.post('/child', async (req, res) => {
 		await Groups.updateOne(
 			{ _id: studentGroup._id },
 			{
-				$set: { students: [...studentGroup.students, newStudent._id] },
+				$set: { students: [...studentGroup.students, newStudent] },
 			}
 		);
 		await Parents.updateOne(
@@ -40,8 +41,13 @@ router.post('/child', async (req, res) => {
 
 router.get('/child', async (req, res) => {
 	const { id } = req.query;
-	const students = await Students.find({ parentID: id });
-	res.send(students);
+	try {
+		const students = await Students.find({ parentID: id });
+		res.send(students);
+	} catch (error) {
+		console.log(error.message);
+		res.send({ message: error.message });
+	}
 });
 
 router.delete('/child', async (req, res) => {

@@ -9,12 +9,14 @@ mongoose.connect(
 	() => console.log('Database running')
 );
 
-const authRoute = require('./routes/authentication.route');
-const childsRoute = require('./routes/childs.route');
-const groupsRoute = require('./routes/groups.route');
-const postsRoute = require('./routes/posts.route');
-const teachersRoute = require('./routes/teachers.route');
-const tasksRoute = require('./routes/tasks.route');
+const {
+	authRoute,
+	childsRoute,
+	groupsRoute,
+	postsRoute,
+	teachersRoute,
+	tasksRoute,
+} = require('./routes/index.route');
 
 const app = express();
 

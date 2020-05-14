@@ -61,6 +61,7 @@ $colorBlue: #00aeef;
         color: $colorBlue;
       }
       i {
+        font-size: 30px;
         color: $colorBlue;
         transition: 0.3s ease-out;
       }
@@ -69,13 +70,6 @@ $colorBlue: #00aeef;
       -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
       -moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
       box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-      h2 {
-        font-size: 25px;
-      }
-      i {
-        text-align: center;
-        font-size: 25px;
-      }
     }
 
     .TeacherCards:nth-child(1) {

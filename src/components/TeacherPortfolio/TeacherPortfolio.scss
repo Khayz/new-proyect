@@ -16,7 +16,21 @@
     padding: 20px;
 
     h2 {
+      font-size: 25px;
       color: #423e5d;
+    }
+    button {
+      background-color: #00aeef;
+      color: #fff;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      transition: 0.3s ease-out;
+      outline: none;
+    }
+    button:hover {
+      background-color: #fff;
+      color: #00aeef;
     }
 
     .activities {
@@ -41,18 +55,16 @@
       h4 {
         font-size: 22px;
         margin: 10px;
-        padding: 5px;
+        padding: 7px;
+        transition: 0.3s ease-out;
       }
 
       h4:hover {
-        border: 1px solid #ccc;
+        background-color: #00aeef;
+        color: #fff;
+        border: 1px solid #fff;
         border-radius: 50px;
         cursor: pointer;
-      }
-
-      i {
-        font-size: 30px;
-        color: blue;
       }
     }
   }

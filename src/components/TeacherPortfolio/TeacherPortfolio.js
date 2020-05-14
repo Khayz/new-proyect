@@ -1,26 +1,35 @@
-import React from "react";
-import "./TeacherPortfolio.scss";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { v1 } from "uuid";
 
 import "./TeacherPortfolio.scss";
-const TeacherPortfolio = () => {
+
+import ModalAssignment from "./ModalAssignment/ModalAssignment";
+
+const TeacherPortfolio = ({ students, assignments }) => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <section className="Teacher-Portfolio">
       <div className="sideBoard-activities">
         <article>
-          <h3>Todos los envios</h3>
+          <h2>Todos los envios</h2>
         </article>
-
+        <hr />
+        <article>
+          <h2>Asignaturas</h2>
+          <button onClick={() => setOpenModal(true)}>Añadir Asignatura</button>
+          {assignments.map((assignment) => (
+            <h4 key={v1()}>{assignment}</h4>
+          ))}
+          {openModal && <ModalAssignment close={setOpenModal} />}
+        </article>
         <hr />
         <article className="name-students">
           <h2>Estudiantes</h2>
-          <h4>
-            <i className="fas fa-plus-circle"></i>Añadir Estudiante
-          </h4>
-          <h4>Sarah</h4>
-          <h4>Ricardo</h4>
-          <h4>David</h4>
-          <h4>Liliana</h4>
-          <h4>Alex</h4>
+          {students.map((student) => (
+            <h4 key={v1()}>{student.firstName}</h4>
+          ))}
         </article>
       </div>
       <article className="portfolio-info">
@@ -34,4 +43,9 @@ const TeacherPortfolio = () => {
   );
 };
 
-export default TeacherPortfolio;
+const mapStateToProps = (state) => ({
+  students: state.groups.currentGroup.students,
+  assignments: state.groups.currentGroup.assignments,
+});
+
+export default connect(mapStateToProps)(TeacherPortfolio);

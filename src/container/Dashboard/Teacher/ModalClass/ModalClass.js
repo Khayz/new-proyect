@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./ModalClass.scss";
 import { addGroup } from "../../../../redux/actions/groups.action";
 import { connect } from "react-redux";
+
 const ModalClass = ({ addGroup, close }) => {
   const [group, setGroup] = useState({
     cct: "",
@@ -27,7 +28,10 @@ const ModalClass = ({ addGroup, close }) => {
   return ReactDOM.createPortal(
     <div className="modal_class">
       <form className="modal_form">
-        <h2>Crear Clase</h2>
+        <div className="form_title">
+          <h2>Crear Clase</h2>
+          <i onClick={() => close(false)} class="fas fa-times-circle"></i>
+        </div>
         <input
           onChange={handleGroup}
           name="cct"
