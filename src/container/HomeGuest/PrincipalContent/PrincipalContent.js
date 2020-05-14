@@ -31,7 +31,7 @@ const PrincipalContent = () => {
           title="video-opening"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/srR73KoE5P8"
+          src="https://www.youtube.com/embed/srR73KoE5P8?controls=1&autoplay=1&loop=1&replay=1&showinfo=0&rel=0"
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

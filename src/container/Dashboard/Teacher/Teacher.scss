@@ -1,159 +1,159 @@
 @mixin card {
-	width: 250px;
-	height: 150px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	text-transform: uppercase;
-	text-decoration: none;
-	background-color: #fff;
-	border-radius: 8px;
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
-	margin: 22px;
-	border: 1px #ccc;
-	transition: 0.3s ease-out;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+  margin: 22px;
+  border: 1px #ccc;
+  transition: 0.3s ease-out;
 }
 
 $colorBlue: #00aeef;
 
 .dashboard-teacher {
-	margin: auto;
-	background-color: #f0efef;
-	height: 830px;
-	display: flex;
-	align-items: flex-start;
-	.class-cards {
-		display: flex;
-		flex-wrap: wrap;
-		box-sizing: border-box;
-		padding: 12px;
-		.group-card {
-			@include card();
-			h2 {
-				font-size: 23px;
-				color: $colorBlue;
-				margin: 10px 0;
-			}
-			p {
-				font-size: 15px;
-				color: $colorBlue;
-				margin: 0;
-				font-weight: normal;
-				span {
-					font-weight: lighter;
-					color: #000;
-				}
-			}
-			i {
-				color: $colorBlue;
-			}
-		}
-		.group-card:hover {
-			-webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-			-moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-			box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-		}
-		.TeacherCards {
-			@include card();
-			h2 {
-				font-size: 23px;
-				color: $colorBlue;
-			}
-			i {
-				font-size: 30px;
-				color: $colorBlue;
-				transition: 0.3s ease-out;
-			}
-		}
-		.TeacherCards:hover {
-			-webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-			-moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-			box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
-		}
+  margin: auto;
+  background-color: #f0efef;
+  height: 830px;
+  display: flex;
+  align-items: flex-start;
+  .class-cards {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 12px;
+    .group-card {
+      @include card();
+      h2 {
+        font-size: 23px;
+        color: $colorBlue;
+        margin: 10px 0;
+      }
+      p {
+        font-size: 15px;
+        color: $colorBlue;
+        margin: 0;
+        font-weight: normal;
+        span {
+          font-weight: lighter;
+          color: #000;
+        }
+      }
+      i {
+        color: $colorBlue;
+      }
+    }
+    .group-card:hover {
+      -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      -moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+    }
+    .TeacherCards {
+      @include card();
+      h2 {
+        font-size: 23px;
+        color: $colorBlue;
+      }
+      i {
+        font-size: 30px;
+        color: $colorBlue;
+        transition: 0.3s ease-out;
+      }
+    }
+    .TeacherCards:hover {
+      -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      -moz-box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+      box-shadow: 10px 10px 20px -8px rgba(0, 166, 255, 1);
+    }
 
-		.TeacherCards:nth-child(1) {
-			i {
-				color: orange;
-			}
-		}
+    .TeacherCards:nth-child(1) {
+      i {
+        color: orange;
+      }
+    }
 
-		.TeacherCards:nth-child(2) {
-			i {
-				color: rgb(18, 132, 174);
-			}
-		}
-	}
+    .TeacherCards:nth-child(2) {
+      i {
+        color: rgb(18, 132, 174);
+      }
+    }
+  }
 
-	.sideboard-teacher {
-		padding: 10px;
-		box-sizing: border-box;
-		background-color: #fff;
-		width: 100%;
-		max-width: 530px;
-		height: 700px;
-		color: rgb(54, 54, 54);
-		margin-top: 15px;
-		i {
-			float: right;
-			margin: auto;
-			font-size: 45px;
-			color: rgb(18, 132, 174);
-		}
-		h2 {
-			font-size: 1.5rem;
-			padding-bottom: 1rem;
-			color: #545454;
-			text-transform: uppercase;
-			span {
-				font-weight: lighter;
-			}
-		}
-		p {
-			font-size: 1rem;
-			color: rgb(167, 167, 167);
-			span {
-				color: #000;
-				font-weight: bold;
-			}
-		}
-		button {
-			border-radius: 5px;
-			background-color: rgb(0, 174, 239);
-			padding: 7px;
-			border: none;
-			color: white;
-			outline: none;
-			transition: 0.3s ease-out;
-		}
-		button:hover {
-			background-color: #fff;
-			color: rgb(0, 174, 239);
-		}
-	}
+  .sideboard-teacher {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%;
+    max-width: 530px;
+    height: 700px;
+    color: rgb(54, 54, 54);
+    margin-top: 15px;
+    i {
+      float: right;
+      margin: auto;
+      font-size: 45px;
+      color: rgb(18, 132, 174);
+    }
+    h2 {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+      color: #545454;
+      text-transform: uppercase;
+      span {
+        font-weight: lighter;
+      }
+    }
+    p {
+      font-size: 1rem;
+      color: rgb(167, 167, 167);
+      span {
+        color: #000;
+        font-weight: bold;
+      }
+    }
+    button {
+      border-radius: 5px;
+      background-color: rgb(0, 174, 239);
+      padding: 7px;
+      border: none;
+      color: white;
+      outline: none;
+      transition: 0.3s ease-out;
+    }
+    button:hover {
+      background-color: #fff;
+      color: rgb(0, 174, 239);
+    }
+  }
 }
 
 @media (max-width: 768px) {
-	.dashboard-teacher {
-		flex-direction: column;
-		.class-cards {
-			margin: auto;
-		}
-		.sideboard-teacher {
-			width: 100%;
-			max-width: 100%;
-			margin: auto;
-		}
-	}
+  .dashboard-teacher {
+    flex-direction: column;
+    .class-cards {
+      margin: auto;
+    }
+    .sideboard-teacher {
+      width: 100%;
+      max-width: 100%;
+      margin: auto;
+    }
+  }
 }
 
 @media (max-width: 572px) {
-	.dashboard-teacher {
-		.class-cards {
-			justify-content: space-between;
-			.TeacherCards {
-				width: 80%;
-			}
-		}
-	}
+  .dashboard-teacher {
+    .class-cards {
+      justify-content: space-between;
+      .TeacherCards {
+        width: 80%;
+      }
+    }
+  }
 }
