@@ -1,7 +1,14 @@
 .Dashboard {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #f0f0f0;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #f0f0f0;
+}
+
+@media (max-width: 1080px) {
+	.Dashboard {
+		align-items: center;
+		flex-direction: column;
+	}
 }
 
 @media (max-width: 1024px) {
