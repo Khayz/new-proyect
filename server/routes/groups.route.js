@@ -3,6 +3,13 @@ const mongodb = require('mongodb');
 require('dotenv').config({ path: __dirname + '../.env' });
 const { Groups } = require('../schemas/index.schemas');
 
+router.get('/groups', async (req, res) => {
+	const dbGroup = await Groups.find({
+		'teachers.teacher': req.query.teacherID,
+	});
+	return res.send(dbGroup);
+});
+
 router.post('/groups', async (req, res) => {
 	console.log(req.body);
 
@@ -29,11 +36,19 @@ router.post('/groups', async (req, res) => {
 	res.send(savedGroup);
 });
 
-router.get('/groups', async (req, res) => {
-	const dbGroup = await Groups.find({
-		'teachers.teacher': req.query.teacherID,
-	});
-	return res.send(dbGroup);
+router.post('/add-assignment', async (req, res) => {
+	console.log(req.body);
+	try {
+		const group = await Groups.findOne({ _id: req.body._id });
+		console.log(group);
+		await Groups.updateOne(
+			{ _id: group._id },
+			{ $set: { assignments: [...group.assignments, req.body.assignment] } }
+		);
+		res.send('Updated!');
+	} catch (error) {
+		res.send({ message: error.message });
+	}
 });
 
 module.exports = router;

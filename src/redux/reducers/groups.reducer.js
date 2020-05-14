@@ -22,6 +22,24 @@ export const groupsReducer = (state = initialState, action) => {
 		case types.SET_CURRENT_GROUP:
 			return { ...state, currentGroup: action.data };
 
+		case types.SET_NEW_ASSIGNMENT:
+			return {
+				...state,
+				currentGroup: {
+					...state.currentGroup,
+					assignments: [...state.currentGroup.assignments, action.data],
+				},
+			};
+
+		case types.SET_NEW_TASK:
+			return {
+				...state,
+				currentGroup: {
+					...state.currentGroup,
+					tasks: [...state.currentGroup.tasks, action.data],
+				},
+			};
+
 		default:
 			return state;
 	}
