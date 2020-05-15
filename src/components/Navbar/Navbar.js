@@ -10,15 +10,7 @@ import NavTeacher from './NavTeacher/NavTeacher';
 const Navbar = ({ user }) => {
 	const { _id, account } = user;
 
-	const activeLink = {
-		backgroundColor: '#00aeef',
-		color: '#fff',
-		padding: '7px',
-		borderRadius: '5px',
-		fontWeight: 'normal',
-	};
-
-	let actualNavbar = <NavGuest activeLink={activeLink} />;
+	let actualNavbar = <NavGuest />;
 
 	if (_id && account === 'parent') {
 		actualNavbar = <NavParent user={user} />;

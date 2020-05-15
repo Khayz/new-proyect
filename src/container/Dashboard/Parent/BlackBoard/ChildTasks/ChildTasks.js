@@ -1,45 +1,60 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { v1 } from 'uuid';
+import { getHomework } from '../../../../../redux/actions/homework.action';
 
 import './ChildTasks.scss';
-import { connect } from 'react-redux';
-import ModalTask from './ModalTask/ModalTask';
 
-const ChildTasks = ({ child }) => {
+import Spinner from '../../../../../components/Ui/Spinner/Spinner';
+
+const ChildTasks = ({ child, homework, getHomework, isLoading }) => {
+	useEffect(() => {
+		getHomework(child._id);
+	}, [getHomework, child]);
+
 	return (
-		<div className='ChildTasks'>
-			{child.tasks.map((task) => (
-				<div
-					key={v1()}
-					className={`Task card text-white ${
-						task.status === 'approved' ? 'bg-success' : 'bg-danger'
-					} mb-3`}
-					style={{ maxWidth: '18rem' }}>
-					<div className='card-header'>{`${
-						task.status === 'approved' ? 'Entregada' : 'No Entregada'
-					}`}</div>
-					<div className='card-body'>
-						<h5 className='card-title'>Titulo: {task.title}</h5>
-						<p className='card-text'>Descripcion: {task.description}</p>
-						<p className='card-text'>
-							Calificacion: {task.calification || 'none'}
-						</p>
-						<p className='card-text'>
-							Fecha: {new Date(task.dueDate).toLocaleDateString()}
-						</p>
-						{task.status !== 'approved' && <ModalTask />}
+		<section className='ChildTasks'>
+			{isLoading ? (
+				<article className='loading_homework'>
+					<Spinner />
+				</article>
+			) : (
+				homework.map((task) => (
+					<div
+						key={v1()}
+						className={`Task card text-white ${
+							task.status === 'Entregada' ? 'bg-success' : 'bg-warning'
+						} mb-3`}
+						style={{ maxWidth: '18rem' }}>
+						<div className='card-header'>{`${
+							task.status === 'Entregada' ? 'Entregada' : 'Pendiente'
+						}`}</div>
+						<div className='card-body'>
+							<h5 className='card-title'>Titulo: {task.title}</h5>
+							<p className='card-text'>
+								Calificacion: {task.calification || 'none'}
+							</p>
+							<p className='card-text'>Fecha: {task.date}</p>
+							<p>Estatus: {task.status}</p>
+						</div>
 					</div>
-				</div>
-			))}
-		</div>
+				))
+			)}
+		</section>
 	);
 };
 
 const mapStateToProps = (state) => ({
+	homework: state.homework.homework,
 	child: state.childs.actualChild,
+	isLoading: state.homework.loading,
 });
 
-export default connect(mapStateToProps)(ChildTasks);
+const mapDispatchToProps = {
+	getHomework,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChildTasks);
 
 /* <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>

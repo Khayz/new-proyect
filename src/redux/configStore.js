@@ -5,6 +5,7 @@ import {
 	childReducer,
 	postsReducer,
 	groupsReducer,
+	homeworkReducer,
 } from './reducers/index.reducer';
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
 	childs: childReducer,
 	posts: postsReducer,
 	groups: groupsReducer,
+	homework: homeworkReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

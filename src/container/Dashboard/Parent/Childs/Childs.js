@@ -27,7 +27,9 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 			</div>
 			<div className={styles.ChildList}>
 				{loadChilds ? (
-					<Spinner />
+					<article className={styles.loading_list_spinner}>
+						<Spinner />
+					</article>
 				) : (
 					childList.map((child) => (
 						<div

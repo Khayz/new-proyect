@@ -1,15 +1,24 @@
+$principalColor: #146eb4;
+$secondaryColor: #ff9900;
+
 .blackboard {
+	border: 1px solid red;
+	width: 50%;
+	height: 730px;
+	margin-top: 50px;
+	background-color: #fff;
 	nav {
+		width: 100%;
 		display: flex;
-		width: 600px;
-		margin: 30px auto 0;
 		justify-content: space-around;
+		background-color: $principalColor;
 		button {
+			outline: none;
 			color: #fff;
 			cursor: pointer;
 			border: none;
-			background-color: #2f89fc;
 			padding: 10px;
+			background-color: inherit;
 			font-size: 24px;
 		}
 	}
@@ -17,10 +26,10 @@
 
 .BoardGuest {
 	margin: 20px;
-	border: 2px solid #2f89fc;
+	border: 2px solid $principalColor;
 	border-radius: 9px;
 	width: 600px;
-	height: 600px;
+	height: 800px;
 	background-color: #fff;
 	display: flex;
 	justify-content: center;
@@ -28,7 +37,7 @@
 }
 .postsLoading {
 	margin: 20px;
-	border: 2px solid #2f89fc;
+	border: 2px solid $principalColor;
 	border-radius: 9px;
 	width: 600px;
 	height: 600px;

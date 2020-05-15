@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Students, Groups, Parents } = require('../schemas/index.schemas');
 
-router.post('/child', async (req, res) => {
+router.post('/students', async (req, res) => {
 	const { groupID, parentID } = req.body;
 	try {
 		const studentGroup = await Groups.findOne({ inviteID: groupID });
@@ -17,7 +17,6 @@ router.post('/child', async (req, res) => {
 			groupID: _id,
 			assignments,
 			parentName: `${parent.firstName} ${parent.lastName}`,
-			tasks: [],
 		});
 		const newStudent = await student.save();
 		await Groups.updateOne(
@@ -39,7 +38,7 @@ router.post('/child', async (req, res) => {
 	}
 });
 
-router.get('/child', async (req, res) => {
+router.get('/students', async (req, res) => {
 	const { id } = req.query;
 	try {
 		const students = await Students.find({ parentID: id });
@@ -50,33 +49,37 @@ router.get('/child', async (req, res) => {
 	}
 });
 
-router.delete('/child', async (req, res) => {
+router.delete('/students', async (req, res) => {
 	const child = JSON.parse(req.query.child);
-	await Students.deleteOne({ _id: child._id });
-	const parentChild = await Parents.findOne({ _id: child.parentID });
-
-	await Parents.updateOne(
-		{ _id: child.parentID },
-		{
-			$set: {
-				childs: parentChild.childs.filter(
-					(student) => String(student) !== child._id
-				),
-			},
-		}
-	);
-	const groupChild = await Groups.findOne({ inviteID: child.groupID });
-	await Groups.updateOne(
-		{ inviteID: child.groupID },
-		{
-			$set: {
-				students: groupChild.students.filter(
-					(student) => String(student) !== child._id
-				),
-			},
-		}
-	);
-	res.send('CHILD DELETED');
+	try {
+		await Students.deleteOne({ _id: child._id });
+		const parentChild = await Parents.findOne({ _id: child.parentID });
+		await Parents.updateOne(
+			{ _id: child.parentID },
+			{
+				$set: {
+					childs: parentChild.childs.filter(
+						(student) => String(student) !== child._id
+					),
+				},
+			}
+		);
+		const groupChild = await Groups.findOne({ _id: child.groupID });
+		await Groups.updateOne(
+			{ _id: child.groupID },
+			{
+				$set: {
+					students: groupChild.students.filter(
+						(student) => String(student._id) !== child._id
+					),
+				},
+			}
+		);
+		res.send('CHILD DELETED');
+	} catch (error) {
+		console.log(error.message);
+		res.send({ message: error.message });
+	}
 });
 
 module.exports = router;

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 import './BlackBoard.scss';
-import { connect } from 'react-redux';
-import BoardContent from './BoardContent/BoardContent';
-import PostsSpinner from '../../../../components/Ui/Spinner/PostsSpinner';
+
+import Posts from './Posts/Posts';
 import ChildTasks from './ChildTasks/ChildTasks';
+import Spinner from '../../../../components/Ui/Spinner/Spinner';
 
 const BlackBoard = ({ posts, loadingPosts }) => {
 	const [showPosts, setShowPosts] = useState(true);
@@ -16,11 +17,11 @@ const BlackBoard = ({ posts, loadingPosts }) => {
 	);
 
 	if (!loadingPosts && posts.length > 0 && showPosts) {
-		groupPosts = <BoardContent posts={posts} />;
+		groupPosts = <Posts posts={posts} />;
 	} else if (loadingPosts) {
 		groupPosts = (
 			<div className='postsLoading'>
-				<PostsSpinner />
+				<Spinner />
 			</div>
 		);
 	} else if (!loadingPosts && posts.length > 0 && !showPosts) {

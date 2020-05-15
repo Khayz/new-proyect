@@ -3,6 +3,7 @@ const Teachers = require('./teachers.schema');
 const Students = require('./students.schema');
 const Groups = require('./groups.schema');
 const Posts = require('./posts.schema');
+const HomeWork = require('./Homework.schema');
 
 module.exports = {
 	Parents,
@@ -10,4 +11,5 @@ module.exports = {
 	Students,
 	Groups,
 	Posts,
+	HomeWork,
 };
