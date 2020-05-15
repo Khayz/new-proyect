@@ -1,15 +1,15 @@
 const authRoute = require('./authentication.route');
-const childsRoute = require('./childs.route');
+const studentsRoute = require('./students.route');
 const groupsRoute = require('./groups.route');
 const postsRoute = require('./posts.route');
 const teachersRoute = require('./teachers.route');
-const tasksRoute = require('./tasks.route');
+const homeworkRoute = require('./homework.route');
 
 module.exports = {
 	authRoute,
-	childsRoute,
+	studentsRoute,
 	groupsRoute,
 	postsRoute,
 	teachersRoute,
-	tasksRoute,
+	homeworkRoute,
 };

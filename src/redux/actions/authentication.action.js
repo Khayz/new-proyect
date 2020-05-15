@@ -12,16 +12,22 @@ export const authUser = () => (dispatch) => {
 
 export const registerUser = (user) => async (dispatch) => {
 	try {
+		dispatch({ type: types.LOADING_AUTH });
 		const { data } = await axios.post(`${url}/register`, user);
 		localStorage.setItem('user', JSON.stringify(data));
+		if (data.message) {
+			return dispatch({ type: types.REGISTER_USER_ERROR, error: data.message });
+		}
 		return dispatch({ type: types.REGISTER_USER_SUCCESS, user: data });
-	} catch (error) {}
+	} catch (error) {
+		return dispatch({ type: types.REGISTER_USER_ERROR, error });
+	}
 };
 
 export const loginUser = (user) => async (dispatch) => {
 	try {
+		dispatch({ type: types.LOADING_AUTH });
 		const { data } = await axios.post(`${url}/login`, user);
-		console.log(data);
 		localStorage.setItem('user', JSON.stringify(data));
 		return dispatch({ type: types.LOGIN_USER_SUCCESS, user: data });
 	} catch (error) {}

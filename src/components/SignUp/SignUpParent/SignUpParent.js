@@ -1,133 +1,151 @@
-import React, { useState } from "react";
-import { registerUser } from "../../../redux/actions/index.actions";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { registerUser } from '../../../redux/actions/index.actions';
+import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 
-function SignUpParent({ registerUser }) {
-  const [register, setRegister] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    phone: "",
-    childs: [],
-    account: "parent",
-  });
+import './SignUpParent.scss';
 
-  const handleRegisterData = (event) => {
-    const { value, name } = event.target;
-    setRegister((prevProps) => ({
-      ...prevProps,
-      [name]: value,
-    }));
-  };
+import Spinner from '../../Ui/Spinner/Spinner';
 
-  const handleSubmitRegister = (event) => {
-    event.preventDefault();
-    registerUser(register);
-  };
+function SignUpParent({ registerUser, error, isLoading }) {
+	const [register, setRegister] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		password: '',
+		phone: '',
+		childs: [],
+		account: 'parent',
+	});
 
-  return (
-    <form
-      onSubmit={handleSubmitRegister}
-      className="Register text-center border border-light p-5"
-      action="#!"
-    >
-      <p className="h4 mb-4">Sign up parent</p>
+	useEffect(() => {
+		if (error !== null) {
+			toast.error(error);
+		}
+	}, [error]);
 
-      <div className="form-row mb-4">
-        <div className="col">
-          <input
-            onChange={handleRegisterData}
-            type="text"
-            name="firstName"
-            id="defaultRegisterFormFirstName"
-            className="form-control"
-            placeholder="First name"
-          />
-        </div>
-        <div className="col">
-          <input
-            onChange={handleRegisterData}
-            type="text"
-            name="lastName"
-            id="defaultRegisterFormLastName"
-            className="form-control"
-            placeholder="Last name"
-          />
-        </div>
-      </div>
+	const handleRegisterData = (event) => {
+		const { value, name } = event.target;
+		setRegister((prevProps) => ({
+			...prevProps,
+			[name]: value,
+		}));
+	};
 
-      <input
-        onChange={handleRegisterData}
-        type="email"
-        name="email"
-        id="defaultRegisterFormEmail"
-        className="form-control mb-4"
-        placeholder="E-mail"
-      />
+	const handleSubmitRegister = (event) => {
+		event.preventDefault();
+		(async () => {
+			await registerUser(register);
+			if (error !== null) {
+				toast.error(error);
+			}
+		})();
+	};
 
-      <input
-        onChange={handleRegisterData}
-        type="password"
-        name="password"
-        id="defaultRegisterFormPassword"
-        className="form-control"
-        placeholder="Password"
-        aria-describedby="defaultRegisterFormPasswordHelpBlock"
-      />
-      <small
-        id="defaultRegisterFormPasswordHelpBlock"
-        className="form-text text-muted mb-4"
-      >
-        At least 8 characters and 1 digit
-      </small>
+	return (
+		<form
+			onSubmit={handleSubmitRegister}
+			className='Register text-center border border-light p-5'
+			action='#!'>
+			<p className='h4 mb-4'>Sign up parent</p>
 
-      <input
-        onChange={handleRegisterData}
-        type="text"
-        name="phone"
-        id="defaultRegisterPhonePassword"
-        className="form-control"
-        placeholder="Phone number"
-        aria-describedby="defaultRegisterFormPhoneHelpBlock"
-      />
-      <small
-        id="defaultRegisterFormPhoneHelpBlock"
-        className="form-text text-muted mb-4"
-      ></small>
-
-      <button className="btn btn-info my-4 btn-block">Sign in</button>
-
-      <p>or sign up with:</p>
-
-      <a href="/" className="mx-2" role="button">
-        <i className="fab fa-facebook-f light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
-        <i className="fab fa-twitter light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
-        <i className="fab fa-linkedin-in light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
-        <i className="fab fa-github light-blue-text"></i>
-      </a>
-
-      <hr />
-
-      <p>
-        By clicking
-        <em>Sign up</em> you agree to our
-        <a href="/" target="_blank">
-          terms of service
-        </a>
-      </p>
-    </form>
-  );
+			{isLoading ? (
+				<article className='login_auth_register'>
+					<Spinner />
+				</article>
+			) : (
+				<>
+					<div className='form-row mb-4'>
+						<div className='col'>
+							<input
+								onChange={handleRegisterData}
+								type='text'
+								name='firstName'
+								id='defaultRegisterFormFirstName'
+								className='form-control'
+								placeholder='First name'
+							/>
+						</div>
+						<div className='col'>
+							<input
+								onChange={handleRegisterData}
+								type='text'
+								name='lastName'
+								id='defaultRegisterFormLastName'
+								className='form-control'
+								placeholder='Last name'
+							/>
+						</div>
+					</div>
+					<input
+						onChange={handleRegisterData}
+						type='email'
+						name='email'
+						id='defaultRegisterFormEmail'
+						className='form-control mb-4'
+						placeholder='E-mail'
+					/>
+					<input
+						onChange={handleRegisterData}
+						type='password'
+						name='password'
+						id='defaultRegisterFormPassword'
+						className='form-control'
+						placeholder='Password'
+						aria-describedby='defaultRegisterFormPasswordHelpBlock'
+					/>
+					<small
+						id='defaultRegisterFormPasswordHelpBlock'
+						className='form-text text-muted mb-4'>
+						At least 8 characters and 1 digit
+					</small>
+					<input
+						onChange={handleRegisterData}
+						type='text'
+						name='phone'
+						id='defaultRegisterPhonePassword'
+						className='form-control'
+						placeholder='Phone number'
+						aria-describedby='defaultRegisterFormPhoneHelpBlock'
+					/>
+					<small
+						id='defaultRegisterFormPhoneHelpBlock'
+						className='form-text text-muted mb-4'></small>
+					<button className='btn btn-info my-4 btn-block'>Sign in</button>
+					<p>or sign up with:</p>
+					<a href='/' className='mx-2' role='button'>
+						<i className='fab fa-facebook-f light-blue-text'></i>
+					</a>
+					<a href='/' className='mx-2' role='button'>
+						<i className='fab fa-twitter light-blue-text'></i>
+					</a>
+					<a href='/' className='mx-2' role='button'>
+						<i className='fab fa-linkedin-in light-blue-text'></i>
+					</a>
+					<a href='/' className='mx-2' role='button'>
+						<i className='fab fa-github light-blue-text'></i>
+					</a>
+					<hr />
+					<p>
+						By clicking
+						<em>Sign up</em> you agree to our
+						<a href='/' target='_blank'>
+							terms of service
+						</a>
+					</p>{' '}
+				</>
+			)}
+		</form>
+	);
 }
 
+const mapStateToProps = (state) => ({
+	error: state.auth.error,
+	isLoading: state.auth.loading,
+});
+
 const mapDispatchToProps = {
-  registerUser,
+	registerUser,
 };
 
-export default connect(null, mapDispatchToProps)(SignUpParent);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpParent);

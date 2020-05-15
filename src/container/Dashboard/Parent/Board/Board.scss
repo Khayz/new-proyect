@@ -1,3 +1,6 @@
+$principalColor: #0099cc;
+$secondaryColor: #ff9933;
+
 .Board {
 	.boardItem {
 		margin: 10px 0;
@@ -8,7 +11,7 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #fff;
-		border: 1px solid #2f89fc;
+		border: 1px solid $principalColor;
 	}
 }
 

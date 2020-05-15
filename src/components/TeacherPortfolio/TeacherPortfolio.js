@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { v1 } from 'uuid';
 
@@ -6,7 +6,7 @@ import './TeacherPortfolio.scss';
 
 import ModalAssignment from './ModalAssignment/ModalAssignment';
 
-const TeacherPortfolio = ({ students, assignments }) => {
+const TeacherPortfolio = ({ students, assignments, user }) => {
 	const [openModal, setOpenModal] = useState(false);
 
 	return (
@@ -38,6 +38,26 @@ const TeacherPortfolio = ({ students, assignments }) => {
 					Un lugar para completar las actividades y compartirlas a tus
 					estudiantes y sus padres.
 				</p>
+				{user.tasks.map((task) => {
+					return (
+						<form key={v1()}>
+							<h1>{task.title}</h1>
+							<figure>
+								{Object.keys(task.files)
+									.filter((file) => task.files[file])
+									.map((file) => (
+										<img key={v1()} src={task.files[file]} alt='task' />
+									))}
+							</figure>
+							<input type='number' placeholder='Calificacion*' />
+							<select>
+								<option>Pendiente</option>
+								<option>Resuelta</option>
+							</select>
+							<button>Enviar</button>
+						</form>
+					);
+				})}
 			</article>
 		</section>
 	);
@@ -46,6 +66,7 @@ const TeacherPortfolio = ({ students, assignments }) => {
 const mapStateToProps = (state) => ({
 	students: state.groups.currentGroup.students,
 	assignments: state.groups.currentGroup.assignments,
+	user: state.auth.user,
 });
 
 export default connect(mapStateToProps)(TeacherPortfolio);

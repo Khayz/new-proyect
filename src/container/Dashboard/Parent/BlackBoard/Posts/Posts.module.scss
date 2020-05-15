@@ -1,0 +1,25 @@
+$principalColor: #146eb4;
+$secondaryColor: #ff9900;
+
+.Posts {
+	height: 92%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	overflow-y: scroll;
+	.Post {
+		width: 90%;
+		margin: 10px;
+		padding: 10px;
+		border: 2px solid $principalColor;
+		border-radius: 8px;
+		h2 {
+			background-color: $principalColor;
+			color: #fff;
+			text-transform: uppercase;
+		}
+		button {
+		}
+	}
+}
