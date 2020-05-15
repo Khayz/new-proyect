@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../redux/actions/index.actions";
 
 import "./Login.scss";
+import { Link } from "react-router-dom";
 
 const Login = ({ loginUser }) => {
   const [login, setLogin] = useState({
@@ -29,7 +30,7 @@ const Login = ({ loginUser }) => {
       className="FormLogin text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Sign in</p>
+      <p className="h4 mb-4">Inicia Sesión</p>
 
       <input
         onChange={handleLoginData}
@@ -37,7 +38,7 @@ const Login = ({ loginUser }) => {
         name="email"
         id="defaultLoginFormEmail"
         className="form-control mb-4"
-        placeholder="E-mail"
+        placeholder="Correo Electronico"
       />
 
       <input
@@ -46,33 +47,38 @@ const Login = ({ loginUser }) => {
         name="password"
         id="defaultLoginFormPassword"
         className="form-control mb-4"
-        placeholder="Password"
+        placeholder="Contraseña"
       />
 
       <div className="d-flex justify-content-around">
-        <a href="/">Forgot password?</a>
+        <Link to="/">Olvidaste tu contraseña?</Link>
       </div>
 
-      <button className="btn btn-info btn-block my-4">Sign in</button>
+      <button
+        style={{ backgroundColor: "rgb(0, 174, 239)" }}
+        className="btn btn-info btn-block my-4"
+      >
+        Iniciar Sesión
+      </button>
 
       <p>
-        Not a member? <a href="/">Register</a>
+        No eres miembro? <Link to="/register/parent">Registrate</Link>
       </p>
 
-      <p>or sign in with:</p>
+      <p>Inicia sesión con tus redes</p>
 
-      <a href="/" className="mx-2" role="button">
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-twitter light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-linkedin-in light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-github light-blue-text"></i>
-      </a>
+      </Link>
     </form>
   );
 };

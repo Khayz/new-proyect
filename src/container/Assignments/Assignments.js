@@ -10,11 +10,15 @@ const Assignments = (props) => {
     { materia: "Historia" },
     { materia: "Matematicas" },
     { materia: "Ciencias" },
+    { materia: "Musica" },
   ];
 
   return (
-    <div>
-      <h1>Calificaciones</h1>
+    <>
+      <div className="assignment-info">
+        <h1>Calificaciones</h1>
+        <p>Aqui podras ver el progreso de tu hijo en cada materia.</p>
+      </div>
       <div className="assignments">
         {morriyos.map((morriyo) => (
           <div className="childCard">
@@ -28,7 +32,7 @@ const Assignments = (props) => {
       <Switch>
         <Route path={`${props.match.url}/charts`} component={childChart} />
       </Switch>
-    </div>
+    </>
   );
 };
 

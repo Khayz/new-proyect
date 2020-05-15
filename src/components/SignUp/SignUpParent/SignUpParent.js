@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../../../redux/actions/index.actions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 function SignUpParent({ registerUser }) {
   const [register, setRegister] = useState({
@@ -28,11 +29,12 @@ function SignUpParent({ registerUser }) {
 
   return (
     <form
+      style={{ minHeight: "70vh" }}
       onSubmit={handleSubmitRegister}
       className="Register text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Sign up parent</p>
+      <p className="h4 mb-4">Regístrate como padre</p>
 
       <div className="form-row mb-4">
         <div className="col">
@@ -42,7 +44,7 @@ function SignUpParent({ registerUser }) {
             name="firstName"
             id="defaultRegisterFormFirstName"
             className="form-control"
-            placeholder="First name"
+            placeholder="Nombre"
           />
         </div>
         <div className="col">
@@ -52,7 +54,7 @@ function SignUpParent({ registerUser }) {
             name="lastName"
             id="defaultRegisterFormLastName"
             className="form-control"
-            placeholder="Last name"
+            placeholder="Apellido"
           />
         </div>
       </div>
@@ -63,7 +65,7 @@ function SignUpParent({ registerUser }) {
         name="email"
         id="defaultRegisterFormEmail"
         className="form-control mb-4"
-        placeholder="E-mail"
+        placeholder="Correo electronico"
       />
 
       <input
@@ -72,14 +74,14 @@ function SignUpParent({ registerUser }) {
         name="password"
         id="defaultRegisterFormPassword"
         className="form-control"
-        placeholder="Password"
+        placeholder="Contraseña"
         aria-describedby="defaultRegisterFormPasswordHelpBlock"
       />
       <small
         id="defaultRegisterFormPasswordHelpBlock"
         className="form-text text-muted mb-4"
       >
-        At least 8 characters and 1 digit
+        Al menos 8 caracteres y 1 digito
       </small>
 
       <input
@@ -88,7 +90,7 @@ function SignUpParent({ registerUser }) {
         name="phone"
         id="defaultRegisterPhonePassword"
         className="form-control"
-        placeholder="Phone number"
+        placeholder="Numero Telefonico"
         aria-describedby="defaultRegisterFormPhoneHelpBlock"
       />
       <small
@@ -96,31 +98,36 @@ function SignUpParent({ registerUser }) {
         className="form-text text-muted mb-4"
       ></small>
 
-      <button className="btn btn-info my-4 btn-block">Sign in</button>
+      <button
+        style={{ backgroundColor: "rgb(0, 174, 239)" }}
+        className="btn btn-info my-4 btn-block"
+      >
+        Regístrate
+      </button>
 
-      <p>or sign up with:</p>
+      <p>Regístrate con tus redes</p>
 
-      <a href="/" className="mx-2" role="button">
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-twitter light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-linkedin-in light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-github light-blue-text"></i>
-      </a>
+      </Link>
 
       <hr />
 
       <p>
-        By clicking
-        <em>Sign up</em> you agree to our
-        <a href="/" target="_blank">
-          terms of service
-        </a>
+        Eres profesor? regístrate como un
+        <Link style={{ fontSize: "18px" }} to="/register/teacher">
+          {" "}
+          Profesor
+        </Link>
       </p>
     </form>
   );
