@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
+import { connect, useStore } from 'react-redux';
 import { v1 } from 'uuid';
 
 import './TeacherPortfolio.scss';
 
 import ModalAssignment from './ModalAssignment/ModalAssignment';
 
-const TeacherPortfolio = ({ students, assignments }) => {
+const TeacherPortfolio = ({ students, assignments, user }) => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const TeacherPortfolio = ({ students, assignments }) => {
             <h2>Asignaturas</h2>
             <i
               onClick={() => setOpenModal(true)}
-              className='fas fa-plus-circle'
+              className='fas fa-plus-circle mx-2'
               aria-hidden='true'></i>
           </div>
           <div className='assignments-container'>
@@ -47,31 +47,47 @@ const TeacherPortfolio = ({ students, assignments }) => {
           ))}
         </article>
       </div>
-      <article className='portfolio-info'>
-        <h2>Bienvenido a tus portafolios</h2>
-        <p>
-          Un lugar para completar las actividades y compartirlas a tus
-          estudiantes y sus padres.
-        </p>
+      <article className='portfolio-info d-flex flex-wrap p-5'>
         {user.tasks.map((task) => {
-          return (
-            <form key={v1()}>
-              <h1>{task.title}</h1>
-              <figure>
-                {Object.keys(task.files)
-                  .filter((file) => task.files[file])
-                  .map((file) => (
-                    <img key={v1()} src={task.files[file]} alt='task' />
-                  ))}
-              </figure>
-              <input type='number' placeholder='Calificacion*' />
-              <select>
-                <option>Pendiente</option>
-                <option>Resuelta</option>
-              </select>
-              <button>Enviar</button>
-            </form>
-          );
+          console.log(task);
+          if (!user.tasks.length == 0) {
+            return (
+              <div class='portfolio-container d-flex justify-content-center shadow-lg rounded m-3  '>
+                <form key={v1()}>
+                  <div className='task-file-container d-flex justify-content-center align-items-center'>
+                    {Object.keys(task.files)
+                      .filter((file) => task.files[file])
+                      .map((file) => (
+                        <img key={v1()} src={task.files[file]} alt='task' />
+                      ))}
+                  </div>
+                  <div className='card-body '>
+                    <h5 className='card-title'>{task.title}</h5>
+                    <div className='card-content d-flex flex-wrap justify-content-around'>
+                      <input type='number' placeholder='Calificacion*' />
+                      <select>
+                        <option>Pendiente</option>
+                        <option>Resuelta</option>
+                      </select>
+                      <button className='btn btn-primary m-2'>Enviar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            );
+          }
+
+          if (user.tasks.length == 0) {
+            return (
+              <div>
+                <h2>Bienvenido a tus portafolios</h2>
+                <p>
+                  Un lugar para completar las actividades y compartirlas a tus
+                  estudiantes y sus padres.
+                </p>
+              </div>
+            );
+          }
         })}
       </article>
     </section>

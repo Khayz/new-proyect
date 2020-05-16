@@ -6,17 +6,12 @@
   width: 100%;
   min-height: 90vh;
   margin: 130px auto 0;
-  .portfolio-info {
-    margin: auto;
-    color: #423e5d;
-    text-align: center;
-  }
 
   .sideBoard-activities {
     margin-top: 15px;
     padding: 2em;
     h4 {
-      font-size: 1em;
+      font-size: 0.95em;
     }
     h4:hover {
       background-color: $blue-hover;
@@ -62,6 +57,43 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+    }
+  }
+
+  .portfolio-info {
+    margin: auto;
+    color: #423e5d;
+    text-align: center;
+    .portfolio-container {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      form {
+        width: 100%;
+        max-width: none;
+        .card-content {
+          input,
+          select {
+            padding: 0.5em;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+        .task-file-container {
+          width: 100%;
+          max-width: 350px;
+          padding: 1em;
+          img {
+            height: 100px;
+            width: 100px;
+          }
+          &:hover {
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(2);
+          }
+        }
+      }
     }
   }
 }
