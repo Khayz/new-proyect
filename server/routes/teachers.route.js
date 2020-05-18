@@ -12,7 +12,15 @@ router.put('/teacher', async (req, res) => {
 });
 
 router.post('/teacher', async (req, res) => {
-	const { studentID, teacherID, calification, status, title, date } = req.body;
+	const {
+		studentID,
+		teacherID,
+		calification,
+		status,
+		title,
+		date,
+		groupPostID,
+	} = req.body;
 	try {
 		const homework = new HomeWork({
 			studentID,
@@ -21,6 +29,7 @@ router.post('/teacher', async (req, res) => {
 			status,
 			title,
 			date,
+			groupPostID,
 		});
 		const savedHomeWork = await homework.save();
 		const teacher = await Teachers.findOne({ _id: teacherID });

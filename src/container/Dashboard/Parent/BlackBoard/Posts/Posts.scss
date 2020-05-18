@@ -1,0 +1,58 @@
+$otherColor: #00a4e4;
+
+.Students_Posts {
+	height: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	overflow-y: scroll;
+	.Students_Post {
+		width: 60%;
+		min-width: 320px;
+		margin: 10px;
+		padding: 10px;
+		border-radius: 8px;
+		background-color: #fff;
+		-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
+		-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
+		box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
+		h2 {
+			text-align: justify;
+			color: #202020;
+			width: 320px;
+			border-radius: 12px;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		p {
+			text-transform: uppercase;
+			color: #202329;
+			span {
+				text-transform: lowercase;
+			}
+		}
+		button {
+			background-color: #fff;
+			padding: 5px 10px;
+			background-color: $otherColor;
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 5px;
+		}
+	}
+
+	.HomeWork_pending {
+		background-color: #ffd54f;
+	}
+
+	.HomeWork_success {
+		background-color: $otherColor;
+		h2 {
+			color: #fff;
+		}
+		p {
+			color: #fff;
+		}
+	}
+}

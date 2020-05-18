@@ -1,31 +1,31 @@
-import React from "react";
-import { v1 } from "uuid";
+import React from 'react';
+import { v1 } from 'uuid';
 
-import "./Board.scss";
+import './Board.scss';
 
 const Board = () => {
-  const BoardItem = [
-    {
-      name: "Libros",
-      url: "",
-    },
-    {
-      name: "Avisos",
-      url: "",
-    },
-  ];
+	const BoardItem = [
+		{
+			name: 'Libros',
+			url: '',
+		},
+		{
+			name: 'Avisos',
+			url: '',
+		},
+	];
 
-  return (
-    <div className="Board">
-      {BoardItem.map((board) => {
-        return (
-          <div className="boardItem" key={v1()}>
-            <a href="/">{board.name}</a>
-          </div>
-        );
-      })}
-    </div>
-  );
+	return (
+		<div className='Board'>
+			{BoardItem.map((board) => {
+				return (
+					<div className='Board_Item' key={v1()}>
+						<a href='/'>{board.name}</a>
+					</div>
+				);
+			})}
+		</div>
+	);
 };
 
 export default Board;

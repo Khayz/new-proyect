@@ -16,18 +16,18 @@ import Spinner from '../../../../components/Ui/Spinner/Spinner';
 const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 	return (
 		<>
-			<div className={styles.Childs}>
+			<div className={styles.Parent}>
 				<figure>
 					<img src={avatarChild} alt='avatarChild' />
 				</figure>
-				<div className={styles.child}>
+				<div className={styles.Add_Child}>
 					Añadir Hijo
 					<ModalAddChild parentID={user._id} />
 				</div>
 			</div>
-			<div className={styles.ChildList}>
+			<div className={styles.Child_List}>
 				{loadChilds ? (
-					<article className={styles.loading_list_spinner}>
+					<article className={styles.Loading_List}>
 						<Spinner />
 					</article>
 				) : (
@@ -38,7 +38,7 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 								setActualChild(child);
 							}}
 							key={v1()}
-							className={styles.child}>
+							className={styles.Child}>
 							<Avatar name={child.firstName + ' ' + child.lastName} />
 							<div className={styles.user}>
 								<h2>

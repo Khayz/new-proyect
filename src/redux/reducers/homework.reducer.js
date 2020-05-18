@@ -11,7 +11,7 @@ export const homeworkReducer = (state = initialState, action) => {
 		case types.GET_HOMEWORK_SUCCESS:
 			return {
 				...state,
-				homework: action.homework,
+				homework: action.data,
 				loading: null,
 			};
 
@@ -19,6 +19,13 @@ export const homeworkReducer = (state = initialState, action) => {
 			return {
 				...state,
 				loading: true,
+			};
+
+		case types.UPDATED_HOMEWORK_SUCCESS:
+			return {
+				...state,
+				homework: action.data,
+				loading: null,
 			};
 
 		default:
