@@ -3,6 +3,8 @@ import "./Assignments.scss";
 import { Link, Switch, Route } from "react-router-dom";
 import childChart from "./ChartChild/ChartChild";
 
+import { v1 } from "uuid";
+
 const Assignments = (props) => {
   const morriyos = [
     { materia: "Español" },
@@ -21,7 +23,7 @@ const Assignments = (props) => {
       </div>
       <div className="assignments">
         {morriyos.map((morriyo) => (
-          <div className="childCard">
+          <div key={v1()} className="childCard">
             <h2>{morriyo.materia}</h2>
             <Link to={`${props.match.url}/charts`} className="button">
               Ver Calificaciones
