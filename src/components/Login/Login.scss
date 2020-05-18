@@ -3,5 +3,13 @@
   max-width: 700px;
   min-width: 325px;
   margin: auto;
-  min-height: 70vh;
+}
+
+.loading_spinner {
+  width: 150px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }

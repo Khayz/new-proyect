@@ -26,27 +26,30 @@ const ModalClass = ({ addGroup, close }) => {
   };
 
   return ReactDOM.createPortal(
-    <div className="modal_class">
-      <form className="modal_form">
-        <div className="form_title">
+    <div className="modal_class d-flex justify-content-center align-items-center">
+      <form className="modal_form d-flex flex-column">
+        <div className="form_title d-flex justify-content-around">
           <h2>Crear Clase</h2>
           <i onClick={() => close(false)} class="fas fa-times-circle"></i>
         </div>
-        <input
-          onChange={handleGroup}
-          name="cct"
-          value={group.cct}
-          type="text"
-          placeholder="CCT*"
-        />
-        <input
-          onChange={handleGroup}
-          name="group"
-          value={group.group}
-          type="text"
-          placeholder="Grupo*"
-        />
-        <button onClick={handleSubmitGroup}>Crear</button>
+        <hr />
+        <div className="d-flex flex-column align-items-center ">
+          <input
+            onChange={handleGroup}
+            name="cct"
+            value={group.cct}
+            type="text"
+            placeholder="CCT*"
+          />
+          <input
+            onChange={handleGroup}
+            name="group"
+            value={group.group}
+            type="text"
+            placeholder="Grupo*"
+          />
+          <button onClick={handleSubmitGroup}>Crear</button>
+        </div>
       </form>
     </div>,
     document.getElementById("modal")

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/actions/index.actions";
-
-import "./Login.scss";
 import { Link } from "react-router-dom";
 
-const Login = ({ loginUser }) => {
+import "./Login.scss";
+
+import Spinner from "../Ui/Spinner/Spinner";
+
+const Login = ({ loginUser, loading }) => {
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -24,13 +26,17 @@ const Login = ({ loginUser }) => {
     loginUser(login);
   };
 
-  return (
+  return loading ? (
+    <section className="loading_spinner">
+      <Spinner />
+    </section>
+  ) : (
     <form
       onSubmit={handleSubmitLogin}
       className="FormLogin text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Inicia Sesión</p>
+      <p className="h4 mb-4">Sign in</p>
 
       <input
         onChange={handleLoginData}
@@ -38,7 +44,7 @@ const Login = ({ loginUser }) => {
         name="email"
         id="defaultLoginFormEmail"
         className="form-control mb-4"
-        placeholder="Correo Electronico"
+        placeholder="E-mail"
       />
 
       <input
@@ -47,38 +53,33 @@ const Login = ({ loginUser }) => {
         name="password"
         id="defaultLoginFormPassword"
         className="form-control mb-4"
-        placeholder="Contraseña"
+        placeholder="Password"
       />
 
       <div className="d-flex justify-content-around">
-        <Link to="/">Olvidaste tu contraseña?</Link>
+        <a href="/">Forgot password?</a>
       </div>
 
-      <button
-        style={{ backgroundColor: "rgb(0, 174, 239)" }}
-        className="btn btn-info btn-block my-4"
-      >
-        Iniciar Sesión
-      </button>
+      <button className="btn btn-info btn-block my-4">Sign in</button>
 
       <p>
-        No eres miembro? <Link to="/register/parent">Registrate</Link>
+        Not a member? <Link to="/register/parent">Register</Link>
       </p>
 
-      <p>Inicia sesión con tus redes</p>
+      <p>or sign in with:</p>
 
-      <Link to="/" className="mx-2" role="button">
+      <a href="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>
-      </Link>
-      <Link to="/" className="mx-2" role="button">
+      </a>
+      <a href="/" className="mx-2" role="button">
         <i className="fab fa-twitter light-blue-text"></i>
-      </Link>
-      <Link to="/" className="mx-2" role="button">
+      </a>
+      <a href="/" className="mx-2" role="button">
         <i className="fab fa-linkedin-in light-blue-text"></i>
-      </Link>
-      <Link to="/" className="mx-2" role="button">
+      </a>
+      <a href="/" className="mx-2" role="button">
         <i className="fab fa-github light-blue-text"></i>
-      </Link>
+      </a>
     </form>
   );
 };
@@ -87,4 +88,8 @@ const mapDispatchToProps = {
   loginUser,
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+const mapStateToProps = (state) => ({
+  loading: state.auth.loading,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

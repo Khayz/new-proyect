@@ -61,8 +61,8 @@ function App({ authUser, user, getChilds, getGroups }) {
         />
         <Footer />
         <ToastContainer
-          autoClose={5000}
-          hideProgressBar={false}
+          autoClose={3000}
+          hideProgressBar={true}
           draggable
           position="top-right"
         />

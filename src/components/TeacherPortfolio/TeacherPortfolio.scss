@@ -1,36 +1,41 @@
+@import "../../Assets/scss/colors";
+
 .Teacher-Portfolio {
   display: flex;
   justify-content: center;
   width: 100%;
   min-height: 90vh;
   margin: 130px auto 0;
-  .portfolio-info {
-    margin: auto;
-    height: 400px;
-    color: #423e5d;
-    text-align: center;
-  }
 
   .sideBoard-activities {
     margin-top: 15px;
-    padding: 20px;
+    padding: 2em;
+    h4 {
+      font-size: 0.95em;
+    }
+    h4:hover {
+      background-color: $blue-hover;
+      border-radius: 10px;
+      padding: 1em;
+      cursor: pointer;
+    }
 
     h2 {
       font-size: 25px;
       color: #423e5d;
+      margin-bottom: 0px;
     }
-    button {
-      background-color: #00aeef;
-      color: #fff;
+    i {
       border: none;
-      padding: 5px;
-      border-radius: 5px;
+      border-radius: 50%;
       transition: 0.3s ease-out;
       outline: none;
-    }
-    button:hover {
-      background-color: #fff;
       color: #00aeef;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    i:hover {
+      color: rgba(0, 174, 239, 0.5);
     }
 
     .activities {
@@ -52,19 +57,42 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      h4 {
-        font-size: 22px;
-        margin: 10px;
-        padding: 7px;
-        transition: 0.3s ease-out;
-      }
+    }
+  }
 
-      h4:hover {
-        background-color: #00aeef;
-        color: #fff;
-        border: 1px solid #fff;
-        border-radius: 50px;
-        cursor: pointer;
+  .portfolio-info {
+    margin: auto;
+    color: #423e5d;
+    text-align: center;
+    .portfolio-container {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      form {
+        width: 100%;
+        max-width: none;
+        .card-content {
+          input,
+          select {
+            padding: 0.5em;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+        .task-file-container {
+          width: 100%;
+          max-width: 350px;
+          padding: 1em;
+          img {
+            height: 100px;
+            width: 100px;
+          }
+          &:hover {
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(2);
+          }
+        }
       }
     }
   }

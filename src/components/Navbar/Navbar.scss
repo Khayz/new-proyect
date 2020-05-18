@@ -4,12 +4,16 @@
 }
 
 .header .navbar {
-  background-color: #fff !important;
+  background-color: #fd5c63 !important;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+  .navbar-brand {
+    text-transform: uppercase;
+  }
 }
 
 .header {
   a {
+    color: #fff;
     font-weight: normal;
   }
 }

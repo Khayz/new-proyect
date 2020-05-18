@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NavGuest = ({ activeLink }) => {
+const NavGuest = () => {
   return (
     <header className="header">
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/" exact activeStyle={activeLink}>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <NavLink className="navbar-brand" to="/">
           <i className="far fa-address-book"></i> Home School
         </NavLink>
         <button
@@ -23,22 +23,12 @@ const NavGuest = ({ activeLink }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/d"
-                exact
-                activeStyle={activeLink}
-              >
+              <NavLink className="nav-link" to="/d">
                 Contacto
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/login"
-                exact
-                activeStyle={activeLink}
-              >
+              <NavLink className="nav-link" to="/login">
                 Iniciar Sesion
               </NavLink>
             </li>
@@ -56,16 +46,14 @@ const NavGuest = ({ activeLink }) => {
               </NavLink>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <NavLink
-                  exact
-                  activeStyle={activeLink}
+                  style={{ color: "#000" }}
                   className="dropdown-item"
                   to="/register/teacher"
                 >
                   Profesor
                 </NavLink>
                 <NavLink
-                  exact
-                  activeStyle={activeLink}
+                  style={{ color: "#000" }}
                   className="dropdown-item"
                   to="/register/parent"
                 >
