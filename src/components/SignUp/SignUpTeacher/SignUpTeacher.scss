@@ -1,4 +1,4 @@
-.FormLogin {
+.FormRegister {
   display: block;
   // width: 50%;
   max-width: 600px;
@@ -10,20 +10,19 @@
   border-radius: 20px;
   font-family: "Roboto", sans-serif;
   // min-height: 70vh;
-  input {
+  .form-control {
     border-radius: 8px;
     border-style: none;
     outline: none;
   }
-  button {
+  .register-btn {
     border-radius: 8px;
     border-style: none;
     background-color: rgb(0, 174, 239);
     transition-duration: 0.2s;
     outline: none;
   }
-  button:hover {
-    opacity: 1;
+  .register-btn:hover {
     color: white;
     background-color: #c71585;
   }

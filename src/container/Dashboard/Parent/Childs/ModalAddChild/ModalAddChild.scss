@@ -5,3 +5,24 @@
   align-items: center;
   height: 300px;
 }
+
+.connect-info {
+  color: #363636;
+  font-size: 18px;
+}
+.modal-dialog {
+  .add-button {
+    background-color: #00aeef;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    outline: none;
+    transition: 0.3s ease-out;
+  }
+  .add-button:hover {
+    background-color: #c71585;
+
+    transition-duration: 0.2s;
+    color: white;
+  }
+}

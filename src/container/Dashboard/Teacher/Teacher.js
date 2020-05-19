@@ -57,10 +57,12 @@ const Teacher = ({ user, groups, setCurrentGroup }) => {
         <button>Cambiar Escuela</button>
         <hr />
         <div>
-          <h2>Aprendizaje Remoto con <br /> HOME-SCHOOL</h2>
+          <h2>
+            Aprendizaje Remoto con <br /> HOME-SCHOOL
+          </h2>
           <p>
-            Todo lo que tu necesitas para mantenerte conectado con tus estudiantes y
-            sus familiares, donde quieran que estén.
+            Todo lo que tu necesitas para mantenerte conectado con tus
+            estudiantes y sus familiares, donde quieran que estén.
           </p>
         </div>
         <hr />
@@ -73,7 +75,7 @@ const Teacher = ({ user, groups, setCurrentGroup }) => {
         </div>
         <button>Recursos Disponibles</button>
       </article>
-    </section >
+    </section>
   );
 };
 

@@ -1,63 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getHomework } from '../../../../redux/actions/index.actions';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { getHomework } from "../../../../redux/actions/index.actions";
 
-import './BlackBoard.scss';
-import Pikachu from '../../../../Assets/Images/pikachu.png';
+import "./BlackBoard.scss";
+import Pikachu from "../../../../Assets/Images/pikachu.png";
 
-import Posts from './Posts/Posts';
-import ChildTasks from './ChildTasks/ChildTasks';
-import Spinner from '../../../../components/Ui/Spinner/Spinner';
+import Posts from "./Posts/Posts";
+import ChildTasks from "./ChildTasks/ChildTasks";
+import Spinner from "../../../../components/Ui/Spinner/Spinner";
 
 const BlackBoard = ({ child, posts, loadingPosts, homework, getHomework }) => {
-	const [showPosts, setShowPosts] = useState(true);
+  const [showPosts, setShowPosts] = useState(true);
 
-	useEffect(() => {
-		getHomework(child._id);
-	}, [getHomework, child]);
+  useEffect(() => {
+    getHomework(child._id);
+  }, [getHomework, child]);
 
-	let Group_Posts = (
-		<div className='Board_Guest'>
-			<h1>Has click en alguno de tus hijos para ver sus avances!</h1>
-			<figure>
-				<img src={Pikachu} alt='Pikachu' />
-			</figure>
-		</div>
-	);
+  let Group_Posts = (
+    <div className="Board_Guest">
+      <h1>Has click en alguno de tus hijos para ver sus avances!</h1>
+      <figure>
+        <img src={Pikachu} alt="Pikachu" />
+      </figure>
+    </div>
+  );
 
-	if (!loadingPosts && posts.length > 0 && showPosts) {
-		Group_Posts = <Posts homework={homework} posts={posts} />;
-	} else if (loadingPosts) {
-		Group_Posts = (
-			<div className='Loading_Posts'>
-				<Spinner />
-			</div>
-		);
-	} else if (!loadingPosts && posts.length > 0 && !showPosts) {
-		Group_Posts = <ChildTasks />;
-	}
+  if (!loadingPosts && posts.length > 0 && showPosts) {
+    Group_Posts = <Posts homework={homework} posts={posts} />;
+  } else if (loadingPosts) {
+    Group_Posts = (
+      <div className="Loading_Posts">
+        <Spinner />
+      </div>
+    );
+  } else if (!loadingPosts && posts.length > 0 && !showPosts) {
+    Group_Posts = <ChildTasks />;
+  }
 
-	return (
-		<div className='Black_Board'>
-			{posts.length > 0 && (
-				<nav>
-					<button onClick={() => setShowPosts(true)}>Publicaciones</button>
-					<button onClick={() => setShowPosts(false)}>Materias</button>
-				</nav>
-			)}
-			{Group_Posts}
-		</div>
-	);
+  return (
+    <div className="Black_Board">
+      {posts.length > 0 && (
+        <nav>
+          <button onClick={() => setShowPosts(true)}>Publicaciones</button>
+          <button onClick={() => setShowPosts(false)}>Materias</button>
+        </nav>
+      )}
+      {Group_Posts}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({
-	posts: state.posts.posts,
-	loadingPosts: state.posts.loading,
-	homework: state.homework.homework,
-	child: state.childs.actualChild,
+  posts: state.posts.posts,
+  loadingPosts: state.posts.loading,
+  homework: state.homework.homework,
+  child: state.childs.actualChild,
 });
 const mapDispatchToProps = {
-	getHomework,
+  getHomework,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlackBoard);

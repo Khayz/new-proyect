@@ -5,8 +5,8 @@ const About = () => {
   return (
     <section id="about" className="About">
       <h1>
-        Home School conecta a profesores, <br /> alumnos y padres para
-        construir <br /> comunidades asombrosas en el aula.
+        Home School conecta a profesores, <br /> alumnos y padres para construir
+        <br /> comunidades asombrosas en el aula.
       </h1>
       <div className="card-group cards">
         <div className="card">
@@ -36,7 +36,9 @@ const About = () => {
           <i className="fas fa-book-open"></i>
 
           <div className="card-body">
-            <h5 className="card-title">Comparte momentos con padres de familia</h5>
+            <h5 className="card-title">
+              Comparte momentos con padres de familia
+            </h5>
             <p className="card-text">
               Aumenta el compromiso de los padres compartiendo fotos y vídeos de
               maravillosos momentos del aula.
