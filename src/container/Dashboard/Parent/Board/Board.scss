@@ -1,17 +1,23 @@
-$principalColor: #0099cc;
-$secondaryColor: #ff9933;
+$principalColor: #00aeef;
+$otherColor: #00a4e4;
 
 .Board {
-  .boardItem {
-    margin: 10px 0;
+  .Board_Item {
     border-radius: 8px;
-    width: 325px;
-    height: 200px;
+    margin: 20px;
+    width: 350px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    border: 1px solid $principalColor;
+    background-color: $otherColor;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.17);
+    a {
+      color: #fff;
+      font-size: 22px;
+    }
   }
 }
 

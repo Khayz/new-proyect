@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import { v1 } from "uuid";
-import { getHomework } from "../../../../../redux/actions/homework.action";
+import { connect } from "react-redux";
 
 import "./ChildTasks.scss";
 
 import Spinner from "../../../../../components/Ui/Spinner/Spinner";
 
-const ChildTasks = ({ child, homework, getHomework, isLoading }) => {
-  useEffect(() => {
-    getHomework(child._id);
-  }, [getHomework, child]);
-
+const ChildTasks = ({ homework, isLoading }) => {
   return (
     <section className="ChildTasks">
       {isLoading ? (
@@ -47,15 +42,10 @@ const ChildTasks = ({ child, homework, getHomework, isLoading }) => {
 
 const mapStateToProps = (state) => ({
   homework: state.homework.homework,
-  child: state.childs.actualChild,
   isLoading: state.homework.loading,
 });
 
-const mapDispatchToProps = {
-  getHomework,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ChildTasks);
+export default connect(mapStateToProps)(ChildTasks);
 
 /* <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>

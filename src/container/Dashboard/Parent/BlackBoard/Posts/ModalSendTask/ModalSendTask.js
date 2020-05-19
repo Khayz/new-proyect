@@ -26,6 +26,7 @@ const ModalClass = ({ close, child, task, sendTask }) => {
 			teacherID: task.teacherID,
 			calification: '',
 			status: 'Pendiente',
+			groupPostID: task._id,
 		});
 	};
 

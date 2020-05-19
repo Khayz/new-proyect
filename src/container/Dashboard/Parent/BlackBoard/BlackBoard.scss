@@ -1,67 +1,46 @@
-$principalColor: #146eb4;
-$secondaryColor: #ff9900;
+$otherColor: #00a4e4;
 
-.blackboard {
-  border: 1px solid red;
+.Black_Board {
+  border-radius: 12px;
   width: 50%;
-  height: 730px;
-  margin-top: 50px;
-  background-color: #fff;
+  height: 700px;
+  margin: 50px;
   nav {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: $principalColor;
     button {
-      outline: none;
-      color: #fff;
-      cursor: pointer;
-      border: none;
+      margin: 10px;
+      width: 25%;
       padding: 10px;
-      background-color: inherit;
-      font-size: 24px;
+      background-color: #fff;
+      color: $otherColor;
+      border-radius: 20px;
+      border: 1px solid $otherColor;
+      outline: none;
+      cursor: pointer;
     }
   }
 }
 
-.BoardGuest {
-  margin: 20px;
-  border: 2px solid $principalColor;
-  border-radius: 9px;
-  width: 600px;
-  height: 800px;
+@mixin Load_Guest {
   background-color: #fff;
+  border-radius: 9px;
+  width: 100%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.postsLoading {
-  margin: 20px;
-  border: 2px solid $principalColor;
-  border-radius: 9px;
-  width: 600px;
-  height: 600px;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
-@media (max-width: 1080px) {
-  .BoardGuest {
-    margin: 50px auto;
+.Board_Guest {
+  @include Load_Guest();
+  h1 {
+    text-transform: uppercase;
   }
 }
 
-@media (max-width: 820px) {
-  .BoardGuest {
-    width: 600px;
-    margin: 50px auto;
-  }
-}
-
-@media (max-width: 600px) {
-  .BoardGuest {
-    width: 320px;
-  }
+.Loading_Posts {
+  @include Load_Guest();
 }

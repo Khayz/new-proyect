@@ -11,4 +11,15 @@ router.get('/homework', async (req, res) => {
 	}
 });
 
+router.put('/homework', async (req, res) => {
+	const { id, calification, status, userID } = req.body;
+	try {
+		await HomeWork.updateOne({ _id: id }, { $set: { calification, status } });
+		const homework = await HomeWork.find({ studentID: userID });
+		res.send(homework);
+	} catch (error) {
+		res.send({ message: error.message });
+	}
+});
+
 module.exports = router;

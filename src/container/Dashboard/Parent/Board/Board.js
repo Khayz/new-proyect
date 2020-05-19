@@ -19,7 +19,7 @@ const Board = () => {
     <div className="Board">
       {BoardItem.map((board) => {
         return (
-          <div className="boardItem" key={v1()}>
+          <div className="Board_Item" key={v1()}>
             <a href="/">{board.name}</a>
           </div>
         );
