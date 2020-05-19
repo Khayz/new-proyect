@@ -14,18 +14,23 @@
     height: 200px;
     text-align: center;
     padding: 10px;
-    background-color: #fff;
+    background-color: #f0efef;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
     .form_title {
       display: flex;
+      color: #686868;
       justify-content: space-evenly;
       align-items: center;
-      border-bottom: 1px solid #202329;
+      border-bottom: 2px solid #686868;
+      margin-bottom: 5px;
       h2 {
         font-size: 25px;
       }
       i {
         font-size: 25px;
         padding-bottom: 10px;
+        align-self: right;
         cursor: pointer;
         transition: 0.3s ease-out;
       }
@@ -35,6 +40,29 @@
     }
     input {
       margin: 10px;
+      padding-left: 10px;
+      border-radius: 10px;
+      border-style: unset;
+      border-width: 1px;
+      opacity: 0.5;
+      outline: none;
+      // border-color: #696969;
+    }
+    button {
+      background-color: rgb(0, 174, 239);
+      color: white;
+      border-radius: 10px;
+      margin-top: 5px;
+      border-style: unset;
+    }
+    button:hover {
+      //options
+      // background-color: rgb(46, 139, 87);
+      // background-color: rgb(30, 144, 255);
+      // background-color: rgb(34, 139, 34);
+      background-color: #c71585;
+      transition-duration: 0.5s;
+      color: white;
     }
   }
 }

@@ -52,15 +52,15 @@ const Teacher = ({ user, groups, setCurrentGroup }) => {
         <h2>Benito Juarez, 219</h2>
         <p>
           Tu escuela no tiene profesor de nuestra app <span>HOME-SCHOOL</span>{" "}
-          todavia, verificalo aqui. Manda un email para ayudarte.
+          todavía, verifícalo aquí. Manda un email para ayudarte.
         </p>
-        <button>Cambiar escuela</button>
+        <button>Cambiar Escuela</button>
         <hr />
         <div>
-          <h2>Aprendizaje Remoto con HOME-SCHOOL</h2>
+          <h2>Aprendizaje Remoto con <br /> HOME-SCHOOL</h2>
           <p>
-            Todo lo que tu nececitas para estar conectado con los estudiantes y
-            sus familiares, donde quieran que esten.
+            Todo lo que tu necesitas para mantenerte conectado con tus estudiantes y
+            sus familiares, donde quieran que estén.
           </p>
         </div>
         <hr />
@@ -71,9 +71,9 @@ const Teacher = ({ user, groups, setCurrentGroup }) => {
             trabajos.
           </p>
         </div>
-        <button>Ver todos los recursos</button>
+        <button>Recursos Disponibles</button>
       </article>
-    </section>
+    </section >
   );
 };
 

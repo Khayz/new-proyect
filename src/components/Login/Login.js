@@ -29,7 +29,7 @@ const Login = ({ loginUser }) => {
       className="FormLogin text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Sign in</p>
+      <p className="h4 mb-4">Iniciar Sesión</p>
 
       <input
         onChange={handleLoginData}
@@ -46,20 +46,20 @@ const Login = ({ loginUser }) => {
         name="password"
         id="defaultLoginFormPassword"
         className="form-control mb-4"
-        placeholder="Password"
+        placeholder="Contraseña"
       />
 
       <div className="d-flex justify-content-around">
-        <a href="/">Forgot password?</a>
+        <a href="/">¿Olvidaste tu contraseña?</a>
       </div>
 
-      <button className="btn btn-info btn-block my-4">Sign in</button>
+      <button className="btn btn-info btn-block my-4">Iniciar Sesión</button>
 
       <p>
-        Not a member? <a href="/">Register</a>
+        ¿No eres miembro? <br /> <a href="/">¡Regístrate!</a>
       </p>
 
-      <p>or sign in with:</p>
+      <p>O regístrate con:</p>
 
       <a href="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>

@@ -1,0 +1,50 @@
+.blackboard {
+  nav {
+    display: flex;
+    width: 600px;
+    margin: 30px auto 0;
+    justify-content: space-around;
+    button {
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      background-color: #2f89fc;
+      padding: 10px;
+      font-size: 24px;
+    }
+  }
+}
+
+.BoardGuest {
+  margin: 20px;
+  border: 2px solid #2f89fc;
+  border-radius: 9px;
+  width: 600px;
+  height: 600px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.postsLoading {
+  margin: 20px;
+  border: 2px solid #2f89fc;
+  border-radius: 9px;
+  width: 600px;
+  height: 600px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .blackboard {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
