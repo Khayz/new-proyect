@@ -25,6 +25,13 @@ const NavContent = ({ match }) => {
 						<h4>Publicaciones</h4>
 					</NavLink>
 				</li>
+				<li>
+					<NavLink
+						activeStyle={{ color: '#363636' }}
+						to={`${match.url}/settings`}>
+						<h4>Configuraciones</h4>
+					</NavLink>
+				</li>
 			</ul>
 		</nav>
 	);

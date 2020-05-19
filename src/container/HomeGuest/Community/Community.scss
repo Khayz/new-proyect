@@ -2,6 +2,8 @@
   box-sizing: border-box;
   width: 100%;
   margin-top: 50px;
+  // font-family: 'Quicksand', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #fff;
   h3 {
     text-align: center;
@@ -111,7 +113,7 @@
     width: 80%;
     box-sizing: border-box;
     text-align: center;
-    background-image: url("../../../Assets/Images/balloons.jpg");
+    background-image: url('../../../Assets/Images/balloons.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: auto;

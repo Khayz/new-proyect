@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { setNewTask } from '../../redux/actions/index.actions';
+import { setNewTask, getPosts } from '../../redux/actions/index.actions';
 
 import Tmonster from './../../Assets/Images/monstert.svg';
 import './TeacherPost.scss';
+import { v1 } from 'uuid';
 
 const TeacherPost = ({ assignments, groupID, setNewTask }) => {
   const [post, setPost] = useState({
@@ -14,6 +15,10 @@ const TeacherPost = ({ assignments, groupID, setNewTask }) => {
     groupID,
     assignment: assignments[0],
   });
+
+  useEffect(() => {
+    getPosts(groupID);
+  }, [getPosts, groupID]);
 
   const handlePostData = (event) => {
     const { value, name } = event.target;
@@ -72,6 +77,15 @@ const TeacherPost = ({ assignments, groupID, setNewTask }) => {
           </select>
           <button className='btn btn-primary'>Publicar</button>
         </form>
+        <section>
+          {posts.map((post) => (
+            <article key={v1()}>
+              <h1>{post.title}</h1>
+              <p>{post.description}</p>
+              <p>{post.assignment}</p>
+            </article>
+          ))}
+        </section>
       </div>
     </section>
   );
@@ -80,10 +94,12 @@ const TeacherPost = ({ assignments, groupID, setNewTask }) => {
 const mapStateToProps = (state) => ({
   assignments: state.groups.currentGroup.assignments,
   groupID: state.groups.currentGroup._id,
+  posts: state.posts.posts,
 });
 
 const mapDispatchToProps = {
   setNewTask,
+  getPosts,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TeacherPost);

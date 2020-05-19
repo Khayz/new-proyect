@@ -7,14 +7,13 @@ const PrincipalContent = () => {
     <div className="PrincipalContent">
       <section className="speach">
         <h1>
-          Lleva a cada familia a <br /> tu aula
+          Home School
         </h1>
         <p>
-          ¡Únete al 95% de las escuelas en los Estados Unidos que utilizan
-          'HOME-SCHOOL' para involucrar a los niños y conectarse con las
-          familias! Gratis para los profesores, para siempre.
+          Únete a las escuelas en México que utilizan
+          Home School para organizar la vida escolar de todos los niños, padres y profesores. <br /> Gratis para profesores ¡Siempre!
         </p>
-        <h2>Inscribirse como un...</h2>
+        <h2>Inscribirse como:</h2>
         <div className="typeAccount">
           <Link className="teacher" to="/register/teacher">
             <i className="icon fas fa-chalkboard-teacher"></i>
@@ -31,7 +30,7 @@ const PrincipalContent = () => {
           title="video-opening"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/srR73KoE5P8"
+          src="https://www.youtube.com/embed/srR73KoE5P8?controls=1&autoplay=1&loop=1&showinfo=0&rel=0"
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

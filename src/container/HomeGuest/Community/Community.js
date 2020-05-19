@@ -10,21 +10,20 @@ const Community = () => {
     <section id="Community" className="Community">
       <div>
         <div className="share">
-          <h3>Comparte la historia de tu clase con las familias</h3>
+          <h3>Comparte historias de tu clase con padres de familia</h3>
           <p>
             Comparte instantáneamente fotos, vídeos y anuncios en la historia de
-            la clase o envía mensajes privados a cualquier padre
+            la clase o envía mensajes privados a cualquier padre.
           </p>
 
           <ul>
             <li>
               Los padres se unen a la clase fácilmente usando cualquier
-              dispositivo
+              dispositivo.
             </li>
-            <li>Traduce instantáneamente los mensajes a 30+ idiomas</li>
+            <li>Traduce instantáneamente mensajes a más de 30 idiomas.</li>
             <li>
-              Hazles saber a las familias que estás ocupado con las horas de "no
-              molestar"
+              Utiliza las función de "no molestar" para evitar interrupciones.
             </li>
           </ul>
           <figure>
@@ -34,11 +33,11 @@ const Community = () => {
         <hr />
         <div className="tools">
           <div className="tool-text">
-            <h3>Todas tus herramientas de clase en un solo lugar</h3>
+            <h3>Todas tus herramientas de clase en un sólo lugar</h3>
             <p>
-              Arma grupos de alumnos al azar. Muestra las instrucciones para tus
-              actividades. Pon música de fondo. Y haz muchas más cosas muy
-              pronto disponibles en el Toolkit de HOME-SCHOOL.
+              Organiza grupos de alumnos al azar. Muestra las instrucciones para tus
+              actividades. Elige música de fondo. <br />Y haz muchas más cosas muy
+              pronto disponibles en el Toolkit de Home School.
             </p>
           </div>
           <figure>
@@ -49,11 +48,11 @@ const Community = () => {
         <div className="digital-content">
           <div>
             <div>
-              <h3>Dale una voz a los alumnos con las carpetas digitales</h3>
+              <h3>Dale voz a tus alumnos con las carpetas digitales</h3>
               <p>
                 Los alumnos pueden exhibir lo que han aprendido añadiendo fotos
-                y vídeos a sus propias carpetas digitales. Disponibles para
-                Chromebooks, iPads y cualquier otro ordenador
+                y vídeos a sus propias carpetas digitales. <br /> Disponibles para
+                Chromebooks, iPads y cualquier otro ordenador.
               </p>
             </div>
           </div>
@@ -68,7 +67,7 @@ const Community = () => {
               <h3>Consolida tu comunidad escolar</h3>
               <p>
                 Los profesores, los líderes de la escuela y las familias pueden
-                asociarse en 'HOME-SCHOOL' para crear una increíble comunidad
+                asociarse en Home School para crear una increíble comunidad
                 escolar.
               </p>
             </div>
@@ -88,7 +87,7 @@ const Community = () => {
         <hr />
         <div className="plan">
           <div>
-            <h3>¿Planeando una presentación? ¡Tenemos todo cubierto!</h3>
+            <h3>¿Planeas una presentación? ¡Tenemos todo cubierto!</h3>
             <p>
               ¡Recursos gratuitos y preguntas frecuentes sobre todo lo que
               necesitas para tu presentación!
@@ -97,15 +96,15 @@ const Community = () => {
         </div>
         <hr />
         <div className="devices">
-          <h3>Cualquier aula, cualquier dispositivo. 100% gratis.</h3>
+          <h3>Cualquier aula, cualquier dispositivo. <br /> 100% gratis.</h3>
           <div className="card-group cards">
             <div className="card">
               <i className="fas fa-mobile-alt"></i>
 
               <div className="card-body">
                 <p className="card-text">
-                  Funciona en dispositivos iOS, Android, Kindle Fire y en
-                  cualquier ordenador
+                  Funciona con dispositivos iOS, Android, Kindle Fire y
+                  cualquier ordenador.
                 </p>
               </div>
             </div>
@@ -114,7 +113,7 @@ const Community = () => {
 
               <div className="card-body">
                 <p className="card-text">
-                  Construido con un diseño atento a la privacidad. ¡Lee cómo
+                  Construido con un diseño enfocado a la privacidad. ¡Lee cómo
                   mantenemos nuestra comunidad a salvo!
                 </p>
               </div>
@@ -124,7 +123,7 @@ const Community = () => {
 
               <div className="card-body">
                 <p className="card-text">
-                  'HOME-SCHOOL' siempre será gratuito para los profesores
+                  ¡Home School siempre será gratuito para los profesores!
                 </p>
               </div>
             </div>
