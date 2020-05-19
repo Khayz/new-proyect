@@ -30,7 +30,7 @@ const NavParent = ({ activeLink, logoutUser }) => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/califications">
+              <NavLink className="nav-link" to="/assignments">
                 Calificaciones
               </NavLink>
             </li>

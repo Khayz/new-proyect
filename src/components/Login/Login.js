@@ -57,27 +57,27 @@ const Login = ({ loginUser, loading }) => {
       />
 
       <div className="d-flex justify-content-around">
-        <Link href="/">¿Olvidaste tu contraseña?</Link>
+        <Link to="/">¿Olvidaste tu contraseña?</Link>
       </div>
 
       <button className="btn btn-info btn-block my-4">Iniciar Sesión</button>
 
       <p>
-        ¿No eres miembro? <br /> <Link href="/">¡Regístrate!</Link>
+        ¿No eres miembro? <br /> <Link to="/register/parent">¡Regístrate!</Link>
       </p>
 
       <p>O regístrate con:</p>
 
-      <Link href="/" className="mx-2" role="button">
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>
       </Link>
-      <Link href="/" className="mx-2" role="button">
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-twitter light-blue-text"></i>
       </Link>
-      <Link href="/" className="mx-2" role="button">
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-linkedin-in light-blue-text"></i>
       </Link>
-      <Link href="/" className="mx-2" role="button">
+      <Link to="/" className="mx-2" role="button">
         <i className="fab fa-github light-blue-text"></i>
       </Link>
     </form>
