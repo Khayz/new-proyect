@@ -35,7 +35,7 @@ function App({ authUser, user, getChilds, getGroups }) {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <Route path="/ratings" component={Assignments} />
+        <Route path="/califications" component={Assignments} />
         <Route
           exact
           path="/"

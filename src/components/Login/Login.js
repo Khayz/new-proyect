@@ -36,7 +36,7 @@ const Login = ({ loginUser, loading }) => {
       className="FormLogin text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Sign in</p>
+      <p className="h4 mb-4">Iniciar Sesión</p>
 
       <input
         onChange={handleLoginData}
@@ -53,33 +53,33 @@ const Login = ({ loginUser, loading }) => {
         name="password"
         id="defaultLoginFormPassword"
         className="form-control mb-4"
-        placeholder="Password"
+        placeholder="Contraseña"
       />
 
       <div className="d-flex justify-content-around">
-        <a href="/">Forgot password?</a>
+        <Link href="/">¿Olvidaste tu contraseña?</Link>
       </div>
 
-      <button className="btn btn-info btn-block my-4">Sign in</button>
+      <button className="btn btn-info btn-block my-4">Iniciar Sesión</button>
 
       <p>
-        Not a member? <Link to="/register/parent">Register</Link>
+        ¿No eres miembro? <br /> <Link href="/">¡Regístrate!</Link>
       </p>
 
-      <p>or sign in with:</p>
+      <p>O regístrate con:</p>
 
-      <a href="/" className="mx-2" role="button">
+      <Link href="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link href="/" className="mx-2" role="button">
         <i className="fab fa-twitter light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link href="/" className="mx-2" role="button">
         <i className="fab fa-linkedin-in light-blue-text"></i>
-      </a>
-      <a href="/" className="mx-2" role="button">
+      </Link>
+      <Link href="/" className="mx-2" role="button">
         <i className="fab fa-github light-blue-text"></i>
-      </a>
+      </Link>
     </form>
   );
 };

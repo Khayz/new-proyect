@@ -52,14 +52,17 @@ const NavTeacher = ({ activeLink, user, logoutUser }) => {
                   className="dropdown-item"
                   to="/"
                 >
-                  Cerrar Sesion
+                  Cerrar Sesión
                 </NavLink>
               </div>
             </li>
           </ul>
           <i
             style={{
-              color: "#00aeef",
+              // original
+              // color: '#00aeef',
+              // option
+              color: "#ffffff",
               fontSize: "25px",
               border: "none",
               marginRight: "30px",
@@ -68,7 +71,10 @@ const NavTeacher = ({ activeLink, user, logoutUser }) => {
           ></i>
           <button
             style={{
-              color: "#00aeef",
+              // original
+              // color: '#00aeef',
+              // option
+              color: "#ffffff",
               fontSize: "22px",
               border: "none",
               background: "transparent",

@@ -43,3 +43,12 @@ $otherColor: #00a4e4;
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .Board .boardItem {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
