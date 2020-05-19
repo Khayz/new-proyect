@@ -23,11 +23,6 @@ const NavTeacher = ({ activeLink, user, logoutUser }) => {
 
 				<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 					<ul className='navbar-nav mr-auto'>
-						<li className='nav-item'>
-							<NavLink className='nav-link' to='/settings'>
-								Configuraciones
-							</NavLink>
-						</li>
 						<li className='nav-item '>
 							<NavLink onClick={logoutUser} className='nav-link' to='/'>
 								Cerrar Sesion

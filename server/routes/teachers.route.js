@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Teachers, HomeWork } = require('../schemas/index.schemas');
+const { Teachers, HomeWork, Groups } = require('../schemas/index.schemas');
 
 router.put('/teacher', async (req, res) => {
 	const { teacherID, data } = req.body;
@@ -18,6 +18,21 @@ router.post('/teacher', async (req, res) => {
 		res.send(savedHomeWork);
 	} catch (error) {
 		console.log(error.message);
+		res.send({ message: error.message });
+	}
+});
+
+router.post('/new-teacher-group', async (req, res) => {
+	const { teacherEmail, groupID } = req.body;
+	try {
+		const teacher = await Teachers.findOne({ email: teacherEmail });
+		const group = await Groups.findOne({ _id: groupID });
+		await Groups.updateOne(
+			{ _id: groupID },
+			{ $set: { teachers: [...group.teachers, { teacher: teacher._id }] } }
+		);
+		res.send('DONE');
+	} catch (error) {
 		res.send({ message: error.message });
 	}
 });
