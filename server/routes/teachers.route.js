@@ -12,39 +12,10 @@ router.put('/teacher', async (req, res) => {
 });
 
 router.post('/teacher', async (req, res) => {
-	const {
-		studentID,
-		teacherID,
-		calification,
-		status,
-		title,
-		date,
-		groupPostID,
-	} = req.body;
 	try {
-		const homework = new HomeWork({
-			studentID,
-			teacherID,
-			calification,
-			status,
-			title,
-			date,
-			groupPostID,
-		});
+		const homework = new HomeWork(req.body);
 		const savedHomeWork = await homework.save();
-		const teacher = await Teachers.findOne({ _id: teacherID });
-		await Teachers.updateOne(
-			{ _id: req.body.teacherID },
-			{
-				$set: {
-					tasks: [
-						...teacher.tasks,
-						{ ...req.body, homeworkID: savedHomeWork._id },
-					],
-				},
-			}
-		);
-		res.send({ message: 'Tarea Entregada' });
+		res.send(savedHomeWork);
 	} catch (error) {
 		console.log(error.message);
 		res.send({ message: error.message });

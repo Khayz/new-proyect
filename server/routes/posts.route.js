@@ -4,7 +4,6 @@ const { Posts, Groups } = require('../schemas/index.schemas');
 router.get('/posts', async (req, res) => {
 	const { id } = req.query;
 	const groupPosts = await Posts.find({ groupID: id });
-	console.log(id, groupPosts);
 	res.send(groupPosts);
 });
 

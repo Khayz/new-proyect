@@ -36,8 +36,8 @@ const Footer = () => {
       <div className="footer-right">
         <p className="footer-company-about">
           <span>Acerca de Home School</span>
-          Home School es la aplicación perfecta para <br /> organizar la vida escolar
-          desde casa.
+          Home School es la aplicación perfecta para <br /> organizar la vida
+          escolar desde casa.
         </p>
 
         <div className="footer-icons">

@@ -1,28 +1,28 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-import './Navbar.scss';
+import "./Navbar.scss";
 
-import NavGuest from './NavGuest/NavGuest';
-import NavParent from './NavParent/NavParent';
-import NavTeacher from './NavTeacher/NavTeacher';
+import NavGuest from "./NavGuest/NavGuest";
+import NavParent from "./NavParent/NavParent";
+import NavTeacher from "./NavTeacher/NavTeacher";
 
 const Navbar = ({ user }) => {
-	const { _id, account } = user;
+  const { _id, account } = user;
 
-	let actualNavbar = <NavGuest />;
+  let actualNavbar = <NavGuest />;
 
-	if (_id && account === 'parent') {
-		actualNavbar = <NavParent user={user} />;
-	} else if (_id && account === 'teacher') {
-		actualNavbar = <NavTeacher user={user} />;
-	}
+  if (_id && account === "parent") {
+    actualNavbar = <NavParent user={user} />;
+  } else if (_id && account === "teacher") {
+    actualNavbar = <NavTeacher user={user} />;
+  }
 
-	return actualNavbar;
+  return actualNavbar;
 };
 
 const mapStateToProps = (state) => ({
-	user: state.auth.user,
+  user: state.auth.user,
 });
 
 const mapDispatchToProps = {};

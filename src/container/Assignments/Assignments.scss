@@ -1,32 +1,43 @@
-h1 {
-  text-align: center;
-  margin: 100px auto;
-  color: #2c2a50;
+.assignment-info {
+  h1 {
+    text-align: center;
+    margin: 100px auto;
+    color: #2c2a50;
+  }
+  p {
+    text-align: center;
+    color: #2c2a50;
+    font-size: 18px;
+  }
 }
 .assignments {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-evenly;
   width: 100%;
   margin: auto;
   padding: 12px;
   background-color: #f5f5f3;
+  box-sizing: border-box;
+  min-height: 60vh;
 
   h2 {
     text-align: center;
     margin: 20px;
+    padding: 12px;
   }
 
   .childCard {
-    background-color: #272b32;
+    background-image: url("../../Assets/Images/books.jpg");
+    background-size: cover;
     color: #fff;
     width: 100%;
-    max-width: 300px;
-    height: 200px;
+    max-width: 280px;
+    height: 320px;
     margin: 5px;
-    padding: 12px;
+    text-align: center;
+    transition: all 0.4s ease-out;
     border-radius: 8px;
 
     .button {
@@ -36,7 +47,7 @@ h1 {
       flex-direction: column;
       margin: auto;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       background-color: rgb(0, 174, 239);
       color: #fff;
       width: 50%;
@@ -44,5 +55,25 @@ h1 {
       height: 40px;
       outline: none;
     }
+  }
+  .childCard:nth-last-child(5) {
+    background-image: url("../../Assets/Images/sports.jpg");
+  }
+  .childCard:nth-last-child(4) {
+    background-image: url("../../Assets/Images/history.jpg");
+  }
+  .childCard:nth-last-child(3) {
+    background-image: url("../../Assets//Images/math.jpg");
+  }
+  .childCard:nth-last-child(2) {
+    background-image: url("../../Assets/Images/science.jpg");
+  }
+  .childCard:nth-last-child(1) {
+    background-image: url("../../Assets/Images/music.jpg");
+  }
+
+  .childCard:hover {
+    opacity: 0.9;
+    transform: scale(0.98);
   }
 }

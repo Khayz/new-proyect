@@ -18,6 +18,7 @@ const Students = ({ students }) => {
             <img src={Monster} alt="" />
           </figure>
           <h3>{students.firstName}</h3>
+          <h3>{students.lastName}</h3>
         </div>
       ))}
       <div

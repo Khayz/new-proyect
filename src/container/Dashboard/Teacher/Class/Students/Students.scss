@@ -1,11 +1,14 @@
 .Student-List {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+  min-height: 90vh;
   background-color: #f0efef;
   box-sizing: border-box;
+  margin: auto;
   width: 100%;
-  min-height: 60vh;
-  margin: 130px auto 0;
+
+  margin: 130px auto auto;
   .Student-Card {
     cursor: pointer;
     display: flex;
@@ -20,7 +23,7 @@
     background-color: white;
     margin: 20px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
-    transition: 0.3s ease-out;
+    transition: 0.4s ease-out;
     figure {
       img {
         display: flex;
@@ -29,15 +32,24 @@
       }
     }
     h3 {
-      font-size: 20px;
+      font-size: 18px;
       text-transform: capitalize;
       text-align: center;
     }
   }
 
   .Student-Card:hover {
-    -webkit-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 10px 11px -8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 450px) {
+  .Student-List {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
   }
 }

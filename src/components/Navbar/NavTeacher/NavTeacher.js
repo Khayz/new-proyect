@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 const NavTeacher = ({ activeLink, user, logoutUser }) => {
 	return (
 		<header className='header'>
-			<nav className='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
-				<NavLink className='navbar-brand' to='/' exact activeStyle={activeLink}>
+			<nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
+				<NavLink className='navbar-brand' to='/'>
 					<i className='far fa-address-book'></i> Home School
 				</NavLink>
 				<button
@@ -23,60 +23,17 @@ const NavTeacher = ({ activeLink, user, logoutUser }) => {
 
 				<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 					<ul className='navbar-nav mr-auto'>
-						<li className='nav-item dropdown'>
-							<NavLink
-								className='nav-link dropdown-toggle'
-								to='/'
-								id='navbarDropdown'
-								role='button'
-								data-toggle='dropdown'
-								aria-haspopup='true'
-								aria-expanded='false'>
-								{user.firstName + ' ' + user.lastName}
+						<li className='nav-item'>
+							<NavLink className='nav-link' to='/settings'>
+								Configuraciones
 							</NavLink>
-							<div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-								<NavLink
-									exact
-									activeStyle={activeLink}
-									className='dropdown-item'
-									to='/settings'>
-									Configuraciones
-								</NavLink>
-								<NavLink
-									onClick={logoutUser}
-									exact
-									activeStyle={activeLink}
-									className='dropdown-item'
-									to='/'>
-									Cerrar Sesión
-								</NavLink>
-							</div>
+						</li>
+						<li className='nav-item '>
+							<NavLink onClick={logoutUser} className='nav-link' to='/'>
+								Cerrar Sesion
+							</NavLink>
 						</li>
 					</ul>
-					<i
-						style={{
-							// original
-							// color: '#00aeef',
-							// option
-							color: '#ffffff',
-							fontSize: '25px',
-							border: 'none',
-							marginRight: '30px',
-						}}
-						className='fas fa-user-circle'></i>
-					<button
-						style={{
-							// original
-							// color: '#00aeef',
-							// option
-							color: '#ffffff',
-							fontSize: '22px',
-							border: 'none',
-							background: 'transparent',
-							outline: 'none',
-							marginRight: '50px',
-						}}
-						className='fas fa-bell'></button>
 				</div>
 			</nav>
 		</header>
