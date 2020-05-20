@@ -6,7 +6,7 @@ import Tmonster from './../../Assets/Images/monstert.svg';
 import './TeacherPost.scss';
 import { v1 } from 'uuid';
 
-const TeacherPost = ({ assignments, groupID, setNewTask }) => {
+const TeacherPost = ({ assignments, groupID, setNewTask, posts }) => {
   const [post, setPost] = useState({
     title: '',
     description: '',

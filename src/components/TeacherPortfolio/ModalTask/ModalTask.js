@@ -1,49 +1,59 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { setNewAssignment } from '../../../redux/actions/index.actions';
+import { v1 } from 'uuid';
 
-import './ModalAssignment.scss';
+import './ModalTask.scss';
 
-const ModalAssignment = ({ close, setNewAssignment, _id }) => {
-  const [assignment, setAssignment] = useState('');
-
-  const handleAssignment = (event) => {
-    setAssignment(event.target.value);
-  };
-
-  const handleSubmitAssignment = (event) => {
-    event.preventDefault();
-    setNewAssignment(assignment, _id);
-    close(false);
-  };
-
+const ModalTask = ({ close, tasks }) => {
+  console.log(tasks);
   return ReactDOM.createPortal(
-    <div className='modal_assignment'>
-      <form className='modal_form'>
-        <div className='formdata'>
-          <h2>Nombre de la asignatura</h2>
-          <i onClick={() => close(false)} className='fas fa-times'></i>
+    <div
+      className='modal_task'
+      onClick={() => {
+        close(false);
+      }}>
+      <div
+        id='carouselExampleFade'
+        className='carousel slide carousel-fade modal_form'
+        data-ride='carousel'>
+        <div className='carousel-inner d-flex justify-content-center align-items-center'>
+          {Object.keys(tasks)
+            .filter((file) => tasks[file])
+            .map((file) => (
+              <div className='carousel-item active'>
+                <img
+                  key={v1()}
+                  src={tasks[file]}
+                  alt='task'
+                  className='d-block'
+                />
+              </div>
+            ))}
         </div>
-        <br />
-        <input
-          onChange={handleAssignment}
-          name='assignment'
-          value={assignment}
-          placeholder='Asignatura*'
-          required
-        />
-        <button onClick={handleSubmitAssignment}>Añadir</button>
-      </form>
+        <a
+          className='carousel-control-prev'
+          href='#carouselExampleFade'
+          role='button'
+          data-slide='prev'>
+          <span
+            className='carousel-control-prev-icon'
+            aria-hidden='true'></span>
+          <span className='sr-only'>Previous</span>
+        </a>
+        <a
+          className='carousel-control-next'
+          href='#carouselExampleFade'
+          role='button'
+          data-slide='next'>
+          <span
+            className='carousel-control-next-icon'
+            aria-hidden='true'></span>
+          <span className='sr-only'>Next</span>
+        </a>
+      </div>
     </div>,
     document.getElementById('modal')
   );
 };
 
-const mapStateToProps = (state) => ({
-  _id: state.groups.currentGroup._id,
-});
-
-const mapDispatchToProps = { setNewAssignment };
-
-export default connect(mapStateToProps, mapDispatchToProps)(ModalAssignment);
+export default ModalTask;
