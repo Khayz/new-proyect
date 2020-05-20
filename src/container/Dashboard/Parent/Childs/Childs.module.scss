@@ -27,9 +27,13 @@ $otherColor: #00a4e4;
     background-color: $otherColor;
     color: #fff;
     width: 80%;
+    border-radius: 5px;
     margin: 10px auto;
     padding: 6px;
     display: flex;
+    border: none;
+    outline: none;
+    transition: 0.3s ease-out;
     justify-content: center;
     align-items: center;
 

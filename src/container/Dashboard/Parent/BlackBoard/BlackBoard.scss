@@ -1,46 +1,46 @@
 $otherColor: #00a4e4;
 
 .Black_Board {
-	border-radius: 12px;
-	width: 50%;
-	height: 700px;
-	margin: 50px;
-	nav {
-		width: 100%;
-		display: flex;
-		justify-content: space-around;
-		button {
-			margin: 10px;
-			width: 25%;
-			padding: 10px;
-			background-color: #fff;
-			color: $otherColor;
-			border-radius: 20px;
-			border: 1px solid $otherColor;
-			outline: none;
-			cursor: pointer;
-		}
-	}
+  border-radius: 12px;
+  width: 50%;
+  height: 700px;
+  margin: 50px;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    button {
+      margin: 10px;
+      width: 25%;
+      padding: 10px;
+      background-color: #fff;
+      color: $otherColor;
+      border-radius: 20px;
+      border: 1px solid $otherColor;
+      outline: none;
+      cursor: pointer;
+    }
+  }
 }
 
 @mixin Load_Guest {
-	background-color: #fff;
-	border-radius: 9px;
-	width: 100%;
-	height: 90%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  background-color: #fff;
+  border-radius: 9px;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .Board_Guest {
-	@include Load_Guest();
-	h1 {
-		text-transform: uppercase;
-	}
+  @include Load_Guest();
+  h1 {
+    text-transform: uppercase;
+  }
 }
 
 .Loading_Posts {
-	@include Load_Guest();
+  @include Load_Guest();
 }

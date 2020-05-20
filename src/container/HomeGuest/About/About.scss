@@ -3,7 +3,7 @@
   margin-top: 50px;
   background-color: #f0efef;
   // font-family: 'Quicksand', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   h1 {
     text-align: center;
     padding: 50px 0;
@@ -26,20 +26,17 @@
     }
     .card:nth-child(1) {
       i {
-        // color: rgb(182, 63, 63);
-        color: rgb(0, 174, 239);
+        color: rgb(182, 60, 60);
       }
     }
     .card:nth-child(2) {
       i {
-        // color: rgb(231, 231, 90);
-        color: rgb(0, 174, 239);
+        color: rgb(220, 220, 78);
       }
     }
     .card:nth-child(3) {
       i {
-        // color: rgb(58, 58, 216);
-        color: rgb(0, 174, 239);
+        color: rgb(0, 174, 238);
       }
     }
   }

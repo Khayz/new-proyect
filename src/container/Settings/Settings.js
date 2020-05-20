@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './Settings.scss';
+import "./Settings.scss";
 
 import SettingChild from './SettingChilds/SettingChild';
 import SettinsTeacher from './SettinsTeacher/SettinsTeacher';
