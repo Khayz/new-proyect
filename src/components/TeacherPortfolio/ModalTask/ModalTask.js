@@ -1,59 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { v1 } from 'uuid';
+import Carousel from 'react-bootstrap/Carousel';
 
 import './ModalTask.scss';
 
-const ModalTask = ({ close, tasks }) => {
-  console.log(tasks);
-  return ReactDOM.createPortal(
-    <div
-      className='modal_task'
-      onClick={() => {
-        close(false);
-      }}>
-      <div
-        id='carouselExampleFade'
-        className='carousel slide carousel-fade modal_form'
-        data-ride='carousel'>
-        <div className='carousel-inner d-flex justify-content-center align-items-center'>
-          {Object.keys(tasks)
-            .filter((file) => tasks[file])
-            .map((file) => (
-              <div className='carousel-item active'>
-                <img
-                  key={v1()}
-                  src={tasks[file]}
-                  alt='task'
-                  className='d-block'
+const ModalTask = ({ close, files, isOpen, title }) => {
+  const imagesArray = Object.keys(files)
+    .map((key) => files[key])
+    .filter((imageURi) => Boolean(imageURi));
+
+  const Images = imagesArray.map((imgUri) => (
+    <Carousel.Item key={v1()} className='w-30 d-flex justify-content-center'>
+      <img src={imgUri} alt='First slide' />
+    </Carousel.Item>
+  ));
+
+  return isOpen
+    ? ReactDOM.createPortal(
+        <div className='modal_task'>
+          <div className='card_modal'>
+            <div>
+              <button className='btn-close' onClick={close}>
+                x
+              </button>
+            </div>
+            <Carousel>{Images}</Carousel>
+            <div className='card-body d-flex justify-content-center flex-column align-items-center'>
+              <h4 className='card-title'>{title}</h4>
+              <div className='card-content d-flex flex-column flex-xl-row justify-content-center my-2'>
+                <input
+                  type='number'
+                  placeholder='Calificacion'
+                  className='m-1'
                 />
+                <select className='m-1'>
+                  <option>Pendiente</option>
+                  <option>Resuelta</option>
+                </select>
+                <button className='btn-card m-2'>Enviar</button>
               </div>
-            ))}
-        </div>
-        <a
-          className='carousel-control-prev'
-          href='#carouselExampleFade'
-          role='button'
-          data-slide='prev'>
-          <span
-            className='carousel-control-prev-icon'
-            aria-hidden='true'></span>
-          <span className='sr-only'>Previous</span>
-        </a>
-        <a
-          className='carousel-control-next'
-          href='#carouselExampleFade'
-          role='button'
-          data-slide='next'>
-          <span
-            className='carousel-control-next-icon'
-            aria-hidden='true'></span>
-          <span className='sr-only'>Next</span>
-        </a>
-      </div>
-    </div>,
-    document.getElementById('modal')
-  );
+            </div>
+          </div>
+        </div>,
+        document.getElementById('modal')
+      )
+    : null;
 };
 
 export default ModalTask;
