@@ -6,7 +6,7 @@ import Tmonster from "./../../Assets/Images/monstert.svg";
 import "./TeacherPost.scss";
 import { v1 } from "uuid";
 
-const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
+const TeacherPost = ({ assignments, groupID, setNewTask, posts }) => {
   const [post, setPost] = useState({
     title: "",
     description: "",
@@ -20,6 +20,10 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
     getPosts(groupID);
   }, [getPosts, groupID]);
 
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
+
   const handlePostData = (event) => {
     const { value, name } = event.target;
     setPost((prevState) => ({
@@ -30,6 +34,7 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 
   const handleSubmitPost = (event) => {
     event.preventDefault();
+    console.log(post);
     setNewTask(post);
   };
 
@@ -77,13 +82,15 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
           <button className="btn btn-primary">Publicar</button>
         </form>
         <section className="Homework-Post">
-          {posts.map((post) => (
-            <article className="_posts" key={v1()}>
-              <h1>{post.title}</h1>
-              <p>{post.description}</p>
-              <p>{post.assignment}</p>
-            </article>
-          ))}
+          {posts.map((post) => {
+            return (
+              <article className="_posts" key={v1()}>
+                <h1>{post.title}</h1>
+                <p>{post.description}</p>
+                <p>{post.assignment}</p>
+              </article>
+            );
+          })}
         </section>
       </div>
     </section>
