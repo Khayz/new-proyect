@@ -36,7 +36,7 @@ const NavParent = ({ activeLink, logoutUser }) => {
             </li>
             <li className="nav-item ">
               <NavLink onClick={logoutUser} className="nav-link" to="/">
-                Cerrar Sesion
+                Cerrar Sesión
               </NavLink>
             </li>
           </ul>

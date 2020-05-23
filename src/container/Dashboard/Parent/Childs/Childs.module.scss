@@ -2,14 +2,12 @@ $principalColor: #00aeef;
 $otherColor: #00a4e4;
 
 @mixin shadows {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.17);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.17);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 20px;
   border: 1px solid $otherColor;
   background-color: #fff;
   width: 350px;
-  border-radius: 8px;
+  border-radius: 10px;
   figure {
     display: flex;
     align-items: center;
@@ -27,7 +25,7 @@ $otherColor: #00a4e4;
     background-color: $otherColor;
     color: #fff;
     width: 80%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 10px auto;
     padding: 6px;
     display: flex;
@@ -64,7 +62,7 @@ $otherColor: #00a4e4;
       margin-left: 10px;
       h2 {
         margin: 5px 0;
-        font-size: 16px;
+        font-size: 15px;
         span {
           font-weight: lighter;
         }

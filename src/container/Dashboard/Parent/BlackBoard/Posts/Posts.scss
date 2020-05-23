@@ -1,58 +1,86 @@
 $otherColor: #00a4e4;
 
-.Students_Posts {
-	height: 90%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-direction: column;
-	overflow-y: scroll;
-	.Students_Post {
-		width: 60%;
-		min-width: 320px;
-		margin: 10px;
-		padding: 10px;
-		border-radius: 8px;
-		background-color: #fff;
-		-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
-		-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
-		box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
-		h2 {
-			text-align: justify;
-			color: #202020;
-			width: 320px;
-			border-radius: 12px;
-			font-weight: normal;
-			text-transform: uppercase;
-		}
-		p {
-			text-transform: uppercase;
-			color: #202329;
-			span {
-				text-transform: lowercase;
-			}
-		}
-		button {
-			background-color: #fff;
-			padding: 5px 10px;
-			background-color: $otherColor;
-			border: 1px solid #fff;
-			color: #fff;
-			border-radius: 5px;
-		}
-	}
+.Posts {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: auto;
+  overflow-y: scroll;
 
-	.HomeWork_pending {
-		background-color: #ffd54f;
-	}
+  & ._Post {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-	.HomeWork_success {
-		background-color: $otherColor;
-		h2 {
-			color: #fff;
-		}
-		p {
-			color: #fff;
-		}
-	}
+    h2 {
+      color: #202020;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 5px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    p {
+      text-transform: uppercase;
+      color: #202329;
+      span {
+        text-transform: lowercase;
+      }
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      width: 115px;
+      height: 40px;
+      background-color: $otherColor;
+      border: none;
+      color: #fff;
+      border-radius: 10px;
+      outline: none;
+      transition: all 0.3s;
+      &:active {
+        background-color: #c71585;
+      }
+    }
+  }
+
+  .HomeWork_pending {
+    border-radius: 10px;
+    background-color: #f1c04b;
+  }
+
+  ._Post.null {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .HomeWork_success {
+    border-radius: 10px;
+    background-color: $otherColor;
+    h2 {
+      color: #fff;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .Posts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+  }
 }

@@ -11,18 +11,19 @@
   font-size: 18px;
 }
 .modal-dialog {
+  h4 {
+    color: #363636;
+  }
   .add-button {
-    background-color: #00aeef;
-    border-radius: 5px;
+    background-color: #00a4e4;
+    border-radius: 10px;
     border: none;
     color: white;
     outline: none;
-    transition: 0.3s ease-out;
+    transition: 0.3s;
   }
   .add-button:hover {
     background-color: #c71585;
-
-    transition-duration: 0.2s;
     color: white;
   }
 }

@@ -8,7 +8,7 @@ import Spinner from "../../../../../components/Ui/Spinner/Spinner";
 
 const ChildTasks = ({ homework, isLoading }) => {
   return (
-    <section className="ChildTasks">
+    <section className="Tasks">
       {isLoading ? (
         <article className="loading_homework">
           <Spinner />
@@ -17,9 +17,9 @@ const ChildTasks = ({ homework, isLoading }) => {
         homework.map((task) => (
           <div
             key={v1()}
-            className={`Task card text-white ${
-              task.status === "Entregada" ? "bg-success" : "bg-warning"
-            } mb-3`}
+            className={`Task card text-black ${
+              task.status === "Entregada" ? "bg-success" : "border-light"
+            } mb-3 Task`}
             style={{ maxWidth: "18rem" }}
           >
             <div className="card-header">{`${

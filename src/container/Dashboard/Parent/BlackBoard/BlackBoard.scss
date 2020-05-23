@@ -1,31 +1,38 @@
 $otherColor: #00a4e4;
 
 .Black_Board {
-  border-radius: 12px;
+  border-radius: 10px;
   width: 50%;
   height: 700px;
   margin: 50px;
+
   nav {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     button {
       margin: 10px;
-      width: 25%;
+      width: 100%;
+      max-width: 320px;
       padding: 10px;
-      background-color: #fff;
-      color: $otherColor;
-      border-radius: 20px;
-      border: 1px solid $otherColor;
+      background-color: $otherColor;
+      color: #fff;
+      border-radius: 10px;
+      border: none;
       outline: none;
+      transition: all 0.3s;
       cursor: pointer;
+      &:hover {
+        background-color: #c71585;
+        color: #fff;
+      }
     }
   }
 }
 
 @mixin Load_Guest {
   background-color: #fff;
-  border-radius: 9px;
+  border-radius: 10px;
   width: 100%;
   height: 90%;
   display: flex;
@@ -37,7 +44,14 @@ $otherColor: #00a4e4;
 .Board_Guest {
   @include Load_Guest();
   h1 {
+    text-align: center;
     text-transform: uppercase;
+  }
+
+  figure {
+    img {
+      width: 100%;
+    }
   }
 }
 

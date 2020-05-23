@@ -109,7 +109,7 @@ const ModalAddChild = ({ parentID, addChild, loading }) => {
                   name="groupID"
                   id="defaultRegisterFormEmail"
                   className="form-control mb-4"
-                  placeholder="Grupo"
+                  placeholder="Código de clase"
                 />
 
                 <button className="btn btn-info my-4 btn-block add-button">

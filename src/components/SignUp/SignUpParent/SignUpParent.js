@@ -133,7 +133,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
           </Link>
           <hr />
           <p>
-            Eres profesor? Regístrate como un
+            Eres profesor? Regístrate como
             <Link style={{ fontSize: "18px" }} to="/register/teacher">
               {" "}
               Profesor

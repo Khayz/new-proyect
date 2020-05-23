@@ -149,7 +149,7 @@ const SignUpTeacher = ({ registerUser, error, isLoading }) => {
           <hr />
 
           <p>
-            Eres padre? Regístrate como un
+            Eres padre? Regístrate como
             <Link style={{ fontSize: "18px" }} to="/register/parent">
               {" "}
               Padre
