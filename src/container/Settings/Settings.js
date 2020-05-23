@@ -9,7 +9,7 @@ import SettinsTeacher from './SettinsTeacher/SettinsTeacher';
 const Settings = ({ user }) => {
 	return (
 		<div className='settings'>
-			{user.account === 'Parent' ? <SettingChild /> : <SettinsTeacher />}
+			<SettingChild />
 		</div>
 	);
 };

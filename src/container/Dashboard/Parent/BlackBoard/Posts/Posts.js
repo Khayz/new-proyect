@@ -34,12 +34,12 @@ const BoardContent = ({ posts, homework }) => {
 	}, [posts, homework]);
 
 	return (
-		<div className='Students_Posts'>
+		<div className='Posts'>
 			{newPosts.length > 0 &&
 				newPosts.map((post) => (
 					<div
 						key={v1()}
-						className={`Students_Post ${
+						className={`Posts-Post ${
 							post.status === 'Pendiente'
 								? 'HomeWork_pending'
 								: post.status === 'Entregada'

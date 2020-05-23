@@ -1,13 +1,13 @@
 $otherColor: #00a4e4;
 
-.Students_Posts {
+.Posts {
 	height: 90%;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
 	overflow-y: scroll;
-	.Students_Post {
+	&-Post {
 		width: 60%;
 		min-width: 320px;
 		margin: 10px;
