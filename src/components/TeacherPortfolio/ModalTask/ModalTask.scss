@@ -24,11 +24,15 @@
       font-size: 1em;
       outline: none;
       border: 1px solid transparent;
-      box-shadow: 5px 5px 21px 0px rgba(8, 7, 7, 0.31);
-      -webkit-box-shadow: 5px 5px 21px 0px rgba(8, 7, 7, 0.31);
-      -moz-box-shadow: 5px 5px 21px 0px rgba(8, 7, 7, 0.31);
+
       &:hover {
         background-color: $blue-hover;
+      }
+    }
+    .carousel-item {
+      img {
+        max-width: 400px;
+        width: 100%;
       }
     }
     .card-content {

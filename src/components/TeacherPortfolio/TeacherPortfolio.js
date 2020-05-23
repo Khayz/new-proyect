@@ -69,9 +69,9 @@ const TeacherPortfolio = ({ students, assignments, user }) => {
         <hr />
       </div>
       <article className='d-flex flex-column align-items-center flex-grow-1'>
-        <div className='name-students flex-xl-row d-flex flex-column align-items-center justify-content-center mt-5'>
+        <div className='name-students flex-xl-row d-flex flex-column align-items-center justify-content-center mt-4 '>
           <h2 className='m-3'>Estudiantes</h2>
-          <Dropdown>
+          <Dropdown className='mb-lg-1 mb-md-1'>
             <Dropdown.Toggle variant='success' id='dropdown-basic'>
               Elige un estudiante
             </Dropdown.Toggle>
