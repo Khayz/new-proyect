@@ -29,7 +29,7 @@ const NavGuest = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/login">
-                Iniciar Sesion
+                Iniciar Sesión
               </NavLink>
             </li>
             <li className="nav-item dropdown">

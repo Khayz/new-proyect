@@ -1,23 +1,106 @@
 .About {
   box-sizing: border-box;
   margin-top: 50px;
-  background-color: #f0efef;
-  // font-family: 'Quicksand', sans-serif;
-  font-family: "Roboto", sans-serif;
+  // background-color: #686868;
+  // background-color: #f0efef;
+  // background: #00d2ff; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to top,
+  //   #3a7bd5,
+  //   #00d2ff
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to top,
+  //   #3a7bd5,
+  //   #00d2ff
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: #00c6ff; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #00c6ff,
+  //   #0072ff
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #00c6ff,
+  //   #0072ff
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: #4568dc; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #b06ab3,
+  //   #4568dc
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #b06ab3,
+  //   #4568dc
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: #373b44; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to left,
+  //   #4286f4,
+  //   #373b44
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to left,
+  //   #4286f4,
+  //   #373b44
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: #0575e6; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #021b79,
+  //   #0575e6
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #021b79,
+  //   #0575e6
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: #56ccf2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2f80ed,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2f80ed,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   h1 {
     text-align: center;
     padding: 50px 0;
-    color: #363636;
-    font-size: 26px;
+    // color: #363636;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   .card-title {
     text-align: center;
+    color: white;
+    font-weight: bold;
+  }
+
+  .card {
+    background-color: transparent;
+    border: none;
   }
 
   .cards {
-    width: 70%;
+    width: 50%;
     margin: 30px auto;
+    color: white;
+    text-align: center;
     i {
       font-size: 50px;
       text-align: center;
@@ -26,17 +109,20 @@
     }
     .card:nth-child(1) {
       i {
-        color: rgb(182, 60, 60);
+        // color: rgb(182, 60, 60);
+        color: white;
       }
     }
     .card:nth-child(2) {
       i {
-        color: rgb(220, 220, 78);
+        // color: rgb(220, 220, 78);
+        color: white;
       }
     }
     .card:nth-child(3) {
       i {
-        color: rgb(0, 174, 238);
+        // color: rgb(0, 174, 238);
+        color: white;
       }
     }
   }

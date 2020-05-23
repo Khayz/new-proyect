@@ -7,17 +7,109 @@
   //original
   // background-color: #fff !important;
   // options
-  background: rgb(1, 196, 250);
+
+  // Gradient 1
+
+  // background: rgb(1, 196, 250);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(1, 196, 250, 1) 0%,
+  //   rgba(103, 179, 255, 1) 47%,
+  //   rgba(0, 123, 255, 1) 100%
+  // );
+
+  // Gradient 2
+
+  // background: #12c2e9; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to left,
+  //   #f64f59,
+  //   #c471ed,
+  //   #12c2e9
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to left,
+  //   #f64f59,
+  //   #c471ed,
+  //   #12c2e9
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // Gradient 3
+
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00c6ff,
+    #0072ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(1, 196, 250, 1) 0%,
-    rgba(103, 179, 255, 1) 47%,
-    rgba(0, 123, 255, 1) 100%
-  );
+    to right,
+    #00c6ff,
+    #0072ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // Gradient 4
+
+  // background: #da22ff; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #9733ee,
+  //   #da22ff
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #9733ee,
+  //   #da22ff
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // Gradient 5
+
+  // background: #009fff; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #ec2f4b,
+  //   #009fff
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #ec2f4b,
+  //   #009fff
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // Gradient 6
+
+  // background: #ff00cc; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #ff00cc,
+  //   #333399
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #ff00cc,
+  //   #333399
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  //Gradient 7
+
+  // background: #232526; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(
+  //   to right,
+  //   #414345,
+  //   #232526
+  // ); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #414345,
+  //   #232526
+  // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  //
+
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
   a {
     color: white;
-    font-family: "Quicksand", sans-serif;
+    font-family: 'Quicksand', sans-serif;
   }
   .nav-link {
     color: white;
