@@ -2,148 +2,145 @@
 @import '../../Assets/scss/breakpoints';
 
 .Teacher-Portfolio {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	min-height: 90vh;
-	margin: 130px auto 0;
-	.asignature-btn-float {
-		display: flex;
-		align-items: flex-end;
-		justify-content: flex-end;
-		position: fixed;
-		top: 150px;
-		right: 20px;
-		z-index: 99;
-		i {
-			font-size: 2em;
-		}
-	}
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 90vh;
+  margin: 130px auto 0;
+  .asignature-btn-float {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: fixed;
+    top: 150px;
+    right: 20px;
+    z-index: 99;
+    i {
+      font-size: 2em;
+    }
+  }
 
-	.sideBoard-activities {
-		margin-top: 15px;
-		padding: 2em;
-		flex: 1;
-		max-width: 300px;
-	}
-	h4 {
-		font-size: 0.95em;
-		transition: 0.3s ease-out;
-	}
-	h4:hover {
-		background-color: $blue-hover;
-		border-radius: 10px;
-		padding: 1em;
-		cursor: pointer;
-	}
+  .sideBoard-activities {
+    margin-top: 15px;
+    padding: 2em;
+    flex: 1;
+    max-width: 300px;
+  }
+  h4 {
+    font-size: 0.95em;
+    transition: 0.3s ease-out;
+  }
+  h4:hover {
+    background-color: $blue-hover;
+    border-radius: 10px;
+    padding: 1em;
+    cursor: pointer;
+  }
 
-	h2 {
-		font-size: 25px;
-		color: #423e5d;
-		margin-bottom: 0px;
-	}
-	i {
-		border: none;
-		border-radius: 50%;
-		transition: 0.3s ease-out;
-		outline: none;
-		color: #00aeef;
-		font-size: 1.5em;
-		text-align: center;
-		transition: 0.3s ease-out;
-	}
-	i:hover {
-		color: rgba(0, 174, 239, 0.5);
-	}
+  h2 {
+    font-size: 25px;
+    color: #423e5d;
+    margin-bottom: 0px;
+  }
+  i {
+    border: none;
+    border-radius: 50%;
+    transition: 0.3s ease-out;
+    outline: none;
+    color: #00aeef;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  i:hover {
+    color: rgba(0, 174, 239, 0.5);
+  }
 
-	.activities {
-		display: flex;
-		flex-direction: column;
-		border-radius: 8px;
-		h4 {
-			margin: 10px;
-			font-size: 22px;
-		}
+  .activities {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    h4 {
+      margin: 10px;
+      font-size: 22px;
+    }
 
-		i {
-			font-size: 30px;
-			color: blue;
-		}
-	}
+    i {
+      font-size: 30px;
+      color: blue;
+    }
+  }
 
-	.name-students {
-		width: 100%;
+  .name-students {
+    width: 100%;
 
-		.dropdown {
-			button {
-				background-color: $main-blue;
-				border: none;
-				outline: none;
-			}
-			&:hover {
-				background-color: $blue-hover;
-				outline: none;
-			}
-			&:active {
-				background-color: $blue-hover;
-				outline: none;
-			}
-		}
-		.btn-success:not(:disabled):not(.disabled).active,
-		.btn-success:not(:disabled):not(.disabled):active,
-		.show > .btn-success.dropdown-toggle {
-			background-color: $blue-hover;
-			&:focus {
-				box-shadow: none;
-			}
-		}
-	}
+    .dropdown {
+      #dropdown-basic {
+        z-index: inherit;
+      }
+      button {
+        background-color: $main-blue;
+        border: none;
+        outline: none;
+      }
+      &:hover {
+        background-color: $blue-hover;
+        outline: none;
+      }
+      &:active {
+        background-color: $blue-hover;
+        outline: none;
+      }
+    }
+    .btn-success:not(:disabled):not(.disabled).active,
+    .btn-success:not(:disabled):not(.disabled):active,
+    .show > .btn-success.dropdown-toggle {
+      background-color: $blue-hover;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
 }
 
 .portfolio-info {
-	width: 100%;
-	color: #423e5d;
-	text-align: center;
-	.portfolio-container {
-		width: 100%;
-		height: 100%;
-		max-width: 350px;
-		max-height: 250px;
-		form {
-			width: 100%;
-			max-width: none;
-			.card-content {
-				border-radius: 10px;
-				input,
-				select {
-					padding: 0.5em;
-					border-radius: 5px;
-					border: 1px solid rgba(0, 0, 0, 0.1);
-				}
-			}
-			.task-file-container {
-				width: 100%;
-				max-width: 350px;
-				padding: 1em;
-				transition: 0.3s ease-out;
-				cursor: pointer;
-				img {
-					height: 100px;
-					width: 100px;
-				}
-				&:hover {
-					-ms-transform: scale(1.5); /* IE 9 */
-					-webkit-transform: scale(1.5); /* Safari 3-8 */
-					transform: scale(2);
-				}
-			}
-			.btn-task-file {
-				background-color: $main-blue;
-				color: white;
-				border: none;
-				border-radius: 10px;
-				padding: 1em;
-			}
-		}
-	}
+  width: 100%;
+  color: #423e5d;
+  text-align: center;
+  .portfolio-container {
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+    max-height: 250px;
+    form {
+      width: 100%;
+      max-width: none;
+      .card-content {
+        border-radius: 10px;
+        input,
+        select {
+          padding: 0.5em;
+          border-radius: 5px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+      .task-file-container {
+        width: 100%;
+        max-width: 350px;
+        padding: 1em;
+        transition: 0.3s ease-out;
+        cursor: pointer;
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+      .btn-task-file {
+        background-color: $main-blue;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 1em;
+      }
+    }
+  }
 }

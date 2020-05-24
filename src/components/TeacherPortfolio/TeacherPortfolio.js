@@ -95,16 +95,7 @@ const TeacherPortfolio = ({ students, assignments, user }) => {
                 key={v1()}>
                 <form key={v1()}>
                   <div className='task-file-container d-flex justify-content-center align-items-center'>
-                    <img
-                      key={v1()}
-                      src={task.files.task0}
-                      alt='task'
-                      onClick={() => {
-                        setSelectedTaskFiles(task.files);
-                        setOpenTaskModal(true);
-                        setSelectedTaskTitle(task.title);
-                      }}
-                    />
+                    <img key={v1()} src={task.files.task0} alt='task' />
                   </div>
 
                   <div>
