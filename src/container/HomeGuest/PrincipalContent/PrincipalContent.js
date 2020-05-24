@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const PrincipalContent = () => {
   return (
     <div className="PrincipalContent">
-      <section className="speach">
+      <section className="speech">
         <h1>
           Home School
         </h1>

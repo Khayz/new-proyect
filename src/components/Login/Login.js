@@ -31,57 +31,57 @@ const Login = ({ loginUser, loading }) => {
       <Spinner />
     </section>
   ) : (
-    <form
-      onSubmit={handleSubmitLogin}
-      className="FormLogin text-center border border-light p-5"
-      action="#!"
-    >
-      <p className="h4 mb-4">Iniciar Sesión</p>
+      <form
+        onSubmit={handleSubmitLogin}
+        className="FormLogin text-center border border-light p-5"
+        action="#!"
+      >
+        <p className="h4 mb-4">Iniciar Sesión</p>
 
-      <input
-        onChange={handleLoginData}
-        type="email"
-        name="email"
-        id="defaultLoginFormEmail"
-        className="form-control mb-4"
-        placeholder="E-mail"
-      />
+        <input
+          onChange={handleLoginData}
+          type="email"
+          name="email"
+          id="defaultLoginFormEmail"
+          className="form-control mb-4"
+          placeholder="E-mail"
+        />
 
-      <input
-        onChange={handleLoginData}
-        type="password"
-        name="password"
-        id="defaultLoginFormPassword"
-        className="form-control mb-4"
-        placeholder="Contraseña"
-      />
+        <input
+          onChange={handleLoginData}
+          type="password"
+          name="password"
+          id="defaultLoginFormPassword"
+          className="form-control mb-4"
+          placeholder="Contraseña"
+        />
 
-      <div className="d-flex justify-content-around">
-        <Link to="/">¿Olvidaste tu contraseña?</Link>
-      </div>
+        <div className="d-flex justify-content-around">
+          <Link to="/">¿Olvidaste tu contraseña?</Link>
+        </div>
 
-      <button className="btn btn-info btn-block my-4">Iniciar Sesión</button>
+        <button className="btn btn-info btn-block my-4">Iniciar Sesión</button>
 
-      <p>
-        ¿No eres miembro? <br /> <Link to="/register/parent">¡Regístrate!</Link>
-      </p>
+        <p>
+          ¿No eres miembro? <br /> <Link to="/register/parent">¡Regístrate!</Link>
+        </p>
 
-      <p>O regístrate con:</p>
+        <p>Iniciar Sesión con:</p>
 
-      <Link to="/" className="mx-2" role="button">
-        <i className="fab fa-facebook-f light-blue-text"></i>
-      </Link>
-      <Link to="/" className="mx-2" role="button">
-        <i className="fab fa-twitter light-blue-text"></i>
-      </Link>
-      <Link to="/" className="mx-2" role="button">
-        <i className="fab fa-linkedin-in light-blue-text"></i>
-      </Link>
-      <Link to="/" className="mx-2" role="button">
-        <i className="fab fa-github light-blue-text"></i>
-      </Link>
-    </form>
-  );
+        <Link to="/" className="mx-2" role="button">
+          <i className="fab fa-facebook-f light-blue-text"></i>
+        </Link>
+        <Link to="/" className="mx-2" role="button">
+          <i className="fab fa-twitter light-blue-text"></i>
+        </Link>
+        <Link to="/" className="mx-2" role="button">
+          <i className="fab fa-linkedin-in light-blue-text"></i>
+        </Link>
+        <Link to="/" className="mx-2" role="button">
+          <i className="fab fa-github light-blue-text"></i>
+        </Link>
+      </form>
+    );
 };
 
 const mapDispatchToProps = {

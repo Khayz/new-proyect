@@ -59,6 +59,7 @@ const ModalClass = ({ close, child, task, sendTask }) => {
 						onChange={handleFiles}
 						placeholder='file*'
 						accept='image/*'
+						id='upload-file'
 					/>
 				))}
 				{inputs.length < 5 && (
