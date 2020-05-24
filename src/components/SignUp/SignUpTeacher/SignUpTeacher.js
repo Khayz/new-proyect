@@ -49,7 +49,7 @@ const SignUpTeacher = ({ registerUser, error, isLoading }) => {
       className="FormRegister text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Regístrate como profesor</p>
+      <p className="h4 mb-4">Registro Profesores</p>
 
       {isLoading ? (
         <article className="login_auth_register">
@@ -111,7 +111,7 @@ const SignUpTeacher = ({ registerUser, error, isLoading }) => {
             id="defaultRegisterPhonePassword"
             name="phone"
             className="form-control"
-            placeholder="Numero Telefonico"
+            placeholder="Número Telefónico"
             aria-describedby="defaultRegisterFormPhoneHelpBlock"
           />
           <input
@@ -131,7 +131,7 @@ const SignUpTeacher = ({ registerUser, error, isLoading }) => {
             Regístrate
           </button>
 
-          <p>Regístrate con tus redes</p>
+          <p>¡Regístrate con tus redes!</p>
 
           <Link to="/" className="mx-2" role="button">
             <i className="fab fa-facebook-f light-blue-text"></i>
@@ -149,7 +149,7 @@ const SignUpTeacher = ({ registerUser, error, isLoading }) => {
           <hr />
 
           <p>
-            Eres padre? Regístrate como
+            ¿Eres Padre? Regístrate como:
             <Link style={{ fontSize: "18px" }} to="/register/parent">
               {" "}
               Padre

@@ -4,11 +4,13 @@ import ReactDOM from 'react-dom';
 import './ModalClass.scss';
 import { addGroup } from '../../../../redux/actions/groups.action';
 import { connect } from 'react-redux';
+import { v1 } from 'uuid';
 
 const ModalClass = ({ addGroup, close }) => {
 	const [group, setGroup] = useState({
 		cct: '',
 		group: '',
+		class: '',
 	});
 
 	const handleGroup = (event) => {
@@ -22,7 +24,7 @@ const ModalClass = ({ addGroup, close }) => {
 	const handleSubmitGroup = (event) => {
 		event.preventDefault();
 		if (group.cct > 0 && group.group > 0) {
-			addGroup(group);
+			addGroup({ group: group.group + '-' + group.class, cct: group.cct });
 			close(false);
 		}
 	};
@@ -32,7 +34,7 @@ const ModalClass = ({ addGroup, close }) => {
 			<form className='modal_form'>
 				<div className='form_title'>
 					<h2>Crear Clase</h2>
-					<i onClick={() => close(false)} class='fas fa-times-circle'></i>
+					<i onClick={() => close(false)} className='fas fa-times-circle'></i>
 				</div>
 				<input
 					onChange={handleGroup}
@@ -40,16 +42,20 @@ const ModalClass = ({ addGroup, close }) => {
 					value={group.cct}
 					type='text'
 					placeholder='CCT*'
-					required
 				/>
-				<input
-					onChange={handleGroup}
-					name='group'
-					value={group.group}
-					type='text'
-					placeholder='Grupo*'
-					required
-				/>
+				<select value={group.group} onChange={handleGroup} name='group'>
+					{new Array(6).fill(0).map((group, index) => (
+						<option key={v1()}>{index + 1}</option>
+					))}
+				</select>
+				<select value={group.class} onChange={handleGroup} name='class'>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+					<option>D</option>
+					<option>E</option>
+					<option>F</option>
+				</select>
 				<button onClick={handleSubmitGroup}>Crear</button>
 			</form>
 		</div>,

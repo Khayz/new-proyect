@@ -61,7 +61,7 @@ const ModalAddChild = ({ parentID, addChild, loading }) => {
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                <i className="fas fa-times-circle" aria-hidden="true"></i>
               </button>
             </div>
             {loading ? (

@@ -49,7 +49,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
       className="FormRegister text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Regístrate como padre</p>
+      <p className="h4 mb-4">Registro Padres</p>
 
       {isLoading ? (
         <article className="login_auth_register">
@@ -100,7 +100,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
             id="defaultRegisterFormPasswordHelpBlock"
             className="form-text text-muted mb-4"
           >
-            Al menos 8 caracteres y 1 digito
+            Al menos 8 caracteres y 1 dígito
           </small>
           <input
             onChange={handleRegisterData}
@@ -108,7 +108,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
             name="phone"
             id="defaultRegisterPhonePassword"
             className="form-control"
-            placeholder="Numero Telefonico"
+            placeholder="Número Telefónico"
             aria-describedby="defaultRegisterFormPhoneHelpBlock"
           />
           <small
@@ -118,7 +118,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
           <button className="btn btn-info my-4 btn-block register-btn">
             Regístrate
           </button>
-          <p>Regístrate con tus redes</p>
+          <p>¡Regístrate con tus redes!</p>
           <Link to="/" className="mx-2" role="button">
             <i className="fab fa-facebook-f light-blue-text"></i>
           </Link>
@@ -133,7 +133,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
           </Link>
           <hr />
           <p>
-            Eres profesor? Regístrate como
+            ¿Eres Profesor? Regístrate como:
             <Link style={{ fontSize: "18px" }} to="/register/teacher">
               {" "}
               Profesor

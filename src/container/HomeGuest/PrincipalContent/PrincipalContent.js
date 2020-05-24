@@ -6,17 +6,14 @@ import { Link } from "react-router-dom";
 const PrincipalContent = () => {
   return (
     <div className="PrincipalContent">
-      <section className="speach">
-        <h1>
-          Home School
-        </h1>
+      <section className="speech">
+        <h1>Home School</h1>
         <p>
-          Únete a las escuelas en México que utilizan
-          Home School <br /> para organizar la vida escolar de todos los estudiantes, <br />  padres y profesores.
+          Únete a las escuelas en México que utilizan Home School <br /> para
+          organizar la vida escolar de todos los estudiantes, <br /> padres y
+          profesores.
         </p>
-        <h3>
-          Gratis para profesores ¡Siempre!
-        </h3>
+        <h3>Gratis para profesores ¡Siempre!</h3>
         <h2>Inscribirse como:</h2>
         <div className="typeAccount">
           <Link className="teacher" to="/register/teacher">
