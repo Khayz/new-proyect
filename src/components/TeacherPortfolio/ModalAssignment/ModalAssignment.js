@@ -22,18 +22,25 @@ const ModalAssignment = ({ close, setNewAssignment, _id }) => {
     <div className='modal_assignment'>
       <form className='modal_form'>
         <div className='formdata'>
-          <h4>Nombre de la asignatura</h4>
+          <h4 className='modal-title w-100 font-weight-bold'>
+            Nombre de la asignaturassss
+          </h4>
+
           <i onClick={() => close(false)} className='fas fa-times'></i>
         </div>
-        <br />
-        <input
-          onChange={handleAssignment}
-          name='assignment'
-          value={assignment}
-          placeholder='Asignatura*'
-          required
-        />
-        <button onClick={handleSubmitAssignment}>Añadir</button>
+        <div className='form p-5 mb-4 d-flex flex-column'>
+          <input
+            className='form-control mb-4'
+            onChange={handleAssignment}
+            name='assignment'
+            value={assignment}
+            placeholder='Asignatura*'
+            required
+          />
+          <button onClick={handleSubmitAssignment} className='mb-4'>
+            Añadir
+          </button>
+        </div>
       </form>
     </div>,
     document.getElementById('modal')

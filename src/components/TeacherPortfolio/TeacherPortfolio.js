@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { v1 } from 'uuid';
 import ModalTask from './ModalTask/ModalTask';
-import Dropdown from 'react-bootstrap/Dropdown';
 import './TeacherPortfolio.scss';
 
 import ModalAssignment from './ModalAssignment/ModalAssignment';
@@ -12,17 +11,6 @@ const TeacherPortfolio = ({ students, assignments, user }) => {
   const [openTaskModal, setOpenTaskModal] = useState(false);
   const [selectedTaskFiles, setSelectedTaskFiles] = useState({});
   const [selectedTaskTitle, setSelectedTaskTitle] = useState({});
-
-  // const prevScrollpos = window.pageYOffset;
-  // window.onscroll = function () {
-  //   var currentScrollPos = window.pageYOffset;
-  //   if (prevScrollpos > currentScrollPos) {
-  //     document.getElementById('asignature-btn-float').style.top = '0';
-  //   } else {
-  //     document.getElementById('asignature-btn-float').style.top = '-50px';
-  //   }
-  //   prevScrollpos = currentScrollPos;
-  // };
 
   return (
     <section className='Teacher-Portfolio'>
@@ -69,22 +57,8 @@ const TeacherPortfolio = ({ students, assignments, user }) => {
         <hr />
       </div>
       <article className='d-flex flex-column align-items-center flex-grow-1'>
-        <div className='name-students flex-xl-row d-flex flex-column align-items-center justify-content-center mt-4 '>
-          <h2 className='m-3'>Estudiantes</h2>
-          <Dropdown className='mb-lg-1 mb-md-1'>
-            <Dropdown.Toggle variant='success' id='dropdown-basic'>
-              Elige un estudiante
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {students.map((student) => (
-                <div
-                  className='d-flex justify-content-between align-items-center mb-3'
-                  key={v1()}>
-                  <Dropdown.Item>{student.firstName}</Dropdown.Item>
-                </div>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
+        <div className='name-students flex-xl-row d-flex flex-column align-items-center justify-content-center mt-xl-4'>
+          <h2 className='m-3'>Tareas</h2>
         </div>
         <div className='portfolio-info d-flex justify-content-center flex-wrap px-3 mb-5'>
           {user.tasks.map((task) => {
