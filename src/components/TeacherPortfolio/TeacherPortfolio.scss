@@ -125,16 +125,10 @@
 				width: 100%;
 				max-width: 350px;
 				padding: 1em;
-				transition: 0.3s ease-out;
 				cursor: pointer;
 				img {
 					height: 100px;
 					width: 100px;
-				}
-				&:hover {
-					-ms-transform: scale(1.5); /* IE 9 */
-					-webkit-transform: scale(1.5); /* Safari 3-8 */
-					transform: scale(2);
 				}
 			}
 			.btn-task-file {
