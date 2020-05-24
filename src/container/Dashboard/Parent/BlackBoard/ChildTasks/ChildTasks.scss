@@ -1,22 +1,32 @@
-.ChildTasks {
-  margin: 20px;
-  border: 2px solid #2f89fc;
-  border-radius: 9px;
-  width: 600px;
-  height: 800px;
-  background-color: #fff;
+.Tasks {
+  height: 90%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  .card {
-    margin: 5px;
-    height: 290px;
-    display: flex;
-    flex-direction: column;
-    button {
-      display: flex;
-      justify-content: center;
-      margin: auto;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: auto;
+  overflow-y: scroll;
+
+  & .Task {
+    width: 100%;
+    max-width: 380px;
+    margin: 10px;
+    height: auto;
+    h5 {
+      font-weight: bold;
+    }
+    border-radius: 20px;
+    /* background-color: #00a4e4; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .card-body {
+      margin: 0;
+    }
+    .card-header {
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      background-color: #f1c04b;
     }
   }
 }

@@ -46,9 +46,6 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
                   Hijo: <span>{child.firstName + " " + child.lastName}</span>
                 </h2>
                 <h2>
-                  Padre: <span>{child.parentName}</span>
-                </h2>
-                <h2>
                   Escuela: <span>{child.school}</span>
                 </h2>
                 <h2>

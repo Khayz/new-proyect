@@ -6,22 +6,24 @@ $otherColor: #00a4e4;
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
+	margin: auto;
 	overflow-y: scroll;
-	&-Post {
-		width: 60%;
-		min-width: 320px;
-		margin: 10px;
+
+	& ._Post {
+		width: 100%;
+		max-width: 380px;
+		height: auto;
+		margin: 15px;
 		padding: 10px;
-		border-radius: 8px;
+		border-radius: 5px;
 		background-color: #fff;
-		-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
-		-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
-		box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.16);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 		h2 {
-			text-align: justify;
 			color: #202020;
-			width: 320px;
-			border-radius: 12px;
+			width: 100%;
+			max-width: 320px;
+			border-radius: 5px;
 			font-weight: normal;
 			text-transform: uppercase;
 		}
@@ -33,20 +35,36 @@ $otherColor: #00a4e4;
 			}
 		}
 		button {
-			background-color: #fff;
-			padding: 5px 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+			width: 115px;
+			height: 40px;
 			background-color: $otherColor;
-			border: 1px solid #fff;
+			border: none;
 			color: #fff;
-			border-radius: 5px;
+			border-radius: 10px;
+			outline: none;
+			transition: all 0.3s;
+			&:active {
+				background-color: #c71585;
+			}
 		}
 	}
 
 	.HomeWork_pending {
-		background-color: #ffd54f;
+		border-radius: 10px;
+		background-color: #f1c04b;
+	}
+
+	._Post.null {
+		background-color: #fff;
+		border-radius: 10px;
 	}
 
 	.HomeWork_success {
+		border-radius: 10px;
 		background-color: $otherColor;
 		h2 {
 			color: #fff;
@@ -54,5 +72,15 @@ $otherColor: #00a4e4;
 		p {
 			color: #fff;
 		}
+	}
+}
+
+@media (max-width: 425px) {
+	.Posts {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		max-width: 380px;
 	}
 }

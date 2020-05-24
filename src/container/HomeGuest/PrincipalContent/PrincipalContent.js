@@ -1,5 +1,6 @@
 import React from "react";
 import "./PrincipalContent.scss";
+// import Backpack from "../../../Assets/Images/backpack-02.svg"
 import { Link } from "react-router-dom";
 
 const PrincipalContent = () => {
@@ -11,8 +12,11 @@ const PrincipalContent = () => {
         </h1>
         <p>
           Únete a las escuelas en México que utilizan
-          Home School para organizar la vida escolar de todos los niños, padres y profesores. <br /> Gratis para profesores ¡Siempre!
+          Home School <br /> para organizar la vida escolar de todos los estudiantes, <br />  padres y profesores.
         </p>
+        <h3>
+          Gratis para profesores ¡Siempre!
+        </h3>
         <h2>Inscribirse como:</h2>
         <div className="typeAccount">
           <Link className="teacher" to="/register/teacher">
@@ -24,6 +28,9 @@ const PrincipalContent = () => {
             <p>Padre</p>
           </Link>
         </div>
+        {/* <figure>
+          <img src={Backpack} alt="imagen" />
+        </figure> */}
       </section>
       <section className="video-opening">
         <iframe

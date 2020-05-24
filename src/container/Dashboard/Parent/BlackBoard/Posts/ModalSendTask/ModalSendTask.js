@@ -46,7 +46,7 @@ const ModalClass = ({ close, child, task, sendTask }) => {
 
 	return ReactDOM.createPortal(
 		<div className='modal_send_task'>
-			<form className='modal_send_task_form'>
+			<form className='modal_form'>
 				<div className='form_title'>
 					<h2>Enviar Tarea</h2>
 					<i onClick={() => close(false)} className='fas fa-times-circle'></i>
@@ -71,7 +71,7 @@ const ModalClass = ({ close, child, task, sendTask }) => {
 									inputs[inputs.length - 1] + 1,
 								]);
 						}}>
-						Añadir input
+						Añadir Tarea
 					</button>
 				)}
 				<button onClick={handleSubmitGroup}>Enviar</button>

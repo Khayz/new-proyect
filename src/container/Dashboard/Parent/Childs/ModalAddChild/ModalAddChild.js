@@ -74,6 +74,10 @@ const ModalAddChild = ({ parentID, addChild, loading }) => {
                 className="ModalRegister text-center border border-light p-5"
                 action="#!"
               >
+                <p className="connect-info">
+                  Para conectarte al aula de tu hijo, necesitarás que el
+                  profesor te dé una invitación con el código de la clase.
+                </p>
                 <div className="form-row mb-4">
                   <div className="col">
                     <input
@@ -82,7 +86,7 @@ const ModalAddChild = ({ parentID, addChild, loading }) => {
                       name="firstName"
                       id="defaultRegisterFormFirstName"
                       className="form-control"
-                      placeholder="First name"
+                      placeholder="Nombre"
                       required
                     />
                   </div>
@@ -93,7 +97,7 @@ const ModalAddChild = ({ parentID, addChild, loading }) => {
                       name="lastName"
                       id="defaultRegisterFormLastName"
                       className="form-control"
-                      placeholder="Last name"
+                      placeholder="Apellido"
                       required
                     />
                   </div>
@@ -105,14 +109,16 @@ const ModalAddChild = ({ parentID, addChild, loading }) => {
                   name="groupID"
                   id="defaultRegisterFormEmail"
                   className="form-control mb-4"
-                  placeholder="Group"
+                  placeholder="Código de clase"
                 />
 
-                <button className="btn btn-info my-4 btn-block">Añadir</button>
+                <button className="btn btn-info my-4 btn-block add-button">
+                  Añadir
+                </button>
                 <button
                   data-dismiss="modal"
                   aria-label="Close"
-                  className="btn btn-info my-4 btn-block"
+                  className="btn btn-info my-4 btn-block add-button"
                 >
                   Cerrar
                 </button>

@@ -20,6 +20,10 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 		getPosts(groupID);
 	}, [getPosts, groupID]);
 
+	useEffect(() => {
+		console.log(posts);
+	}, [posts]);
+
 	const handlePostData = (event) => {
 		const { value, name } = event.target;
 		setPost((prevState) => ({
@@ -30,6 +34,7 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 
 	const handleSubmitPost = (event) => {
 		event.preventDefault();
+		console.log(post);
 		setNewTask(post);
 	};
 
@@ -42,7 +47,7 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 					</figure>
 					<h2>Bienvenido a tus publicaciones</h2>
 					<p>
-						Tus publicaciones son la manera mas facil de compartir a tu
+						Tus publicaciones son la manera más fácil de compartir a tu
 						classroom las actualizaciones de cada tarea
 					</p>
 				</article>
@@ -53,7 +58,7 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 						name='title'
 						value={post.title}
 						type='text'
-						placeholder='Titulo*'
+						placeholder='Título*'
 						required
 					/>
 					<textarea
@@ -61,7 +66,7 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 						value={post.description}
 						name='description'
 						maxLength='300'
-						placeholder='Que pasa en tu classroom?*'
+						placeholder='¿Qué pasa en tu classroom?*'
 						type='text'
 						required
 					/>
@@ -76,14 +81,16 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 					</select>
 					<button className='btn btn-primary'>Publicar</button>
 				</form>
-				<section>
-					{posts.map((post) => (
-						<article key={v1()}>
-							<h1>{post.title}</h1>
-							<p>{post.description}</p>
-							<p>{post.assignment}</p>
-						</article>
-					))}
+				<section className='Homework-Post'>
+					{posts.map((post) => {
+						return (
+							<article className='_posts' key={v1()}>
+								<h1>{post.title}</h1>
+								<p>{post.description}</p>
+								<p>{post.assignment}</p>
+							</article>
+						);
+					})}
 				</section>
 			</div>
 		</section>

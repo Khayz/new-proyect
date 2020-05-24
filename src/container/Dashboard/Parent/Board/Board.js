@@ -7,7 +7,7 @@ const Board = () => {
   const BoardItem = [
     {
       name: "Libros",
-      url: "",
+      url: "https://librosdetexto.sep.gob.mx/",
     },
     {
       name: "Avisos",
@@ -20,7 +20,7 @@ const Board = () => {
       {BoardItem.map((board) => {
         return (
           <div className="Board_Item" key={v1()}>
-            <a href="/">{board.name}</a>
+            <a href={board.url}>{board.name}</a>
           </div>
         );
       })}

@@ -39,7 +39,7 @@ const BoardContent = ({ posts, homework }) => {
 				newPosts.map((post) => (
 					<div
 						key={v1()}
-						className={`Posts-Post ${
+						className={`_Post ${
 							post.status === 'Pendiente'
 								? 'HomeWork_pending'
 								: post.status === 'Entregada'

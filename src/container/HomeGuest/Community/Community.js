@@ -1,6 +1,6 @@
 import React from "react";
 import Mobile from "../../../Assets/Images/telefono-inteligente.svg";
-import Share from "../../../Assets/Images/img-share.png";
+// import Share from "../../../Assets/Images/img-share.png";
 import Calendar from "../../../Assets/Images/unnamed.png";
 
 import "./Community.scss";
@@ -10,41 +10,39 @@ const Community = () => {
     <section id="Community" className="Community">
       <div>
         <div className="share">
-          <h3>Comparte historias de tu clase con padres de familia</h3>
+          <h3>Comparte historias de tu clase</h3>
           <p>
             Comparte instantáneamente fotos, vídeos y anuncios en la historia de
-            la clase o envía mensajes privados a cualquier padre.
+            la clase o envía <br /> mensajes privados a cualquier padre de familia.
           </p>
 
           <ul>
             <li>
-              Los padres se unen a la clase fácilmente usando cualquier
+              Los padres pueden unirse a la clase fácilmente con cualquier
               dispositivo.
             </li>
             <li>Traduce instantáneamente mensajes a más de 30 idiomas.</li>
             <li>
-              Utiliza las función de "no molestar" para evitar interrupciones.
+              Utiliza la función de "No Molestar" para evitar interrupciones.
             </li>
           </ul>
-          <figure>
+          {/* <figure>
             <img src={Share} alt="imagen" />
-          </figure>
+          </figure> */}
         </div>
-        <hr />
         <div className="tools">
           <div className="tool-text">
             <h3>Todas tus herramientas de clase en un sólo lugar</h3>
             <p>
               Organiza grupos de alumnos al azar. Muestra las instrucciones para tus
-              actividades. Elige música de fondo. <br />Y haz muchas más cosas muy
-              pronto disponibles en el Toolkit de Home School.
+              actividades. Elige música de fondo. <br /> ¡Y haz muchas más cosas muy
+              pronto disponibles en el Toolkit de Home School!
             </p>
           </div>
           <figure>
             <img src={Mobile} alt="imagen" />
           </figure>
         </div>
-        <hr />
         <div className="digital-content">
           <div>
             <div>
@@ -60,13 +58,12 @@ const Community = () => {
             <img src={Calendar} alt="imagen" />
           </figure>
         </div>
-        <hr />
         <div className="school-community">
           <div>
             <div>
               <h3>Consolida tu comunidad escolar</h3>
               <p>
-                Los profesores, los líderes de la escuela y las familias pueden
+                Profesores, líderes de la escuela y familias pueden
                 asociarse en Home School para crear una increíble comunidad
                 escolar.
               </p>
@@ -84,7 +81,6 @@ const Community = () => {
             ></iframe>
           </div>
         </div>
-        <hr />
         <div className="plan">
           <div>
             <h3>¿Planeas una presentación? ¡Tenemos todo cubierto!</h3>
@@ -94,7 +90,6 @@ const Community = () => {
             </p>
           </div>
         </div>
-        <hr />
         <div className="devices">
           <h3>Cualquier aula, cualquier dispositivo. <br /> 100% gratis.</h3>
           <div className="card-group cards">
@@ -120,7 +115,6 @@ const Community = () => {
             </div>
             <div className="card">
               <i className="fas fa-chalkboard-teacher"></i>
-
               <div className="card-body">
                 <p className="card-text">
                   ¡Home School siempre será gratuito para los profesores!

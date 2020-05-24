@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import "./SignUpParent.scss";
 
 import Spinner from "../../Ui/Spinner/Spinner";
+import { Link } from "react-router-dom";
 
 function SignUpParent({ registerUser, error, isLoading }) {
   const [register, setRegister] = useState({
@@ -45,10 +46,10 @@ function SignUpParent({ registerUser, error, isLoading }) {
   return (
     <form
       onSubmit={handleSubmitRegister}
-      className="Register text-center border border-light p-5"
+      className="FormRegister text-center border border-light p-5"
       action="#!"
     >
-      <p className="h4 mb-4">Sign up parent</p>
+      <p className="h4 mb-4">Regístrate como padre</p>
 
       {isLoading ? (
         <article className="login_auth_register">
@@ -64,7 +65,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
                 name="firstName"
                 id="defaultRegisterFormFirstName"
                 className="form-control"
-                placeholder="First name"
+                placeholder="Nombre"
               />
             </div>
             <div className="col">
@@ -74,7 +75,7 @@ function SignUpParent({ registerUser, error, isLoading }) {
                 name="lastName"
                 id="defaultRegisterFormLastName"
                 className="form-control"
-                placeholder="Last name"
+                placeholder="Apellido"
               />
             </div>
           </div>
@@ -92,50 +93,52 @@ function SignUpParent({ registerUser, error, isLoading }) {
             name="password"
             id="defaultRegisterFormPassword"
             className="form-control"
-            placeholder="Password"
+            placeholder="Contraseña"
             aria-describedby="defaultRegisterFormPasswordHelpBlock"
           />
           <small
             id="defaultRegisterFormPasswordHelpBlock"
             className="form-text text-muted mb-4"
           >
-            At least 8 characters and 1 digit
+            Al menos 8 caracteres y 1 digito
           </small>
           <input
             onChange={handleRegisterData}
-            type="text"
+            type="tel"
             name="phone"
             id="defaultRegisterPhonePassword"
             className="form-control"
-            placeholder="Phone number"
+            placeholder="Numero Telefonico"
             aria-describedby="defaultRegisterFormPhoneHelpBlock"
           />
           <small
             id="defaultRegisterFormPhoneHelpBlock"
             className="form-text text-muted mb-4"
           ></small>
-          <button className="btn btn-info my-4 btn-block">Sign in</button>
-          <p>or sign up with:</p>
-          <a href="/" className="mx-2" role="button">
+          <button className="btn btn-info my-4 btn-block register-btn">
+            Regístrate
+          </button>
+          <p>Regístrate con tus redes</p>
+          <Link to="/" className="mx-2" role="button">
             <i className="fab fa-facebook-f light-blue-text"></i>
-          </a>
-          <a href="/" className="mx-2" role="button">
+          </Link>
+          <Link to="/" className="mx-2" role="button">
             <i className="fab fa-twitter light-blue-text"></i>
-          </a>
-          <a href="/" className="mx-2" role="button">
+          </Link>
+          <Link to="/" className="mx-2" role="button">
             <i className="fab fa-linkedin-in light-blue-text"></i>
-          </a>
-          <a href="/" className="mx-2" role="button">
+          </Link>
+          <Link to="/" className="mx-2" role="button">
             <i className="fab fa-github light-blue-text"></i>
-          </a>
+          </Link>
           <hr />
           <p>
-            By clicking
-            <em>Sign up</em> you agree to our
-            <a href="/" target="_blank">
-              terms of service
-            </a>
-          </p>{" "}
+            Eres profesor? Regístrate como
+            <Link style={{ fontSize: "18px" }} to="/register/teacher">
+              {" "}
+              Profesor
+            </Link>
+          </p>
         </>
       )}
     </form>
