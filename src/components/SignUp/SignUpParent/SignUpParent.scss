@@ -5,6 +5,13 @@
   margin: auto;
   min-height: 65vh;
 
+  hr {
+    margin: 20px 0px;
+    // border: solid #c71585;
+    border: 1px solid #535353;
+    border-radius: 20px;
+  }
+
   .login_auth_register {
     height: 400px;
     display: flex;

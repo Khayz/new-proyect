@@ -66,7 +66,7 @@ const Login = ({ loginUser, loading }) => {
         ¿No eres miembro? <br /> <Link to="/register/parent">¡Regístrate!</Link>
       </p>
 
-      <p>O regístrate con:</p>
+      <p>Iniciar Sesión con:</p>
 
       <Link to="/" className="mx-2" role="button">
         <i className="fab fa-facebook-f light-blue-text"></i>

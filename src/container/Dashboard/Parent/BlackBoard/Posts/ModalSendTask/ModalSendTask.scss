@@ -15,8 +15,8 @@
     height: 320px;
     text-align: center;
     padding: 10px;
-    border-radius: 10px;
-    background-color: #fff;
+    border-radius: 20px;
+    background-color: #f0efef;
     button {
       display: flex;
       justify-content: center;
@@ -28,34 +28,46 @@
       border-radius: 10px;
       background-color: #00a4e4;
       color: #fff;
-      transition: 0.3s;
+      transition: 0.5s ease-out;
       outline: none;
       &:hover {
         background-color: #c71585;
       }
     }
+    #upload-file {
+      margin: auto;
+      margin-right: 10px;
+      justify-content: center;
+    }
     .form_title {
       display: flex;
-      justify-content: space-between;
+      // flex-direction: row;
+      color: #535353;
+      justify-content: center;
       align-items: center;
-      border-bottom: 1px solid #202329;
+      border-bottom: 2px solid #535353;
+      margin-bottom: 5px;
       h2 {
         font-size: 25px;
+        margin-left: 140px;
       }
       i {
+        margin-left: 120px;
         font-size: 25px;
-        padding-bottom: 10px;
+        padding-bottom: 6px;
         cursor: pointer;
-        transition: 0.3s;
+        transition: 0.5s ease-out;
+        color: #e26a6a;
         &:hover {
-          color: #686868;
+          color: #c0392b;
         }
       }
     }
-    input {
-      height: 50px;
-      width: 100%;
-      margin: auto;
-    }
+  }
+}
+
+@media (max-width: 520px) {
+  .modal_form {
+    width: 96%;
   }
 }

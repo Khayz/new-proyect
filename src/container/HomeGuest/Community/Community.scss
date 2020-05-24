@@ -18,7 +18,7 @@
   h3 {
     text-align: center;
     // padding: 50px 0;
-    color: #363636;
+    color: #535353;
     // color: white;
     font-size: 34px;
     line-height: 43px;
@@ -68,12 +68,13 @@
     ul {
       font-weight: 500;
       text-align: left;
-      color: #363636;
+      color: #535353;
       // color: white;
       margin: auto;
       font-size: 14px;
       line-height: 24px;
       max-width: 530px;
+      padding: 0px;
     }
     li {
       margin: 20px;
@@ -94,6 +95,8 @@
     // margin-top: 60px;
     // margin-bottom: 60px;
     padding: 50px 0px;
+    // background-color: white;
+
     background: #00c6ff; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
@@ -112,10 +115,12 @@
       flex-direction: column;
       text-align: center;
       color: white;
+      // color: #535353;
     }
 
     h3 {
       color: white;
+      // color: #535353;
       font-weight: bold;
       margin-top: 20px;
       margin-bottom: 0px;
@@ -192,7 +197,7 @@
     // width: 70%;
     // box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.4);
     height: auto;
-    color: #363636;
+    color: #535353;
     margin: auto;
     padding: 50px 0px;
     width: 80%;
@@ -202,7 +207,7 @@
       // color: white;
       // text-shadow: 2px 3px black;
       // background-color: rgba(0, 0, 0, 0.3);
-      color: #363636;
+      color: #535353;
     }
     p {
       // background-color: rgba(0, 0, 0, 0.3);
@@ -263,6 +268,28 @@
           color: white;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .devices {
+    flex-direction: column;
+    h3 {
+      margin: 0px 20px 8px 20px;
+    }
+  }
+  .school-community {
+    h3 {
+      margin: 0px 20px 8px 20px;
+    }
+    p {
+      margin: 0px 20px 8px 20px;
+    }
+  }
+  .share {
+    ul {
+      padding: 0px;
     }
   }
 }

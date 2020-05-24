@@ -19,8 +19,8 @@ $blue-light-hover: rgba(0, 174, 239, 0.5);
     height: 200px;
     // text-align: center;
     padding: 10px;
-    background-color: white;
-    // background-color: #f0efef;
+    // background-color: white;
+    background-color: #f0efef;
     border-radius: 20px;
     .form_title {
       display: flex;
@@ -35,15 +35,11 @@ $blue-light-hover: rgba(0, 174, 239, 0.5);
         margin-left: 65px;
       }
       i {
-        // position: relative;
-        // right: -40px;
         margin-left: 30px;
         font-size: 25px;
         padding-bottom: 6px;
         cursor: pointer;
         transition: 0.5s ease-out;
-        // color: #c71585;
-        // color: #535353;
         color: #e26a6a;
         &:hover {
           color: #c0392b;
@@ -57,7 +53,7 @@ $blue-light-hover: rgba(0, 174, 239, 0.5);
       border-radius: 10px;
       border-style: none;
       outline: none;
-      background-color: #e4e4e4;
+      // background-color: #e4e4e4;
     }
     button {
       background-color: rgb(0, 174, 239);
