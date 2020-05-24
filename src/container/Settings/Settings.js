@@ -1,21 +1,20 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import "./Settings.scss";
+import './Settings.scss';
 
-import SettingChild from "./SettingChilds/SettingChild";
-import SettinsTeacher from "./SettinsTeacher/SettinsTeacher";
+import SettingChild from './SettingChilds/SettingChild';
 
 const Settings = ({ user }) => {
-  return (
-    <div className="settings">
-      {user.account === "Parent" ? <SettingChild /> : <SettinsTeacher />}
-    </div>
-  );
+	return (
+		<div className='settings'>
+			<SettingChild />
+		</div>
+	);
 };
 
 const mapStateToProps = (state) => ({
-  user: state.auth.user,
+	user: state.auth.user,
 });
 
 export default connect(mapStateToProps)(Settings);

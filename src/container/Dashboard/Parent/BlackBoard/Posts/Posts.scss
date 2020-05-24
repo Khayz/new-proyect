@@ -1,86 +1,86 @@
 $otherColor: #00a4e4;
 
 .Posts {
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin: auto;
-  overflow-y: scroll;
+	height: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	margin: auto;
+	overflow-y: scroll;
 
-  & ._Post {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	& ._Post {
+		width: 100%;
+		max-width: 380px;
+		height: auto;
+		margin: 15px;
+		padding: 10px;
+		border-radius: 5px;
+		background-color: #fff;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    h2 {
-      color: #202020;
-      width: 100%;
-      max-width: 320px;
-      border-radius: 5px;
-      font-weight: normal;
-      text-transform: uppercase;
-    }
-    p {
-      text-transform: uppercase;
-      color: #202329;
-      span {
-        text-transform: lowercase;
-      }
-    }
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-      width: 115px;
-      height: 40px;
-      background-color: $otherColor;
-      border: none;
-      color: #fff;
-      border-radius: 10px;
-      outline: none;
-      transition: all 0.3s;
-      &:active {
-        background-color: #c71585;
-      }
-    }
-  }
+		h2 {
+			color: #202020;
+			width: 100%;
+			max-width: 320px;
+			border-radius: 5px;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		p {
+			text-transform: uppercase;
+			color: #202329;
+			span {
+				text-transform: lowercase;
+			}
+		}
+		button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+			width: 115px;
+			height: 40px;
+			background-color: $otherColor;
+			border: none;
+			color: #fff;
+			border-radius: 10px;
+			outline: none;
+			transition: all 0.3s;
+			&:active {
+				background-color: #c71585;
+			}
+		}
+	}
 
-  .HomeWork_pending {
-    border-radius: 10px;
-    background-color: #f1c04b;
-  }
+	.HomeWork_pending {
+		border-radius: 10px;
+		background-color: #f1c04b;
+	}
 
-  ._Post.null {
-    background-color: #fff;
-    border-radius: 10px;
-  }
+	._Post.null {
+		background-color: #fff;
+		border-radius: 10px;
+	}
 
-  .HomeWork_success {
-    border-radius: 10px;
-    background-color: $otherColor;
-    h2 {
-      color: #fff;
-    }
-    p {
-      color: #fff;
-    }
-  }
+	.HomeWork_success {
+		border-radius: 10px;
+		background-color: $otherColor;
+		h2 {
+			color: #fff;
+		}
+		p {
+			color: #fff;
+		}
+	}
 }
 
 @media (max-width: 425px) {
-  .Posts {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 380px;
-  }
+	.Posts {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		max-width: 380px;
+	}
 }
