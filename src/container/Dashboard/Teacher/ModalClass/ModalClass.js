@@ -30,7 +30,7 @@ const ModalClass = ({ addGroup, close }) => {
       <form className="modal_form">
         <div className="form_title">
           <h2>Crear Clase</h2>
-          <i onClick={() => close(false)} class="fas fa-times-circle"></i>
+          <i onClick={() => close(false)} className="fas fa-times-circle"></i>
         </div>
         <input
           onChange={handleGroup}
