@@ -30,10 +30,6 @@ const TeacherPortfolio = ({
     }
   };
 
-  const handleSidebarClose = () => {
-    setSidebarOpen(false);
-  };
-
   const Sidebar = () => (
     <div
       className={
@@ -42,14 +38,14 @@ const TeacherPortfolio = ({
           : 'sideBoard-activities-showed px-5 py-3 '
       }>
       <article>
-        <div className='assignments-title d-flex justify-content-between align-items-center mb-3'>
+        <div className='assignments-title d-flex justify-content-between align-items-center mb-5 mb-sm-3'>
           <h2>Asignaturas</h2>
           <i
             onClick={() => setOpenModal(true)}
             className='fas fa-plus-circle mx-2'
             aria-hidden='true'></i>
         </div>
-        <div className='assignments-container'>
+        <div className='assignments-container mb-5 mb-sm-2'>
           {assignments.map((assignment) => (
             <div
               className='assignment d-flex justify-content-between'
@@ -59,11 +55,10 @@ const TeacherPortfolio = ({
             </div>
           ))}
         </div>
-        <hr />
-        <div className='name-students d-flex align-items-center justify-content-start mb-3'>
+        <div className='name-students d-flex align-items-center justify-content-start mb-5 mb-sm-3'>
           <h2>Estudiantes</h2>
         </div>
-        <div>
+        <div className='students-container mb-5 mb-sm-2'>
           {students.map((student) => (
             <div className='d-flex justify-content-between' key={v1()}>
               <i className='fas fa-user-graduate'></i>
@@ -81,7 +76,6 @@ const TeacherPortfolio = ({
 
         {openModal && <ModalAssignment close={setOpenModal} />}
       </article>
-      <hr />
       {!sidebarOpen ? (
         <button className='btn-close-sidebar' onClick={handlerSidebarIsOpen}>
           {' '}
