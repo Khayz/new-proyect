@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { setNewAssignment } from '../../../redux/actions/index.actions';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import { connect } from "react-redux";
+import { setNewAssignment } from "../../../redux/actions/index.actions";
 
-import './ModalAssignment.scss';
+import "./ModalAssignment.scss";
 
 const ModalAssignment = ({ close, setNewAssignment, _id }) => {
-  const [assignment, setAssignment] = useState('');
+  const [assignment, setAssignment] = useState("");
 
   const handleAssignment = (event) => {
     setAssignment(event.target.value);
@@ -19,31 +19,31 @@ const ModalAssignment = ({ close, setNewAssignment, _id }) => {
   };
 
   return ReactDOM.createPortal(
-    <div className='modal_assignment'>
-      <form className='modal_form'>
-        <div className='formdata'>
-          <h4 className='modal-title w-100 font-weight-bold'>
+    <div className="modal_assignment">
+      <form className="modal_form">
+        <div className="formdata">
+          <h4 className="modal-title w-100 font-weight-bold">
             Nombre de la asignaturassss
           </h4>
 
-          <i onClick={() => close(false)} className='fas fa-times'></i>
+          <i onClick={() => close(false)} className="fas fa-times"></i>
         </div>
-        <div className='form p-5 mb-4 d-flex flex-column'>
+        <div className="form p-5 mb-4 d-flex flex-column">
           <input
-            className='form-control mb-4'
+            className="form-control mb-4"
             onChange={handleAssignment}
-            name='assignment'
+            name="assignment"
             value={assignment}
-            placeholder='Asignatura*'
+            placeholder="Asignatura*"
             required
           />
-          <button onClick={handleSubmitAssignment} className='mb-4'>
+          <button onClick={handleSubmitAssignment} className="mb-4">
             Añadir
           </button>
         </div>
       </form>
     </div>,
-    document.getElementById('modal')
+    document.getElementById("modal")
   );
 };
 

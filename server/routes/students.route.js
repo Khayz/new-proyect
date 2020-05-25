@@ -9,7 +9,7 @@ router.post('/students', async (req, res) => {
 		if (studentGroup === null) {
 			return res.send({ message: 'GroupID Incorrect' });
 		}
-		const { school, group, assignments, _id } = studentGroup;
+		const { school, group, assignments, emailList, _id } = studentGroup;
 		const student = new Students({
 			...req.body,
 			school,
@@ -22,7 +22,11 @@ router.post('/students', async (req, res) => {
 		await Groups.updateOne(
 			{ _id: studentGroup._id },
 			{
-				$set: { students: [...studentGroup.students, newStudent] },
+				$set: {
+					students: [...studentGroup.students, newStudent],
+					emailList: [...emailList, parent.email]
+				},
+				//aqui
 			}
 		);
 		await Parents.updateOne(

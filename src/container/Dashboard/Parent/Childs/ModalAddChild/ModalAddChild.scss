@@ -7,12 +7,44 @@
 }
 
 .connect-info {
-  color: #363636;
+  color: #535353;
   font-size: 18px;
 }
 .modal-dialog {
-  h4 {
-    color: #363636;
+  .ModalChild.modal-content {
+    background-color: #f0efef;
+    border-radius: 20px;
+    form {
+      border: none !important;
+      input {
+        background-color: #ffff;
+        border-radius: 10px;
+        border: none;
+      }
+    }
+  }
+  .modal-header.text-center {
+    h4 {
+      margin-left: 75px;
+      text-align: center;
+      color: #535353;
+    }
+    i {
+      // position: relative;
+      // right: -40px;
+      margin: auto;
+      font-size: 28px;
+
+      cursor: pointer;
+      transition: 0.5s ease-out;
+      // color: #c71585;
+      // color: #535353;
+      color: #e26a6a;
+      &:hover {
+        color: #c0392b;
+        // color: #e26a6a;
+      }
+    }
   }
   .add-button {
     background-color: #00a4e4;
@@ -21,9 +53,9 @@
     color: white;
     outline: none;
     transition: 0.3s;
-  }
-  .add-button:hover {
-    background-color: #c71585;
-    color: white;
+    &:hover {
+      background-color: #c71585;
+      color: white;
+    }
   }
 }

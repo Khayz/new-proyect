@@ -31,7 +31,9 @@ router.post('/groups', async (req, res) => {
 		teachers: [{ teacher: req.body.teacherID }],
 		class_turn: dbGroup.turno,
 		type: dbGroup.type,
+		emailList: [],
 	});
+
 	const savedGroup = await newGroup.save();
 	res.send(savedGroup);
 });
