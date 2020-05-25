@@ -10,6 +10,7 @@ const GroupsSchema = mongoose.Schema({
 	teachers: { type: Array },
 	class_turn: { type: String },
 	type: { type: String },
+	emailList: { type: Array }
 });
 
 module.exports = mongoose.model('groups_collections', GroupsSchema);
