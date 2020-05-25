@@ -20,6 +20,76 @@ const TeacherPortfolio = ({
   const [selectedTaskFiles, setSelectedTaskFiles] = useState({});
   const [selectedTaskTitle, setSelectedTaskTitle] = useState({});
   const [actualTask, setActualTask] = useState({});
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const handlerSidebarIsOpen = () => {
+    if (!sidebarOpen) {
+      setSidebarOpen(true);
+    } else {
+      setSidebarOpen(false);
+    }
+  };
+
+  const handleSidebarClose = () => {
+    setSidebarOpen(false);
+  };
+
+  const Sidebar = () => (
+    <div
+      className={
+        sidebarOpen
+          ? 'sideBoard-activities d-none d-xl-block'
+          : 'sideBoard-activities-showed px-5 py-3 '
+      }>
+      <article>
+        <div className='assignments-title d-flex justify-content-between align-items-center mb-3'>
+          <h2>Asignaturas</h2>
+          <i
+            onClick={() => setOpenModal(true)}
+            className='fas fa-plus-circle mx-2'
+            aria-hidden='true'></i>
+        </div>
+        <div className='assignments-container'>
+          {assignments.map((assignment) => (
+            <div
+              className='assignment d-flex justify-content-between'
+              key={v1()}>
+              <i className='fas fa-book-open mr-2'></i>
+              <h4 key={v1()}>{assignment}</h4>
+            </div>
+          ))}
+        </div>
+        <hr />
+        <div className='name-students d-flex align-items-center justify-content-start mb-3'>
+          <h2>Estudiantes</h2>
+        </div>
+        <div>
+          {students.map((student) => (
+            <div className='d-flex justify-content-between' key={v1()}>
+              <i className='fas fa-user-graduate'></i>
+              <h4
+                onClick={() => handleActualHomework(student)}
+                className='mb-2'
+                name='hello'
+                value={student.firstName}
+                key={v1()}>
+                {student.firstName}
+              </h4>
+            </div>
+          ))}
+        </div>
+
+        {openModal && <ModalAssignment close={setOpenModal} />}
+      </article>
+      <hr />
+      {!sidebarOpen ? (
+        <button className='btn-close-sidebar' onClick={handlerSidebarIsOpen}>
+          {' '}
+          Cerrar
+        </button>
+      ) : null}
+    </div>
+  );
 
   useEffect(() => {
     console.log(homework);
@@ -33,62 +103,17 @@ const TeacherPortfolio = ({
     <section className='Teacher-Portfolio'>
       <div
         id='asignature-btn-float'
-        className='asignature-btn-float .d-none d-md-block d-sm-block d-lg-none '>
+        className='asignature-btn-float .d-none d-md-block d-sm-block d-lg-block d-xl-none '>
         <i
-          onClick={() => setOpenModal(true)}
-          className='fas fa-plus-circle mx-2'
+          onClick={handlerSidebarIsOpen}
+          className='fas fa-bars'
           aria-hidden='true'></i>
       </div>
-      <div className='sideBoard-activities d-none d-xl-block'>
-        <article>
-          <h2>Actividades</h2>
-        </article>
-        <hr />
-        <article>
-          <div className='d-flex justify-content-between align-items-center mb-3'>
-            <h2>Asignaturas</h2>
-            <i
-              onClick={() => setOpenModal(true)}
-              className='fas fa-plus-circle mx-2'
-              aria-hidden='true'></i>
-          </div>
-          <div className='assignments-container'>
-            {assignments.map((assignment) => (
-              <div
-                className='assignment d-flex justify-content-between'
-                key={v1()}>
-                <i className='fas fa-book-open mr-2'></i>
-                <h4 key={v1()}>{assignment}</h4>
-              </div>
-            ))}
-          </div>
-          <hr />
-          <div className='name-students d-flex flex-column align-items-center justify-content-between mt-4 '>
-            <div>
-              <h2 className='m-3'>Estudiantes</h2>
-            </div>
-            <div className='d-flex justify-content-between align-items-center'>
-              {students.map((student) => (
-                <h4
-                  onClick={() => handleActualHomework(student)}
-                  className='mb-3'
-                  name='hello'
-                  value={student.firstName}
-                  key={v1()}>
-                  {student.firstName}
-                </h4>
-              ))}
-            </div>
-          </div>
-
-          {openModal && <ModalAssignment close={setOpenModal} />}
-        </article>
-        <hr />
-      </div>
-      <article className='d-flex flex-column align-items-center flex-grow-1'>
-        <div className='portfolio-info d-flex justify-content-center flex-wrap px-3 mb-5'>
+      <Sidebar />
+      <article className='d-flex flex-column align-items-center justify-content-center flex-grow-1'>
+        <div className='portfolio-info d-flex justify-content-center flex-wrap p-3 m-auto'>
           {message !== null ? (
-            <p>{message}</p>
+            <h3 className='mt-xl-5 mt-lg-5 mt-3'>{message}</h3>
           ) : (
             homework.map((task) => (
               <div
@@ -101,38 +126,26 @@ const TeacherPortfolio = ({
                 key={v1()}>
                 <form key={v1()}>
                   <div className='task-file-container d-flex justify-content-center align-items-center'>
-                    <img
-                      key={v1()}
-                      src={task.files.task0}
-                      alt='task'
-                      onClick={() => {
-                        setSelectedTaskFiles(task.files);
-                        setOpenTaskModal(true);
-                        setSelectedTaskTitle(task.title);
-                      }}
-                    />
+                    <img key={v1()} src={task.files.task0} alt='task' />
                   </div>
-
                   <div>
-                    <h5 className='card-title'>{task.title}</h5>
-
-                    <div>
-                      <h2 className='card-title'>{task.title}</h2>
+                    <h2 className='card-title'>{task.title}</h2>
+                    <div className='card-status d-flex justify-content-around'>
                       <p>Estatus: {task.status}</p>
                       <p>Calificacion: {task.calification}</p>
-                      {task.status === 'Pendiente' && (
-                        <button
-                          className='btn-task-file m-2'
-                          onClick={() => {
-                            setActualTask(task);
-                            setSelectedTaskFiles(task.files);
-                            setOpenTaskModal(true);
-                            setSelectedTaskTitle(task.title);
-                          }}>
-                          Calificar
-                        </button>
-                      )}
                     </div>
+                    {task.status === 'Pendiente' && (
+                      <button
+                        className='btn-task-file mb-2'
+                        onClick={() => {
+                          setActualTask(task);
+                          setSelectedTaskFiles(task.files);
+                          setOpenTaskModal(true);
+                          setSelectedTaskTitle(task.title);
+                        }}>
+                        Calificar
+                      </button>
+                    )}
                   </div>
                 </form>
               </div>

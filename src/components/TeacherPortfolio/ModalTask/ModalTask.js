@@ -39,7 +39,7 @@ const ModalTask = ({ close, files, isOpen, title, task, updateHomework }) => {
     ? ReactDOM.createPortal(
         <div className='modal_task'>
           <div className='card_modal'>
-            <div>
+            <div className='d-flex justify-content-end'>
               <button className='btn-close' onClick={close}>
                 x
               </button>
