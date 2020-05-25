@@ -25,6 +25,7 @@ const v4options = {
 
 export const addGroup = (group) => async (dispatch) => {
 	const teacher = JSON.parse(localStorage.getItem('user'));
+	console.log(teacher);
 	const { data } = await axios.post(`${url}/groups`, {
 		...group,
 		inviteID: v4(v4options),

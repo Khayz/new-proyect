@@ -9,12 +9,13 @@ import { v1 } from 'uuid';
 const ModalClass = ({ addGroup, close }) => {
 	const [group, setGroup] = useState({
 		cct: '',
-		group: '',
-		class: '',
+		group: '1',
+		class: 'A',
 	});
 
 	const handleGroup = (event) => {
 		const { value, name } = event.target;
+		console.log(value, name);
 		setGroup((prevState) => ({
 			...prevState,
 			[name]: value,
@@ -23,7 +24,8 @@ const ModalClass = ({ addGroup, close }) => {
 
 	const handleSubmitGroup = (event) => {
 		event.preventDefault();
-		if (group.cct > 0 && group.group > 0) {
+		if (group.cct.length > 0 && group.group.length > 0) {
+			console.log('HELLO');
 			addGroup({ group: group.group + '-' + group.class, cct: group.cct });
 			close(false);
 		}
@@ -42,13 +44,22 @@ const ModalClass = ({ addGroup, close }) => {
 					value={group.cct}
 					type='text'
 					placeholder='CCT*'
+					required
 				/>
-				<select value={group.group} onChange={handleGroup} name='group'>
+				<select
+					required
+					value={group.group}
+					onChange={handleGroup}
+					name='group'>
 					{new Array(6).fill(0).map((group, index) => (
 						<option key={v1()}>{index + 1}</option>
 					))}
 				</select>
-				<select value={group.class} onChange={handleGroup} name='class'>
+				<select
+					required
+					value={group.class}
+					onChange={handleGroup}
+					name='class'>
 					<option>A</option>
 					<option>B</option>
 					<option>C</option>
