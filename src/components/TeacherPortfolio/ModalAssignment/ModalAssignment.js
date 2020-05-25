@@ -23,10 +23,10 @@ const ModalAssignment = ({ close, setNewAssignment, _id }) => {
       <form className="modal_form">
         <div className="formdata">
           <h4 className="modal-title w-100 font-weight-bold">
-            Nombre de la asignaturassss
+            Nombre de la asignaturas
           </h4>
 
-          <i onClick={() => close(false)} className="fas fa-times"></i>
+          <i onClick={() => close(false)} className="fas fa-times-circle"></i>
         </div>
         <div className="form p-5 mb-4 d-flex flex-column">
           <input
