@@ -112,16 +112,18 @@ const TeacherPortfolio = ({
 									<div>
 										<h5 className='card-title'>{task.title}</h5>
 
-										<button
-											className='btn-task-file m-2'
-											onClick={() => {
-												setActualTask(task);
-												setSelectedTaskFiles(task.files);
-												setOpenTaskModal(true);
-												setSelectedTaskTitle(task.title);
-											}}>
-											Calificar
-										</button>
+										{task.status === 'Pendiente' && (
+											<button
+												className='btn-task-file m-2'
+												onClick={() => {
+													setActualTask(task);
+													setSelectedTaskFiles(task.files);
+													setOpenTaskModal(true);
+													setSelectedTaskTitle(task.title);
+												}}>
+												Calificar
+											</button>
+										)}
 									</div>
 								</form>
 							</div>
