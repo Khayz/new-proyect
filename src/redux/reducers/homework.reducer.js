@@ -65,7 +65,7 @@ export const homeworkReducer = (state = initialState, action) => {
 		case types.SEND_TASK_SUCCESS:
 			return {
 				...state,
-				student_homework: [...state.homework, action.data],
+				homework: [...state.homework, action.data],
 				message: 'Tarea entregada satisfactoriamente',
 				loading: null,
 				error: null,

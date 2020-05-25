@@ -43,6 +43,7 @@ const ModalClass = ({ close, child, task, sendTask, message, loading }) => {
 			});
 
 			await close(false);
+			toast.info('Tarea enviada satisfactoriamente.');
 		})();
 	};
 

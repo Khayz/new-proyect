@@ -40,7 +40,10 @@ const Teacher = ({ user, groups, setCurrentGroup }) => {
 					Profesor: <span>{user.firstName}</span>{' '}
 				</h2>
 				<p>
-					Escuela: <span>Benito Juarez, 219</span>{' '}
+					Escuelas:{' '}
+					{groups.map(({ school }) => (
+						<span>{school} / </span>
+					))}
 				</p>
 				<hr />
 				<i className='fas fa-school'></i>

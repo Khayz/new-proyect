@@ -35,7 +35,8 @@ function App({ authUser, user, getChilds, getGroups }) {
 		<BrowserRouter>
 			<div className='App'>
 				<Navbar />
-				<Route path='/assignments' component={Assignments} />
+				{/* <Route path='/assignments' component={Assignments} /> */}
+				<Route render={() => <Redirect path='/' />} />
 				<Route
 					exact
 					path='/'
