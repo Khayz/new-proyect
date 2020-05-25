@@ -5,9 +5,7 @@ const TeachersSchema = mongoose.Schema({
 	email: { type: String },
 	password: { type: String },
 	phone: { type: Number },
-	cct: { type: Number },
 	account: { type: String },
-	tasks: { type: Array },
 });
 
 module.exports = mongoose.model('teachers_accounts', TeachersSchema);

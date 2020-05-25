@@ -45,6 +45,7 @@ const Login = ({ loginUser, loading }) => {
 					id='defaultLoginFormEmail'
 					className='form-control mb-4'
 					placeholder='E-mail'
+					required
 				/>
 
 				<input
@@ -54,6 +55,7 @@ const Login = ({ loginUser, loading }) => {
 					id='defaultLoginFormPassword'
 					className='form-control mb-4'
 					placeholder='Contraseña'
+					required
 				/>
 
 				<div className='d-flex justify-content-around'>

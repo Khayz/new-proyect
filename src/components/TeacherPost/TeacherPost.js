@@ -5,8 +5,16 @@ import { setNewTask, getPosts } from '../../redux/actions/index.actions';
 import Tmonster from './../../Assets/Images/monstert.svg';
 import './TeacherPost.scss';
 import { v1 } from 'uuid';
+import Spinner from '../Ui/Spinner/Spinner';
 
-const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
+const TeacherPost = ({
+	assignments,
+	groupID,
+	setNewTask,
+	posts,
+	getPosts,
+	isLoading,
+}) => {
 	const [post, setPost] = useState({
 		title: '',
 		description: '',
@@ -51,43 +59,47 @@ const TeacherPost = ({ assignments, groupID, setNewTask, posts, getPosts }) => {
 						classroom las actualizaciones de cada tarea
 					</p>
 				</article>
-				<form onSubmit={handleSubmitPost} className='teacher-post'>
-					<i className='fas fa-user-circle'></i>
-					<input
-						onChange={handlePostData}
-						name='title'
-						value={post.title}
-						type='text'
-						placeholder='Título*'
-						required
-					/>
-					<textarea
-						onChange={handlePostData}
-						value={post.description}
-						name='description'
-						maxLength='300'
-						placeholder='¿Qué pasa en tu classroom?*'
-						type='text'
-						required
-					/>
-					<hr />
-					<h2>Materia</h2>
-					<select required onChange={handlePostData}>
-						{assignments.map((assignment) => (
-							<option key={assignment} name='assignment' value={assignment}>
-								{assignment}
-							</option>
-						))}
-					</select>
-					<button className='btn btn-primary'>Publicar</button>
-				</form>
+				{isLoading ? (
+					<Spinner />
+				) : (
+					<form onSubmit={handleSubmitPost} className='teacher-post'>
+						<i className='fas fa-user-circle'></i>
+						<input
+							onChange={handlePostData}
+							name='title'
+							value={post.title}
+							type='text'
+							placeholder='Título*'
+							required
+						/>
+						<textarea
+							onChange={handlePostData}
+							value={post.description}
+							name='description'
+							maxLength='300'
+							placeholder='¿Qué pasa en tu classroom?*'
+							type='text'
+							required
+						/>
+						<hr />
+						<h2>Materia</h2>
+						<select required onChange={handlePostData}>
+							{assignments.map((assignment) => (
+								<option key={assignment} name='assignment' value={assignment}>
+									{assignment}
+								</option>
+							))}
+						</select>
+						<button className='btn btn-primary'>Publicar</button>
+					</form>
+				)}
 				<section className='Homework-Post'>
 					{posts.map((post) => {
 						return (
 							<article className='_posts' key={v1()}>
-								<h1>{post.title}</h1>
-								<p>{post.description}</p>
-								<p>{post.assignment}</p>
+								<h1>Tarea: {post.title}</h1>
+								<p>Descripcion: {post.description}</p>
+								<p>Asignatura: {post.assignment}</p>
 							</article>
 						);
 					})}
@@ -101,6 +113,7 @@ const mapStateToProps = (state) => ({
 	assignments: state.groups.currentGroup.assignments,
 	groupID: state.groups.currentGroup._id,
 	posts: state.posts.posts,
+	isLoading: state.posts.isLoading,
 });
 
 const mapDispatchToProps = {

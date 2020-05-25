@@ -3,12 +3,17 @@ const { Parents, Teachers } = require('../schemas/index.schemas');
 
 router.post('/register', async (req, res) => {
 	const data = req.body;
+	if (Object.keys(data).filter((data) => data[data]).length === 0) {
+		return res.send({ message: 'Inserta datos validos en la aplicacion' });
+	}
+
 	const { email } = data;
 	try {
 		let findAccount = await Parents.find({ email });
 		if (findAccount.length > 0) {
 			return res.send({ message: 'Email already exists' });
 		}
+		console.log(findAccount);
 
 		findAccount = await Teachers.find({ email });
 		if (findAccount.length > 0) {
@@ -22,7 +27,7 @@ router.post('/register', async (req, res) => {
 		}
 
 		if (findAccount.length === 0 && data.account === 'teacher') {
-			const account = new Teachers({ ...data, tasks: [] });
+			const account = new Teachers(data);
 			const user = await account.save();
 			return res.send(user);
 		}
@@ -33,6 +38,10 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
 	const { email, password } = req.body;
+
+	if (Object.keys(req.body).filter((data) => req.body[data]).length === 0) {
+		return res.send({ message: 'Inserta datos validos en la aplicacion' });
+	}
 	let findAccount = await Parents.findOne({ email });
 	if (findAccount === null) {
 		findAccount = await Teachers.findOne({ email });
