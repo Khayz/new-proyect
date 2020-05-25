@@ -13,6 +13,8 @@ const ChildTasks = ({ homework, isLoading }) => {
 				<article className='loading_homework'>
 					<Spinner />
 				</article>
+			) : homework.length === 0 ? (
+				<p>No hay tareas enviadas actualmente.</p>
 			) : (
 				homework.map((task) => (
 					<div

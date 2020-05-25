@@ -110,8 +110,9 @@ const TeacherPortfolio = ({
 									</div>
 
 									<div>
-										<h5 className='card-title'>{task.title}</h5>
-
+										<h2 className='card-title'>{task.title}</h2>
+										<p>Estatus: {task.status}</p>
+										<p>Calificacion: {task.calification}</p>
 										{task.status === 'Pendiente' && (
 											<button
 												className='btn-task-file m-2'

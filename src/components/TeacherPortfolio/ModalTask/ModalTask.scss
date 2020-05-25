@@ -1,73 +1,78 @@
 @import '../../../Assets/scss/colors';
 
-.modal_task {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  .card_modal {
-    margin: auto 0;
-    width: 80%;
-    position: relative;
-    background-color: white;
-    border-radius: 10px;
-    padding: 1em;
-    .btn-close {
-      padding: 1em 2em;
-      border-radius: 10%;
-      font-size: 1em;
-      outline: none;
-      border: 1px solid transparent;
+.carousel__modal {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
 
-      &:hover {
-        background-color: $blue-hover;
-      }
-    }
-    .carousel-item {
-      img {
-        max-width: 400px;
-        width: 100%;
-      }
-    }
-    .card-content {
-      width: 100%;
-      input[type='number'] {
-        border-radius: 10px;
-        padding: 0.8em;
-        border: 1px solid gray;
-        outline: none;
-      }
-      select {
-        border-radius: 10px;
-        padding: 0.8em;
-        border: 1px solid gray;
-        outline: none;
-      }
-      .btn-card {
-        background-color: $main-blue;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 1em;
-      }
-    }
-  }
+.modal_task {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1031;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	.card_modal {
+		margin: auto 0;
+		width: 80%;
+		position: relative;
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+		padding: 1em;
+		.btn-close {
+			padding: 1em 2em;
+			border-radius: 10%;
+			font-size: 1em;
+			outline: none;
+			border: 1px solid transparent;
+
+			&:hover {
+				background-color: $blue-hover;
+			}
+		}
+		.carousel-item {
+			img {
+				width: 320px;
+			}
+		}
+		.card-content {
+			width: 100%;
+			input[type='number'] {
+				border-radius: 10px;
+				padding: 0.8em;
+				border: 1px solid gray;
+				outline: none;
+			}
+			select {
+				border-radius: 10px;
+				padding: 0.8em;
+				border: 1px solid gray;
+				outline: none;
+			}
+			.btn-card {
+				background-color: $main-blue;
+				color: white;
+				border: none;
+				border-radius: 10px;
+				padding: 1em;
+			}
+		}
+	}
 }
 .carousel-control-prev,
 .carousel-control-next {
-  span {
-    background-color: $main-blue !important;
-    padding: 2em;
-    font-size: 1em;
-    border-radius: 50%;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.31);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.31);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.31);
-  }
+	span {
+		background-color: $main-blue !important;
+		padding: 2em;
+		font-size: 1em;
+		border-radius: 50%;
+		box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.31);
+		-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.31);
+		-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.31);
+	}
 }

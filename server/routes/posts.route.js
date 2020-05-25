@@ -11,15 +11,14 @@ router.post('/add-task', async (req, res) => {
 	const { groupID } = req.body;
 	try {
 		const post = new Posts(req.body);
-		await post.save();
+		const savedPost = await post.save();
 		const group = await Groups.findOne({ _id: groupID });
 		await Groups.updateOne(
 			{ _id: groupID },
 			{ $set: { tasks: [...group.tasks, req.body] } }
 		);
-		res.send('Post Added');
+		res.send(savedPost);
 	} catch (error) {
-		console.log(error.message);
 		res.send({ message: error.message });
 	}
 });

@@ -7,6 +7,8 @@ export const LOADING_AUTH = 'LOADING_AUTH';
 
 export const LOGOUT_USER = 'LOGOUT_USER';
 
+export const GROUP_LOADING = 'GROUP_LOADING';
+export const GROUP_ERROR = 'GROUP_ERROR';
 export const GET_GROUP_SUCCESS = 'GET_GROUP_SUCCESS';
 export const ADD_NEW_GROUP = 'ADD_NEW_GROUP';
 export const SET_CURRENT_GROUP = 'SET_CURRENT_GROUP';
@@ -21,6 +23,8 @@ export const UPDATE_CHILD = 'UPDATE_CHILD';
 export const DELETE_CHILD = 'DELETE_CHILD';
 export const SET_ACTUAL_CHILD = 'SET_ACTUAL_CHILD';
 
+export const POSTS_ERROR = 'POSTS_ERROR';
+export const SET_NEW_POST = 'SET_NEW_POST';
 export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
 export const LOADING_POSTS = 'LOADING_POSTS';
 

@@ -53,8 +53,3 @@ export const setNewAssignment = (assignment, groupId) => async (dispatch) => {
 	});
 	dispatch({ type: types.SET_NEW_ASSIGNMENT, data: assignment });
 };
-
-export const setNewTask = (task) => async (dispatch) => {
-	await axios.post(`${url}/add-task`, task);
-	dispatch({ type: types.SET_NEW_TASK, data: task });
-};

@@ -48,3 +48,13 @@ export const getStudentHomework = (studentID) => async (dispatch) => {
 		return dispatch({ type: types.HOMEWORK_ERROR, message });
 	}
 };
+
+export const sendTask = (task) => async (dispatch) => {
+	try {
+		dispatch({ type: types.HOMEWORK_LOADING });
+		const { data } = await axios.post(`${url}/teacher`, task);
+		return dispatch({ type: types.SEND_TASK_SUCCESS, data });
+	} catch ({ message }) {
+		return dispatch({ type: types.HOMEWORK_ERROR, message });
+	}
+};

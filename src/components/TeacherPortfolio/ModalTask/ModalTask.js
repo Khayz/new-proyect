@@ -15,10 +15,10 @@ const ModalTask = ({ close, files, isOpen, title, task, updateHomework }) => {
 
 	const imagesArray = Object.keys(files)
 		.map((key) => files[key])
-		.filter((imageURi) => Boolean(imageURi));
+		.filter((imageURi) => imageURi);
 
 	const Images = imagesArray.map((imgUri) => (
-		<Carousel.Item key={v1()} className='d-flex justify-content-center'>
+		<Carousel.Item key={v1()}>
 			<img src={imgUri} alt='First slide' />
 		</Carousel.Item>
 	));
@@ -44,7 +44,9 @@ const ModalTask = ({ close, files, isOpen, title, task, updateHomework }) => {
 								x
 							</button>
 						</div>
-						<Carousel>{Images}</Carousel>
+						<div className='carousel__modal'>
+							<Carousel>{Images}</Carousel>
+						</div>
 						<div className='card-body d-flex justify-content-center flex-column align-items-center'>
 							<h4 className='card-title'>{title}</h4>
 							<div className='card-content d-flex flex-column flex-xl-row justify-content-center my-2'>
