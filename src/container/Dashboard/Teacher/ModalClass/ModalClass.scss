@@ -22,6 +22,15 @@ $blue-light-hover: rgba(0, 174, 239, 0.5);
     // background-color: white;
     background-color: #f0efef;
     border-radius: 20px;
+
+    select {
+      margin: auto;
+      width: 100%;
+      max-width: 260px;
+      border-radius: 10px;
+      outline: none;
+    }
+
     .form_title {
       display: flex;
       flex-direction: row;
@@ -62,6 +71,7 @@ $blue-light-hover: rgba(0, 174, 239, 0.5);
       width: 100%;
       max-width: 240px;
       margin: auto;
+      height: auto;
       border-style: none;
       cursor: pointer;
       transition: 0.5s ease-out;
