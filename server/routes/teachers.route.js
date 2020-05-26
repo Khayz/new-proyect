@@ -17,7 +17,6 @@ router.post('/teacher', async (req, res) => {
 		const savedHomeWork = await homework.save();
 		res.send(savedHomeWork);
 	} catch (error) {
-		console.log(error.message);
 		res.send({ message: error.message });
 	}
 });

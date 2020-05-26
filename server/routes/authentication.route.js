@@ -3,9 +3,6 @@ const { Parents, Teachers } = require('../schemas/index.schemas');
 
 router.post('/register', async (req, res) => {
 	const data = req.body;
-	if (Object.keys(data).filter((data) => data[data]).length === 0) {
-		return res.send({ message: 'Inserta datos validos en la aplicacion' });
-	}
 
 	const { email } = data;
 	try {
@@ -13,7 +10,6 @@ router.post('/register', async (req, res) => {
 		if (findAccount.length > 0) {
 			return res.send({ message: 'Email already exists' });
 		}
-		console.log(findAccount);
 
 		findAccount = await Teachers.find({ email });
 		if (findAccount.length > 0) {

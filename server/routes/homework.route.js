@@ -26,11 +26,9 @@ router.get('/get-student-homework', async (req, res) => {
 
 router.put('/homework', async (req, res) => {
 	const { id, calification, status, userID } = req.body;
-	console.log(req.body);
 	try {
 		await HomeWork.updateOne({ _id: id }, { $set: { calification, status } });
 		const homework = await HomeWork.find({ studentID: userID });
-		console.log(homework[0].status, homework[1].status);
 		res.send(homework);
 	} catch (error) {
 		res.send({ message: error.message });
