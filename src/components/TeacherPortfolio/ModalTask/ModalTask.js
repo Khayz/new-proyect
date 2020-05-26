@@ -40,9 +40,7 @@ const ModalTask = ({ close, files, isOpen, title, task, updateHomework }) => {
         <div className="modal_task">
           <div className="card_modal">
             <div className="d-flex justify-content-end">
-              <button className="btn-close" onClick={close}>
-                x
-              </button>
+              <i className="fas fa-times-circle" onClick={close}></i>
             </div>
             <div className="carousel__modal">
               <Carousel>{Images}</Carousel>

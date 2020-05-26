@@ -15,7 +15,7 @@ const ModalClass = ({ addGroup, close }) => {
 
   const handleGroup = (event) => {
     const { value, name } = event.target;
-    console.log(value, name);
+
     setGroup((prevState) => ({
       ...prevState,
       [name]: value,
@@ -25,7 +25,6 @@ const ModalClass = ({ addGroup, close }) => {
   const handleSubmitGroup = (event) => {
     event.preventDefault();
     if (group.cct.length > 0 && group.group.length > 0) {
-      console.log("HELLO");
       addGroup({ group: group.group + "-" + group.class, cct: group.cct });
       close(false);
     }
