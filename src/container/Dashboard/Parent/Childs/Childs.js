@@ -41,7 +41,7 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
               className={styles.Child}
             >
               <Avatar
-                round="7px"
+                round="20px"
                 color={Avatar.getRandomColor("sitebase", [
                   "green",
                   "blue",
