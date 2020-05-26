@@ -35,9 +35,12 @@
       }
     }
     #upload-file {
-      margin: auto;
-      margin-right: 10px;
+      display: flex;
+      align-items: center;
       justify-content: center;
+      width: 100%;
+      max-width: 360px;
+      margin: auto;
     }
     .form_title {
       display: flex;
@@ -48,11 +51,11 @@
       border-bottom: 2px solid #535353;
       margin-bottom: 5px;
       h2 {
+        text-align: center;
         font-size: 25px;
-        margin-left: 140px;
+        margin: auto;
       }
       i {
-        margin-left: 120px;
         font-size: 25px;
         padding-bottom: 6px;
         cursor: pointer;
