@@ -16,6 +16,7 @@ module.exports = function (emailList) {
 			pass: 'h0m3sch00l',
 		},
 	});
+
 	transporter.sendMail(mailOptions, function (error, info) {
 		if (error) {
 			console.log(error);
