@@ -7,6 +7,22 @@
   margin: auto;
   overflow-y: scroll;
 
+  .bg-success {
+    background-color: #fff !important;
+    .card-header {
+      background-color: rgb(23, 185, 120);
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+  .card-header {
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #f1c04b;
+  }
+
   & .Task {
     width: 100%;
     max-width: 380px;
@@ -21,12 +37,6 @@
 
     .card-body {
       margin: 0;
-    }
-    .card-header {
-      color: #fff;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      background-color: #f1c04b;
     }
   }
 }

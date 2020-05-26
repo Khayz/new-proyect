@@ -1,5 +1,5 @@
-@import '../../Assets/scss/colors';
-@import '../../Assets/scss/breakpoints';
+@import "../../Assets/scss/colors";
+@import "../../Assets/scss/breakpoints";
 
 .Teacher-Portfolio {
   display: flex;
@@ -30,6 +30,7 @@
     animation: slide-open 0.5s forwards;
     background-color: rgba(0, 0, 0, 0.5);
     animation: open-slide 1s forwards;
+
     .assignments-container {
       overflow: auto;
       height: 100%;
@@ -44,12 +45,12 @@
       font-size: 0.95em;
       transition: 0.3s ease-out;
       color: white;
-    }
-    h4:hover {
-      background-color: $blue-hover;
-      border-radius: 10px;
-      padding: 1em;
-      cursor: pointer;
+      &:hover {
+        background-color: $blue-hover;
+        border-radius: 10px;
+        padding: 1em;
+        cursor: pointer;
+      }
     }
 
     h2 {
@@ -67,15 +68,15 @@
     color: #00aeef;
     font-size: 1.5em;
     text-align: center;
-  }
-  i:hover {
-    color: rgba(0, 174, 239, 0.5);
+    &:hover {
+      color: rgba(0, 174, 239, 0.5);
+    }
   }
 
   .activities {
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: 10px;
     h4 {
       margin: 10px;
       font-size: 22px;
@@ -116,12 +117,12 @@
   h4 {
     font-size: 0.95em;
     transition: 0.3s ease-out;
-  }
-  h4:hover {
-    background-color: $blue-hover;
-    border-radius: 10px;
-    padding: 1em;
-    cursor: pointer;
+    &:hover {
+      background-color: $blue-hover;
+      border-radius: 10px;
+      padding: 1em;
+      cursor: pointer;
+    }
   }
 
   h2 {
@@ -132,14 +133,14 @@
   i {
     border: none;
     border-radius: 50%;
-    transition: 0.3s ease-out;
+    transition: 0.5s ease-out;
     outline: none;
     color: #00aeef;
     font-size: 1.5em;
     text-align: center;
-  }
-  i:hover {
-    color: rgba(0, 174, 239, 0.5);
+    &:hover {
+      color: rgba(0, 174, 239, 0.5);
+    }
   }
 
   .activities {
@@ -171,6 +172,7 @@
     height: 100%;
     max-width: 350px;
     max-height: 300px;
+    border-radius: 20px !important;
     form {
       width: 100%;
       max-width: none;
@@ -182,6 +184,7 @@
         img {
           height: 100px;
           width: 100px;
+          border-radius: 100px;
         }
       }
       .card-status {
@@ -191,11 +194,22 @@
         }
       }
       .btn-task-file {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        max-width: 160px;
+        height: 35px;
         background-color: $main-blue;
         color: white;
         border: none;
         border-radius: 10px;
-        padding: 1em;
+        transition: 0.5s ease-out;
+        outline: none;
+        &:hover {
+          background-color: #c71585;
+        }
       }
     }
   }

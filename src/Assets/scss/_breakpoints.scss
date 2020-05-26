@@ -82,7 +82,7 @@ $screen-xl-min: 1200px;
 
 // Custom devices breakpoints
 @mixin rwd($screen) {
-  @media (min-width: $screen+'px') {
+  @media (min-width: $screen+"px") {
     @content;
   }
 }

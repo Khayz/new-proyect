@@ -2,6 +2,7 @@
   width: 240px;
   height: 140px;
   display: flex;
+  // padding: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -44,27 +45,31 @@ $colorBlue: #00aeef;
     box-sizing: border-box;
     align-items: flex-start;
     .group-card {
+      padding: 4px;
+      align-content: center;
+      justify-content: space-evenly;
       @include card();
       h2 {
-        font-size: 23px;
+        font-size: 25px;
         color: $colorBlue;
         color: #535353;
         color: #c71585;
         margin: 8px 0;
       }
       p {
-        font-size: 14px;
+        font-size: 12px;
         margin: 0;
         font-weight: bold;
         color: #535353;
+        text-align: center;
         span {
           font-weight: normal;
           color: #535353;
         }
       }
       i {
-        margin-top: 8px;
-        font-size: 20px;
+        margin: 8px 0px 4px 0px;
+        font-size: 15px;
         color: #535353;
       }
     }
@@ -127,7 +132,7 @@ $colorBlue: #00aeef;
     hr {
       margin: 30px 0px;
       // border: solid #c71585;
-      border: solid #535353;
+      border: 1px solid #535353;
       border-radius: 20px;
     }
     i {

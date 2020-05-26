@@ -4,9 +4,10 @@ $otherColor: #00a4e4;
 @mixin shadows {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	margin: 20px;
+	// border: 1px solid $otherColor;
 	background-color: #fff;
 	width: 350px;
-	border-radius: 10px;
+	border-radius: 20px;
 	figure {
 		display: flex;
 		align-items: center;
@@ -19,6 +20,7 @@ $otherColor: #00a4e4;
 }
 
 .Parent {
+	padding-bottom: 10px;
 	@include shadows();
 	.Add_Child {
 		background-color: $otherColor;
@@ -26,11 +28,12 @@ $otherColor: #00a4e4;
 		width: 80%;
 		border-radius: 10px;
 		margin: 10px auto;
+		padding-bottom: 40px;
 		padding: 6px;
 		display: flex;
 		border: none;
 		outline: none;
-		transition: 0.3s ease-out;
+		transition: 0.5s ease-out;
 		justify-content: center;
 		align-items: center;
 		i {
@@ -56,16 +59,19 @@ $otherColor: #00a4e4;
 	.Child {
 		@include shadows();
 		cursor: pointer;
-		color: #202020;
+		// color: #202020;
+		color: #363636;
 		display: flex;
-		transition: 0.3s ease-out;
+		transition: 0.5s ease-out;
 		.user {
 			margin-left: 10px;
 			h2 {
-				margin: 5px 0;
+				margin: 10px 0;
 				font-size: 15px;
+				color: #363636;
 				span {
-					font-weight: lighter;
+					font-weight: normal;
+					color: #363636;
 				}
 			}
 		}
