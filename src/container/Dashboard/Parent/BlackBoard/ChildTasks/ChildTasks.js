@@ -16,27 +16,27 @@ const ChildTasks = ({ homework, isLoading }) => {
 			) : homework.length === 0 ? (
 				<p>No hay tareas enviadas actualmente.</p>
 			) : (
-				homework.map((task) => (
-					<div
-						key={v1()}
-						className={`Task card text-black ${
-							task.status === 'Resuelta' ? 'bg-success' : 'border-light'
-						} mb-3 Task`}
-						style={{ maxWidth: '18rem' }}>
-						<div className='card-header'>{`${
-							task.status === 'Resuelta' ? 'Resuelta' : 'Pendiente'
-						}`}</div>
-						<div className='card-body'>
-							<h5 className='card-title'>Titulo: {task.title}</h5>
-							<p className='card-text'>
-								Calificacion: {task.calification || 'none'}
-							</p>
-							<p className='card-text'>Fecha: {task.date}</p>
-							<p>Estatus: {task.status}</p>
-						</div>
-					</div>
-				))
-			)}
+						homework.map((task) => (
+							<div
+								key={v1()}
+								className={`Task card text-black ${
+									task.status === 'Resuelta' ? 'bg-success' : 'border-light'
+									} mb-3 Task`}
+								style={{ maxWidth: '18rem' }}>
+								<div className='card-header'>{`${
+									task.status === 'Resuelta' ? 'Resuelta' : 'Pendiente'
+									}`}</div>
+								<div className='card-body'>
+									<h5 className='card-title'>Titulo: {task.title}</h5>
+									<p className='card-text'>
+										Calificacion: {task.calification || 'none'}
+									</p>
+									<p className='card-text'>Fecha: {task.date}</p>
+									<p>Estatus: {task.status}</p>
+								</div>
+							</div>
+						))
+					)}
 		</section>
 	);
 };

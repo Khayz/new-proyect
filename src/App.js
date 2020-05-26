@@ -14,7 +14,7 @@ import SignUp from './components/SignUp/SignUp';
 import Dashboard from './container/Dashboard/Dashboard';
 import Footer from './components/Footer/Footer';
 import Settings from './container/Settings/Settings';
-import Assignments from './container/Assignments/Assignments';
+// import Assignments from './container/Assignments/Assignments';
 import Class from './container/Dashboard/Teacher/Class/Class';
 
 function App({ authUser, user, getChilds, getGroups }) {

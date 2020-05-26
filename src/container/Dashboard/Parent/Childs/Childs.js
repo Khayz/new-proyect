@@ -31,37 +31,37 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
 						<Spinner />
 					</article>
 				) : (
-					childList.map((child) => (
-						<div
-							onClick={() => {
-								getPosts(child.groupID);
-								setActualChild(child);
-							}}
-							key={v1()}
-							className={styles.Child}>
-							<Avatar
-								round='7px'
-								color={Avatar.getRandomColor('sitebase', [
-									'green',
-									'blue',
-									'#17b978',
-								])}
-								name={child.firstName + ' ' + child.lastName}
-							/>
-							<div className={styles.user}>
-								<h2>
-									Hijo: <span>{child.firstName + ' ' + child.lastName}</span>
-								</h2>
-								<h2>
-									Escuela: <span>{child.school}</span>
-								</h2>
-								<h2>
-									Grupo: <span>{child.group}</span>
-								</h2>
+						childList.map((child) => (
+							<div
+								onClick={() => {
+									getPosts(child.groupID);
+									setActualChild(child);
+								}}
+								key={v1()}
+								className={styles.Child}>
+								<Avatar
+									round='20px'
+									color={Avatar.getRandomColor('sitebase', [
+										'green',
+										'blue',
+										'#17b978',
+									])}
+									name={child.firstName + ' ' + child.lastName}
+								/>
+								<div className={styles.user}>
+									<h2>
+										Hijo: <span>{child.firstName + ' ' + child.lastName}</span>
+									</h2>
+									<h2>
+										Escuela: <span>{child.school}</span>
+									</h2>
+									<h2>
+										Grupo: <span>{child.group}</span>
+									</h2>
+								</div>
 							</div>
-						</div>
-					))
-				)}
+						))
+					)}
 			</div>
 		</>
 	);
