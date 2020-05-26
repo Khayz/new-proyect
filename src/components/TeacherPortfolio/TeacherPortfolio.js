@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { v1 } from "uuid";
 import { getStudentHomework } from "../../redux/actions/index.actions";
-
+import Book from "../../Assets/Images/study.svg";
 import "./TeacherPortfolio.scss";
 
 import ModalAssignment from "./ModalAssignment/ModalAssignment";
@@ -89,9 +89,7 @@ const TeacherPortfolio = ({
     </div>
   );
 
-  useEffect(() => {
-    console.log(homework);
-  }, [homework]);
+  useEffect(() => {}, [homework]);
 
   const handleActualHomework = (student) => {
     getStudentHomework(student._id);
@@ -113,7 +111,12 @@ const TeacherPortfolio = ({
       <article className="d-flex flex-column align-items-center justify-content-center flex-grow-1">
         <div className="portfolio-info d-flex justify-content-center flex-wrap p-3 m-auto">
           {message !== null ? (
-            <h3 className="mt-xl-5 mt-lg-5 mt-3">{message}</h3>
+            <article>
+              <h3 className="mt-xl-5 mt-lg-5 mt-3">{message}</h3>
+              <figure>
+                <img src={Book} alt="book" />
+              </figure>
+            </article>
           ) : (
             homework.map((task) => (
               <div

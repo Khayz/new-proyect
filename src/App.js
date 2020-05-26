@@ -36,7 +36,7 @@ function App({ authUser, user, getChilds, getGroups }) {
       <div className="App">
         <Navbar />
         {/* <Route path='/assignments' component={Assignments} /> */}
-        <Route render={() => <Redirect path="/" />} />
+        <Route render={() => <Redirect to="/" />} />
         <Route
           exact
           path="/"

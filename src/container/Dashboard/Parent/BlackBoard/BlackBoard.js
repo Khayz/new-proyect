@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getHomework } from "../../../../redux/actions/index.actions";
 
 import "./BlackBoard.scss";
-import Pikachu from "../../../../Assets/Images/pikachu.png";
+import Books from "../../../../Assets/Images/study.svg";
 
 import Posts from "./Posts/Posts";
 import ChildTasks from "./ChildTasks/ChildTasks";
@@ -20,7 +20,7 @@ const BlackBoard = ({ child, posts, loadingPosts, homework, getHomework }) => {
     <div className="Board_Guest">
       <h1>Has click en alguno de tus hijos para ver sus avances!</h1>
       <figure>
-        <img src={Pikachu} alt="Pikachu" />
+        <img src={Books} alt="Books" />
       </figure>
     </div>
   );
