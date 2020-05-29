@@ -11,8 +11,6 @@ router.get('/groups', async (req, res) => {
 });
 
 router.post('/groups', async (req, res) => {
-	console.log(req.body);
-
 	const dbConnect = await mongodb.connect(process.env.DB_CONNECTION, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
@@ -39,7 +37,6 @@ router.post('/groups', async (req, res) => {
 });
 
 router.post('/add-assignment', async (req, res) => {
-	console.log(req.body);
 	try {
 		const group = await Groups.findOne({ _id: req.body._id });
 		console.log(group);

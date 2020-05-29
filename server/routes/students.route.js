@@ -24,7 +24,7 @@ router.post('/students', async (req, res) => {
 			{
 				$set: {
 					students: [...studentGroup.students, newStudent],
-					emailList: [...emailList, parent.email]
+					emailList: [...emailList, parent.email],
 				},
 				//aqui
 			}
@@ -48,7 +48,6 @@ router.get('/students', async (req, res) => {
 		const students = await Students.find({ parentID: id });
 		res.send(students);
 	} catch (error) {
-		console.log(error.message);
 		res.send({ message: error.message });
 	}
 });
@@ -81,7 +80,6 @@ router.delete('/students', async (req, res) => {
 		);
 		res.send('CHILD DELETED');
 	} catch (error) {
-		console.log(error.message);
 		res.send({ message: error.message });
 	}
 });
