@@ -12,11 +12,8 @@ $otherColor: #00a4e4;
   & ._Post {
     width: 100%;
     max-width: 380px;
+    margin: 10px;
     height: auto;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     h2 {
@@ -53,19 +50,50 @@ $otherColor: #00a4e4;
     }
   }
 
+  .HomeWork_success {
+    background-color: #fff !important;
+    .card-header {
+      background-color: rgb(23, 185, 120);
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
   .HomeWork_pending {
-    border-radius: 10px;
-    border: 4px solid #f1c04b;
+    background-color: #fff !important;
+    .card-header {
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      background-color: #f1c04b;
+    }
+  }
+
+  & ._Post {
+    width: 100%;
+    max-width: 380px;
+    margin: 10px;
+    height: auto;
+    h5 {
+      font-weight: bold;
+    }
+    border-radius: 20px;
+    /* background-color: #00a4e4; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .card-body {
+      margin: 0;
+    }
   }
 
   ._Post.null {
-    border-radius: 10px;
-    border: 4px solid $otherColor;
-  }
-
-  .HomeWork_success {
-    border-radius: 10px;
-    border: 4px solid rgb(23, 185, 120);
+    background-color: #fff !important;
+    .card-header {
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      background-color: #00a4e4;
+    }
   }
 }
 

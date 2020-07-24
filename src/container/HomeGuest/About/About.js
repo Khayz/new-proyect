@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section id="about" className="About">
       <h1>
-        HOME SCHOOL conecta a profesores, alumnos <br />  y padres para construir
+        Conecta a profesores, alumnos <br />  y padres para construir
         comunidades <br /> asombrosas en el aula.
       </h1>
       <div className="card-group cards">

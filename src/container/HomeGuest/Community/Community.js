@@ -1,7 +1,9 @@
 import React from "react";
-import Mobile from "../../../Assets/Images/telefono-inteligente.svg";
-// import Share from "../../../Assets/Images/img-share.png";
-import Calendar from "../../../Assets/Images/unnamed.png";
+import Mobile from "../../../Assets/Images/mobile.svg";
+import ShareCommunity from "../../../Assets/Images/share-comunity.jpg";
+import Login from "../../../Assets/Images/Login.jpg";
+import Cloud from "../../../Assets/Images/Cloud-Storage.jpg";
+import Portfolio from "../../../Assets/Images/Portfolio.jpg";
 
 import "./Community.scss";
 
@@ -12,10 +14,9 @@ const Community = () => {
         <div className="share">
           <h3>Comparte historias de tu clase</h3>
           <p>
-            Comparte instantáneamente fotos, vídeos y anuncios en la historia de
-            la clase o envía <br /> mensajes privados a cualquier padre de familia.
+            Comparte instantáneamente fotos y anuncios en la historia de la
+            clase o envía <br /> mensajes privados a cualquier padre de familia.
           </p>
-
           <ul>
             <li>
               Los padres pueden unirse a la clase fácilmente con cualquier
@@ -26,21 +27,23 @@ const Community = () => {
               Utiliza la función de "No Molestar" para evitar interrupciones.
             </li>
           </ul>
-          {/* <figure>
-            <img src={Share} alt="imagen" />
-          </figure> */}
+          <div className="share-img">
+            <figure>
+              <img src={ShareCommunity} alt="" />
+            </figure>
+          </div>
         </div>
         <div className="tools">
           <div className="tool-text">
             <h3>Todas tus herramientas de clase en un sólo lugar</h3>
             <p>
-              Organiza grupos de alumnos al azar. Muestra las instrucciones para tus
-              actividades. Elige música de fondo. <br /> ¡Y haz muchas más cosas muy
-              pronto disponibles en el Toolkit de Home School!
+              Organiza grupos de alumnos al azar. Muestra las instrucciones para
+              tus actividades. Elige música de fondo. <br /> ¡Y haz muchas más
+              cosas muy pronto disponibles en el Toolkit de Home School!
             </p>
           </div>
           <figure>
-            <img src={Mobile} alt="imagen" />
+            <img src={Mobile} alt="" />
           </figure>
         </div>
         <div className="digital-content">
@@ -49,23 +52,33 @@ const Community = () => {
               <h3>Dale voz a tus alumnos con las carpetas digitales</h3>
               <p>
                 Los alumnos pueden exhibir lo que han aprendido añadiendo fotos
-                y vídeos a sus propias carpetas digitales. <br /> Disponibles para
+                a sus propias carpetas digitales. <br /> Disponibles para
                 Chromebooks, iPads y cualquier otro ordenador.
               </p>
             </div>
           </div>
           <figure>
-            <img src={Calendar} alt="imagen" />
+            <img src={Login} alt="" />
+            <img src={Cloud} alt="" />
+            <img src={Portfolio} alt="" />
           </figure>
+        </div>
+        <div className="plan">
+          <div>
+            <h3>¿Planeas una presentación? ¡Tenemos todo cubierto!</h3>
+            <p>
+              ¡Libros gratuitos y preguntas frecuentes sobre todo lo que
+              necesitas para tu presentación!
+            </p>
+          </div>
         </div>
         <div className="school-community">
           <div>
             <div>
               <h3>Consolida tu comunidad escolar</h3>
               <p>
-                Profesores, líderes de la escuela y familias pueden
-                asociarse en Home School para crear una increíble comunidad
-                escolar.
+                Profesores, líderes de la escuela y familias pueden asociarse en
+                Home School para crear una increíble comunidad escolar.
               </p>
             </div>
           </div>
@@ -81,17 +94,11 @@ const Community = () => {
             ></iframe>
           </div>
         </div>
-        <div className="plan">
-          <div>
-            <h3>¿Planeas una presentación? ¡Tenemos todo cubierto!</h3>
-            <p>
-              ¡Recursos gratuitos y preguntas frecuentes sobre todo lo que
-              necesitas para tu presentación!
-            </p>
-          </div>
-        </div>
+
         <div className="devices">
-          <h3>Cualquier aula, cualquier dispositivo. <br /> 100% gratis.</h3>
+          <h3>
+            Cualquier aula, cualquier dispositivo. <br /> 100% gratis.
+          </h3>
           <div className="card-group cards">
             <div className="card">
               <i className="fas fa-mobile-alt"></i>

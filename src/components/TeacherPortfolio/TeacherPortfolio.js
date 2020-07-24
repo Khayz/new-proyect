@@ -120,19 +120,21 @@ const TeacherPortfolio = ({
           ) : (
             homework.map((task) => (
               <div
-                style={
-                  task.status === "Resuelta"
-                    ? { border: "4px solid #17b978" }
-                    : { border: "4px solid #f1c04b" }
-                }
-                className="portfolio-container d-flex justify-content-center shadow-lg rounded m-3 m-md-2 "
+                className="card-text-black portfolio-container d-flex justify-content-center shadow-lg rounded m-3 m-md-2 "
                 key={v1()}
               >
                 <form key={v1()}>
-                  <div className="task-file-container d-flex justify-content-center align-items-center">
+                  <div
+                    style={
+                      task.status === "Resuelta"
+                        ? { background: "#17b978" }
+                        : { background: "#f1c04b" }
+                    }
+                    className=" card-header task-file-container d-flex justify-content-center align-items-center"
+                  >
                     <img key={v1()} src={task.files.task0} alt="task" />
                   </div>
-                  <div>
+                  <div className="card-body">
                     <h2 className="card-title">{task.title}</h2>
                     <div className="card-status d-flex justify-content-around">
                       <p>Estatus: {task.status}</p>

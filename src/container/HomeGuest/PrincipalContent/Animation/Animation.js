@@ -15,7 +15,7 @@ function Animation() {
     },
     enter: [
       { opacity: 1, height: 80, innerHeight: 80 },
-      { transform: "perspective(600px) rotateX(180deg)", color: "#28d79f" },
+      { transform: "perspective(600px) rotateX(180deg)", color: "#c71585" },
       { transform: "perspective(600px) rotateX(0deg)" },
     ],
     leave: [

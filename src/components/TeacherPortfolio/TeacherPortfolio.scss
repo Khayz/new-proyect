@@ -180,6 +180,11 @@
     max-width: 350px;
     max-height: 300px;
     border-radius: 20px !important;
+    .card-header {
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
     form {
       width: 100%;
       max-width: none;

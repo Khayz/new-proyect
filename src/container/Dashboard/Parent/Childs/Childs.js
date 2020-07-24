@@ -7,7 +7,7 @@ import {
 import { v1 } from "uuid";
 import Avatar from "react-avatar";
 
-import avatarChild from "../../../../Assets/Images/avatar-1.png";
+import avatarParent from "../../../../Assets/Images/avatar-1.svg";
 import styles from "./Childs.module.scss";
 
 import ModalAddChild from "./ModalAddChild/ModalAddChild";
@@ -18,7 +18,7 @@ const Childs = ({ user, childList, loadChilds, getPosts, setActualChild }) => {
     <>
       <div className={styles.Parent}>
         <figure>
-          <img src={avatarChild} alt="avatarChild" />
+          <img src={avatarParent} alt=""/>       
         </figure>
         <div className={styles.Add_Child}>
           Añadir Hijo

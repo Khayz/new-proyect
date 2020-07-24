@@ -14,4 +14,12 @@ body {
       font-weight: lighter;
     }
   }
+  .loading_spinner {
+    width: 150px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
 }

@@ -1,6 +1,7 @@
 .Post {
   background-color: #f0efef;
   margin: 130px auto auto;
+  min-height: 90vh;
   .post-events {
     margin: 50px 0;
     background-color: #fff;
@@ -125,23 +126,55 @@
     }
   }
   .Homework-Post {
-    max-height: 80vh;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    margin: 15px auto;
+    margin: auto;
     overflow-y: scroll;
   }
   & ._posts {
     width: 100%;
     max-width: 380px;
+    margin: 10px;
     height: auto;
-    margin: 15px;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    h1 {
+      color: #202020;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 5px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+    p {
+      text-transform: uppercase;
+      color: #202329;
+    }
+  }
+  & ._posts {
+    width: 100%;
+    max-width: 380px;
+    margin: 10px;
+    height: auto;
+    h5 {
+      font-weight: bold;
+    }
+    border-radius: 20px;
+    /* background-color: #00a4e4; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .card-body {
+      margin: 0;
+    }
+  }
+  .card-header {
+    background-color: #414345;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 }
 

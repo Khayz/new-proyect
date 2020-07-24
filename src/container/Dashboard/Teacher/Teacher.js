@@ -57,7 +57,7 @@ const Teacher = ({ user, groups, setCurrentGroup }) => {
         <hr />
         <div>
           <h2>
-            Aprendizaje Remoto con <br /> HOME-SCHOOL
+            Aprendizaje con <br /> HOME-SCHOOL
           </h2>
           <p>
             Todo lo que tu necesitas para mantenerte conectado con tus

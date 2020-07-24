@@ -99,10 +99,18 @@ const TeacherPost = ({
         <section className="Homework-Post">
           {posts.map((post) => {
             return (
-              <article className="_posts" key={v1()}>
-                <h1>Tarea: {post.title}</h1>
-                <p>Descripcion: {post.description}</p>
-                <p>Asignatura: {post.assignment}</p>
+              <article
+                style={{ maxWidth: "18rem" }}
+                className="_posts card bg-light mb-3"
+                key={v1()}
+              >
+                <div className="card-header"> </div>
+
+                <div className="card-body">
+                  <h1 className="card-title">Tarea: {post.title}</h1>
+                  <p className="card-text">Descripcion: {post.description}</p>
+                  <p className="card-text">Asignatura: {post.assignment}</p>
+                </div>
               </article>
             );
           })}

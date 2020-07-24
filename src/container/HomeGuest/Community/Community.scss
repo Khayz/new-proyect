@@ -16,12 +16,11 @@
   // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   h3 {
-    text-align: center;
     // padding: 50px 0;
     color: #535353;
     // color: white;
-    font-size: 34px;
-    line-height: 43px;
+    font-size: 36px;
+    line-height: 44px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -42,10 +41,22 @@
   }
   .share {
     // margin: auto;
-    padding: 50px;
+    padding: 30px;
     width: 100%;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
+    margin: 30px auto;
+    .share-img {
+      display: flex;
+      justify-content: flex-end;
+      figure {
+        img {
+          width: 100%;
+          max-width: 560px;
+          margin: auto;
+        }
+      }
+    }
     // background-color: #363636;
     // background-color: #bdc3c7;
     // background-color: #ecf0f1;
@@ -63,22 +74,24 @@
 
     p {
       padding: 8px;
+      text-align: left;
+      font-size: 24px;
     }
 
     ul {
       font-weight: 500;
       text-align: left;
-      color: #535353;
+      color: #c71585;
       // color: white;
-      margin: auto;
       font-size: 14px;
       line-height: 24px;
       max-width: 530px;
       padding: 0px;
     }
     li {
+      text-align: left;
       margin: 20px;
-      font-size: 18px;
+      font-size: 20px;
       list-style: circle;
     }
   }
@@ -140,9 +153,17 @@
     p {
       margin: 20px 0px;
     }
-    img {
-      margin: 20px 0px;
-    }
+      figure {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        img {
+          border-radius: 20px;
+          width: 100%;
+          max-width: 320px;
+        }
+      }
+   
   }
 
   .school-community {
@@ -177,8 +198,8 @@
       .school-video {
         margin-top: 20px;
         border-radius: 10px;
-        width: 420px;
-        height: 280px;
+        width: 440px;
+        height: 300px;
       }
     }
   }
@@ -197,7 +218,7 @@
     // width: 70%;
     // box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.4);
     height: auto;
-    color: #535353;
+    color: #c71585;
     margin: auto;
     padding: 50px 0px;
     width: 80%;

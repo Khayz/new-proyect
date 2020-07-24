@@ -6,14 +6,23 @@ import "./Students.scss";
 
 import ModalInviteStudent from "./ModalInviteStudent/ModalInviteStudent";
 import { connect } from "react-redux";
+import ModalCommentStudent from "./ModalCommentStudent/ModalCommentStudent";
 
 const Students = ({ students }) => {
   const [openModal, setOpenModal] = useState(false);
+  const [commentModal, setCommentModal] = useState(false);
 
   return (
     <section className="Student-List">
       {students.map((students) => (
-        <div key={v1()} className="Student-Card">
+        <div
+          type="button"
+          data-toggle="modal"
+          data-target="#centralModalSm"
+          onClick={() => setCommentModal(true)}
+          key={v1()}
+          className="Student-Card"
+        >
           <figure>
             <img src={Monster} alt="" />
           </figure>
@@ -21,6 +30,7 @@ const Students = ({ students }) => {
           <h3>{students.lastName}</h3>
         </div>
       ))}
+      {commentModal && <ModalCommentStudent close={setCommentModal} />}
       <div
         onClick={() => setOpenModal(true)}
         style={{ border: `dashed 1px #ccc` }}
